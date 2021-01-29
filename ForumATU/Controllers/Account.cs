@@ -1,5 +1,8 @@
-﻿using ForumATU.Models;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using ForumATU.Models;
 using ForumATU.Models.Data;
+using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +24,28 @@ namespace ForumATU.Controllers
             return View();
         }
         
+        [HttpPost]
+        public async Task<IActionResult> Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+                User userAuthorizing = _db.Users.FirstOrDefault(u => u.Email == model.EmailAndUserName || u.UserName == model.EmailAndUserName);
+                if (userAuthorizing != null)
+                {
+                    var result = await _signInManager.PasswordSignInAsync(
+                        userAuthorizing,
+                        model.Password,
+                        model.RememberMe,
+                        false
+                    );
+                    if (result.Succeeded)
+                        return RedirectToAction("Index", "Home");
+                }
+                else
+                    ModelState.AddModelError("","Неверный пароль или логин пользователя ");
+            }
+            return View(model);
+        }
         
         
     }
