@@ -1,3 +1,9 @@
 ﻿body{
     background-color: rgb(240,240,240);
 }
+.icon-demo-al{
+    background-image: url(../images/icon/planet.svg)!important;
+}
+.icon-input-al{
+    background-image: url(../images/icon/login.svg)!important;
+}
