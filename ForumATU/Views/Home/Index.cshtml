@@ -502,38 +502,30 @@
                     <div class="sidebar">
                         <!-- Форма регистрации -->
                         <div class="section login-form">
-                            <h3>Вход</h3><h3>|</h3><h3><a href="register">Регистрация</a></h3>
+                            <h3>Вход</h3><h3>|</h3><h3><a asp-action="Register" asp-controller="Account">Регистрация</a></h3>
                             
-                            <!--<form action="login/login" method="post" class="xenForm " id="login">-->
-                            <!--<form action="login/login" method="post" class="xenForm " id="authorization">-->
-                            <form action="/login/login" method="post" class="xenForm authorization-form" id="authorization">
+                           
+                            <form asp-action="Login" asp-controller="Account" method="post" class="xenForm authorization-form" id="authorization">
 
 
                                 <div class="ctrlWrapper">
                                     <dl class="ctrlUnit">
-                                        <dd><input type="text" name="login" id="LoginControl" class="textCtrl" tabindex="101" placeholder="e-mail"></dd>
+                                        <dd><input type="text" name="EmailAndUserName" id="LoginControl" class="textCtrl"  placeholder="e-mail"></dd>
                                     </dl>
                                     <dl class="ctrlUnit">
                                         <dd>
-                                            <input type="password" name="password" class="textCtrl" id="ctrl_password" tabindex="102" placeholder="password">
+                                            <input type="password" name="Password" class="textCtrl" id="ctrl_password" placeholder="password">
                                         </dd>
                                     </dl>
                                     <dl class="ctrlUnit submitUnit">
                                         <dd>
-                                            <input type="submit" class="button primary" value="Вход" tabindex="104" data-loginphrase="Вход" data-signupphrase="Регистрация">
-                                            <div class="lostPasswordLogin"><a href="lost-password/" class="OverlayTrigger OverlayCloser" tabindex="106">Забыли пароль?</a></div>
-                                            <!--<label for="ctrl_remember" class="rememberPassword"><input type="checkbox" name="remember" value="1" id="ctrl_remember" tabindex="103" /> Запомнить меня</label>-->
+                                            <input type="submit" class="button primary" value="Вход" >
+                                            <div class="lostPasswordLogin"><a href="#" class="OverlayTrigger OverlayCloser" tabindex="106">Забыли пароль?</a></div>
                                         </dd>
                                     </dl>
                                 </div>
-
-                                <input type="hidden" name="cookie_check" value="1">
-                                <input type="hidden" name="target_path" value="https://forum.elma-bpm.ru/">
-                                <input type="hidden" name="fail_path" value="https://forum.elma-bpm.ru/ru/login/">
-                                <input type="hidden" name="xfToken" value="">
-
+                                
                             </form>
-
                         </div>
                         
                         <div class="section widget-single">
@@ -546,15 +538,8 @@
                                 <div class="WidgetFramework_WidgetRenderer_Threads_Sidebar avatarList">
                                     <ul>
 
-
-
-
-
                                         <li class="thread-1050 thread-node-45">
                                             <a href="members/1834/" class="avatar Av1834s" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_s.png" width="36" height="36" alt="Turuhansky"></a>
-
-
-
                                             <a class="Tooltip" href="threads/1050/">
                                                 Перенос значений одной...
                                             </a>
@@ -562,14 +547,7 @@
                                             <div class="userTitle">
                                                 <a href="members/1834/" class="username" dir="auto">Turuhansky</a> posted <abbr class="DateTime" data-time="1611574676" data-diff="153339" data-datestring="25 янв 2021" data-timestring="14:37" title="25 янв 2021 в 14:37">Понедельник в 14:37</abbr>
                                             </div>
-
-
                                         </li>
-
-
-
-
-
                                     </ul>
                                 </div>
                             </div>
@@ -650,39 +628,16 @@
                                         <li><a href="#" class="fb-icon"></a></li>
                                         <li><a href="#" class="tw-icon"></a></li>
                                     </ul>
-
-
-                                    <!--<div class="tweet shareControl">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal"
-                                            data-lang="ru-RU"
-                                            data-url="https://forum.elma-bpm.ru/"
-                                            
-                                            >Tweet</a>
-                                    </div>-->
+                                    
                                     <div>
                                         <a class="twitter-share" href="https://twitter.com/share?url=https://forum.elma-bpm.ru/&amp;lang=ru-RU" target="_blank">
                                             <i class="btn-icon"></i>
                                             <span class="btn-text">Tweet</span>
                                         </a>
                                     </div>
-
-
-                                    <!--<div class="facebookLike shareControl">
-                                        
-                                        <div class="fb-like" data-href="https://forum.elma-bpm.ru/" data-layout="button_count" data-action="like" data-font="trebuchet ms" data-colorscheme="light"></div>
-                                    </div>-->
                                     <div class="fb-share">
                                         <a href="http://www.facebook.com/sharer.php?u=https://forum.elma-bpm.ru/" target="_blank">facebook</a>
                                     </div>
-
-
-                                    <!--<div class="plusone shareControl">
-                                        <div class="g-plusone" data-size="medium" data-count="true" data-href="https://forum.elma-bpm.ru/"></div>
-                                    </div>-->
-                                    <!--<div class="gplus-share">
-                                        <a href="https://plus.google.com/share?url=https://forum.elma-bpm.ru/" target="_blank"></a>
-                                    </div>-->
-
                                     <div class="linkedin-share">
                                         <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://forum.elma-bpm.ru/" target="_blank"></a>
                                     </div>

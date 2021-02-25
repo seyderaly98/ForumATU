@@ -11,7 +11,6 @@ namespace ForumATU.ViewModels
         [DataType(DataType.Password)]
         [MinLength(6,ErrorMessage = "Пароль должен содержать не менее 8 символов.")]
         public string Password { get; set; }
-        
-        public bool RememberMe { get; set; }
+
     }
 }

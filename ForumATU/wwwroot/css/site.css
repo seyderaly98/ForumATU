@@ -1,126 +1,420 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿/*! CSS Used from: https://forum.elma-bpm.ru/css.php?css=xenforo,form,public&style=2&dir=LTR&d=1605699363 */
+body,div,dl,dt,dd,ul,ol,li,h2,h3,form,input,button,blockquote{margin:0;padding:0;}
+img{border:0;}
+li{list-style:none;}
+h2,h3{font-size:100%;font-weight:normal;}
+abbr{border:0;font-variant:normal;text-decoration:none;}
+input,button{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button{*font-size:100%;}
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+input,button{font:99% arial,helvetica,clean,sans-serif;}
+body{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;font-size:24px;font-family:'Open Sans', sans-serif;color:rgb(20,20,20);word-wrap:break-word;line-height:1.28;}
+[dir=auto]{text-align:left;}
+a:link,a:visited{font-family:'Open Sans', sans-serif;color:#176093;text-decoration:none;}
+a[href]:hover{font-family:'Open Sans', sans-serif;text-decoration:underline;}
+a:hover{_text-decoration:underline;}
+img{-ms-interpolation-mode:bicubic;}
+a.avatar{*cursor:pointer;}
+.avatar img{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:2px;border:1px none #a5cae4;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;}
+body .muted{color:rgb(150,150,150);}
+.xenTooltip{font-size:11px;color:rgb(255, 255, 255);background:url(https://forum.elma-bpm.ru/rgba.php?r=0&g=0&b=0&a=153);background:rgba(0,0,0, 0.6);_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);padding:5px 10px;margin-left:10px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;display:none;z-index:15000;cursor:default;}
+.xenTooltip .arrow{border-top:6px solid rgb(0,0,0);border-top:6px solid rgba(0,0,0, 0.6);_border-top:6px solid rgb(0,0,0);border-right:6px solid transparent;border-bottom:1px none black;border-left:6px solid transparent;position:absolute;bottom:-6px;line-height:0px;width:0px;height:0px;left:9px;_display:none;}
+.section{font-family:'Open Sans', sans-serif;margin:10px auto;}
+.sectionMain{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px;margin:10px auto;border:1px solid #a5cae4;-webkit-border-radius:10px;-moz-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;}
+.primaryContent{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px;border-bottom:1px solid #d7edfc;}
+.primaryContent a{font-family:'Open Sans', sans-serif;color:#176093;}
+.secondaryContent{font-family:'Open Sans', sans-serif;background:#f0f7fc url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/category-23px-light.png') repeat-x top;padding:10px;border-bottom:1px solid #d7edfc;}
+.secondaryContent a{font-family:'Open Sans', sans-serif;color:#176093;}
+.pairsInline dt,.pairsJustified dt{color:rgb(150,150,150);}
+.pairsJustified{line-height:1.5;}
+.pairsInline dl,.pairsInline dt,.pairsInline dd{display:inline;}
+.pairsJustified dl{overflow:hidden;zoom:1;}
+.pairsJustified dt{float:left;max-width:100%;margin-right:5px;}
+.pairsJustified dd{float:right;text-align:right;max-width:100%;}
+input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;-ms-box-sizing:content-box;box-sizing:content-box;}
+.xenForm{margin:10px auto;max-width:800px;}
+.xenForm .ctrlUnit > dd{width:68%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding-right:30px;}
+.xenForm .ctrlUnit > dd .textCtrl{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;width:100%;}
+.xenForm .submitUnit{border-top:1px solid #d7edfc;}
+.xenForm .ctrlUnit.submitUnit dd{line-height:31px;padding-top:0;}
+.xenForm .ctrlUnit{font-family:'Open Sans', sans-serif;}
+.textCtrl{font-size:14px;font-family:'Open Sans', sans-serif;color:#000000;background:#ffffff url('https://forum.elma-bpm.ru/styles/default/xenforo/clear.png');padding:3px;margin-bottom:2px;border-width:1px;border-style:solid;border-top-color:rgb(192, 192, 192);border-right-color:rgb(233, 233, 233);border-bottom-color:rgb(233, 233, 233);border-left-color:rgb(192, 192, 192);-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;outline:0;}
+.textCtrl:focus{font-family:'Open Sans', sans-serif;background:rgb(255,255,240) url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-element-focus-25.png') repeat-x;border-top-color:rgb(150,150,150);border-bottom-color:rgb(230,230,230);}
+.textCtrl:-moz-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl::-moz-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl::-webkit-input-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl:-ms-input-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+input.textCtrl[type="password"]{font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;}
+.button{font-style:normal;font-size:12px;font-family:Calibri, 'Trebuchet MS', Verdana, Geneva, Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);background:rgb(220,220,235) url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-button-white-25px.png') repeat-x top;padding:0px 6px;border:1px solid rgb(221, 221, 235);border-top-color:rgb(255, 255, 255);border-bottom-color:rgb(179, 179, 189);-webkit-border-radius:7px;-moz-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;text-align:center;-webkit-box-shadow:0px 1px 4px 0px rgb(200,200,210);-moz-box-shadow:0px 1px 4px 0px rgb(200,200,210);-khtml-box-shadow:0px 1px 4px 0px rgb(200,200,210);box-shadow:0px 1px 4px 0px rgb(200,200,210);outline:none;line-height:21px;display:inline-block;cursor:pointer;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;height:23px;}
+.button.primary{background-color:#a5cae4;}
+.button::-moz-focus-inner{border:none;}
+.button:hover{color:black;text-decoration:none;background-color:rgb(255,255,200);border-color:rgb(255,255,200);border-top-color:white;border-bottom-color:rgb(190,190,170);}
+.button:focus{border-color:#6cb2e4;}
+.button:active{color:black;background-color:rgb(153, 153, 163);border-color:rgb(200,200,215);border-top-color:#b3b3bd;border-bottom-color:white;-webkit-box-shadow:0px 0px 0px 0px transparent;-moz-box-shadow:0px 0px 0px 0px transparent;-khtml-box-shadow:0px 0px 0px 0px transparent;box-shadow:0px 0px 0px 0px transparent;outline:0;}
+.submitUnit .button{min-width:100px;*min-width:0;}
+.xenForm .ctrlUnit{position:relative;margin:10px auto;}
+.xenForm .ctrlUnit{zoom:1;}
+.xenForm .ctrlUnit:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.xenForm .ctrlUnit > dd{font-family:'Open Sans', sans-serif;float:left;}
+.xenForm .ctrlUnit > dd{padding-top:4px;}
+.xenForm .ctrlUnit > dd > input{margin-top:-4px;}
+.xenForm .ctrlUnit.submitUnit > dd > input{margin-top:0;}
+@media (max-width:480px){
+  .Responsive .xenForm .ctrlUnit > dd{float:none;width:auto;text-align:left;height:auto;padding-left:10px;padding-right:10px;overflow:hidden;}
+  .Responsive .xenForm .ctrlUnit > dd > input{margin-top:0;}
 }
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+@media (max-device-width:568px){
+  .Responsive .textCtrl{font-size:16px;}
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+#header{font-family:'Open Sans', sans-serif;background-color:#176093;}
+#logo{display:block;float:left;line-height:46px;*line-height:50px;height:50px;max-width:100%;vertical-align:middle;}
+.clearfix{display:table;clear:both;}
+#header{background-color:#fff;width:1200px;margin:0 auto;padding:40px 40px 30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+header{background-color:#fff;}
+svg.icon{background:none;}
+svg:not(:root){overflow:hidden;}
+.icon{display:block;width:20px;height:20px;}
+.header-hr{margin:30px 0;}
+.content{width:1200px;margin:0 auto;padding:39px 20px 0;}
+.content .pageWidth{padding-left:0;padding-right:0;margin:0;}
+.content .sectionMain{background:none;border:none;-webkit-border-radius:0;-moz-border-radius:0;-khtml-border-radius:0;border-radius:0;}
+.content .node.category{background-color:#fff;}
+.content .nodeList .categoryStrip{background:none;border:none;padding:12px 20px;}
+.content .nodeList .categoryStrip .nodeTitle a{color:#000;font-weight:700;}
+.content .sectionMain{margin:0;padding:0;}
+.content .node .nodeText{margin-left:10px;}
+.nodeLatestMessage{width:150px;}
+.date-last{display:block;font-size:11px;line-height:14px;}
+.nodeLatestMessage .username{font-size:11px;line-height:14px;}
+.nodeList .node.forum .nodeInfo{display:table;width:100%;}
+.node.forum{padding:0 10px;}
+.node.forum:before{content:'';display:block;width:100%;border-top:1px solid #cecece;margin:0 auto;}
+.nodeList .node.forum .nodeInfo .nodeText{display:table-cell;vertical-align:middle;margin-right:0;padding:10px 10px 10px 0;}
+.nodeList .node.forum .nodeInfo .nodeLatestMessage{display:table-cell;vertical-align:middle;padding:10px 0 10px 10px;}
+.sidebar{background-color:#fff;}
+aside .sidebar .section .secondaryContent h3{border:none;color:#000;}
+.sidebar .secondaryContent{background:none;border:none;padding:0;margin-top:23px;}
+.sidebar .secondaryContent:after{content:'';display:table;clear:both;}
+.sidebar .section:after{content:'';display:block;margin:0 auto;border-bottom:1px solid #cecece;margin-top:25px;}
+.sidebar .section:last-child:after{display:none;}
+.sidebar .section .avatar{width:48px;height:48px;margin:10px;display:inline-block;vertical-align:middle;float:none;}
+.sidebar .section .avatar img{border:none;padding:0;-webkit-border-radius:24px;-moz-border-radius:24px;-khtml-border-radius:24px;border-radius:24px;width:48px;height:48px;}
+.sidebar .section .pairsJustified dd{text-align:left;float:none;}
+footer{background-color:#fff;margin-top:20px;}
+.footer{width:1200px;margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding:40px 20px;}
+footer .footer .pageContent{background:none;}
+.content .nodeList .forumNodeInfo{border:none;}
+aside .sidebar{width:260px;padding:0 20px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.nodeList .node.category,aside .sidebar{-webkit-box-shadow:0 0 3px 0 #cecece;-webkit-box-shadow:0 0 3px 0 #cecece;-moz-box-shadow:0 0 3px 0 #cecece;-khtml-box-shadow:0 0 3px 0 #cecece;box-shadow:0 0 3px 0 #cecece;}
+.header-hr{border-bottom:1px solid #cecece;}
+.content .nodeList .node.level_1{margin-bottom:40px;}
+.content .mainContent{margin-right:300px;}
+.content .nodeList .categoryStrip .nodeTitle{font-size:15px;}
+header .breadBoxTop{line-height:16px;}
+header .breadBoxTop{line-height:16px;float:left;width:90%;}
+.login-form{padding:10px 0;margin-top:0;}
+.login-form h3{font-size:16px;padding-bottom:2px;margin-bottom:5px;display:inline-block;}
+.login-form .xenForm .ctrlUnit > dd{float:none;padding:0;width:100%;}
+.content .avatar img{padding:0;border:none;-webkit-border-radius:18px;-moz-border-radius:18px;-khtml-border-radius:18px;border-radius:18px;}
+.login-form .submitUnit{border:none;}
+.login-form .button.primary{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;-khtml-box-shadow:none;box-shadow:none;background:#3f8ac9;color:#fff;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;font-size:14px;height:35px;min-width:127px;}
+.login-form .xenForm{margin-top:31px;}
+.login-form .textCtrl{padding:6px;}
+.login-form .xenForm .ctrlUnit{margin-top:20px;}
+.login-form .xenForm .ctrlUnit.submitUnit{margin-top:12px;}
+.lostPasswordLogin{font-size:12px;}
+.content .sidebar{font-size:12px;}
+.logo .img{background-image:url("https://forum.elma-bpm.ru/svg/#logo");}
+span.subtitle{display:block;margin-top:5px;font-size:12px;}
+.footer .pageContent{font-size:11px;font-family:'Open Sans', sans-serif;color:#a5cae4;background-color:#176093;-webkit-border-bottom-right-radius:5px;-moz-border-radius-bottomright:5px;-khtml-border-bottom-right-radius:5px;border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomleft:5px;-khtml-border-bottom-left-radius:5px;border-bottom-left-radius:5px;overflow:hidden;zoom:1;}
+.footer a,.footer a:visited{font-family:'Open Sans', sans-serif;color:#a5cae4;padding:5px;display:block;}
+.footer a:hover,.footer a:active{font-family:'Open Sans', sans-serif;color:#d7edfc;}
+.footerLinks{font-family:'Open Sans', sans-serif;padding-right:5px;float:right;overflow:hidden;zoom:1;}
+.footerLinks li{float:left;}
+@media (max-width:610px){
+  .Responsive .footerLinks a.topLink,.Responsive .footerLinks a.homeLink{display:none;}
 }
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.breadBoxTop{font-family:'Open Sans', sans-serif;padding:10px 0;overflow:hidden;zoom:1;clear:both;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.search-block{float:right;}
+#QuickSearchPlaceholder{position:absolute;right:20px;top:-20.5px;display:none;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;cursor:pointer;font-size:11px;height:16px;width:16px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;text-indent:-9999px;background:transparent url('https://forum.elma-bpm.ru/styles/default/xenforo/xenforo-ui-sprite.png') no-repeat -144px 0px;overflow:hidden;}
+@media (max-width:610px){
+  .Responsive #QuickSearchPlaceholder{display:block;}
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
+.pageWidth{padding-right:5px;padding-left:5px;margin:0 1%;_width:976px;_margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+#content .pageContent{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px 20px;}
+#content .pageContent{zoom:1;}
+#content .pageContent:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.mainContainer{float:left;margin-right:-260px;width:100%;}
+.mainContent{margin-right:260px;}
+.sidebar{float:right;font-size:11px;width:250px;}
+.sidebar .section .secondaryContent h3{font-size:12pt;color:#6cb2e4;padding-bottom:2px;margin-bottom:5px;border-bottom:1px solid #d7edfc;}
+.sidebar .avatarList li{margin:5px 0;overflow:hidden;zoom:1;}
+.sidebar .avatarList .avatar{margin-right:5px;float:left;width:32px;height:32px;width:auto;height:auto;}
+.sidebar .avatarList .avatar img{width:32px;height:32px;}
+.sidebar .avatarList .username{font-size:11pt;margin-top:2px;display:block;}
+.sidebar .avatarList .userTitle{color:rgb(150,150,150);}
+.followedOnline{margin-top:3px;margin-bottom:-5px;overflow:hidden;zoom:1;}
+.followedOnline li{margin-right:5px;margin-bottom:5px;float:left;}
+.followedOnline .avatar{width:32px;height:32px;width:auto;height:auto;}
+.followedOnline .avatar img{width:32px;height:32px;}
+@media (max-width:800px){
+  .Responsive .mainContainer{float:none;margin-right:0;width:auto;}
+  .Responsive .mainContent{margin-right:0;}
+  .Responsive .sidebar{float:none;margin:0 auto;}
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@media (max-width:340px){
+  .Responsive .sidebar{width:100%;}
 }
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
+@media (max-width:800px){
+  .Responsive #content .pageContent{padding-left:10px;padding-right:10px;}
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+@media (max-width:610px){
+  .Responsive .pageWidth{padding-right:0;padding-left:0;margin-right:0;margin-left:0;}
 }
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.svg{width:0;height:0;overflow:hidden;}
+.button{background:#fff;-webkit-box-shadow:none;-moz-box-shadow:none;-khtml-box-shadow:none;box-shadow:none;border:1px solid #cecece;padding:5px 20px;height:auto;-webkit-border-radius:0px;-moz-border-radius:0px;-khtml-border-radius:0px;border-radius:0px;font-size:14px;margin:0 5px;}
+.content .button:hover{border:1px solid #cecece;background:#f5f5f5;}
+.button.primary{border:1px solid #3f8ac9;background:#3f8ac9;color:#fff;}
+.button.primary:hover{border-color:#0076d5;background:#0076d5;color:#fff;}
+.button:hover{background:#f5f5f5;border:1px solid #cecece;}
+.content .pageWidth{padding:0 20px;}
+#content .pageContent{-webkit-box-shadow:0 0 3px 0 #cecece;-webkit-box-shadow:0 0 3px 0 #cecece;-moz-box-shadow:0 0 3px 0 #cecece;-khtml-box-shadow:0 0 3px 0 #cecece;-webkit-box-shadow:0 0 3px 0 #cecece;-moz-box-shadow:0 0 3px 0 #cecece;-khtml-box-shadow:0 0 3px 0 #cecece;box-shadow:0 0 3px 0 #cecece;background:#fff;font-size:14px;padding-left:0;padding-right:0;font-family:'Open Sans', sans-serif;}
+.textCtrl:focus{background:none;}
+.xenForm .submitUnit{border:none;}
+.search-block{font-size:0;}
+.search-block .textCtrl{height:33px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;width:200px;padding:6px;border-right:none;-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;-khtml-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px;display:inline-block;vertical-align:top;}
+.search-block button[type='submit']{display:inline-block;-webkit-border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;-khtml-border-radius:0 4px 4px 0;border-radius:0 4px 4px 0;background:none;border:1px solid;border-top-color:rgb(192, 192, 192);border-right-color:rgb(233, 233, 233);border-bottom-color:rgb(233, 233, 233);border-left:none;padding:5px;vertical-align:top;height:33px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.search-block .icon-search{width:21px;height:21px;}
+.button:focus{border-color:#cecece;}
+.nodeList{padding:0px 10px;}
+.content .node .unread .nodeText .nodeTitle{font-weight:600;}
+.content .nodeList .forumNodeInfo,.primaryContent{background:none;}
+header .logo{float:left;display:block;margin:0;font-size:0.59em;font-weight:400;}
+header .logo a{position:relative;padding-right:0.5em;display:inline-block;vertical-align:middle;}
+header .logo a.img:after{content:'';position:absolute;top:3px;right:0;display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;width:1px;height:28px;background:#3F8AC9;}
+header .logo .logo-link{padding-left:7px;font-size:16px;color:#000;text-decoration:none;}
+header .logo svg.icon-logo{width:128px;height:32px;}
+ul.sup_menu{float:right;font-size:14px;font-weight:400;}
+ul.menu{list-style:none;margin:0;padding:0;}
+ul.menu li{display:block;float:left;margin:0;padding:0;}
+ul.sup_menu li{margin-left:1.5em;line-height:32px;}
+ul.sup_menu li:last-child{margin-left:2em;}
+a{color:#3F8AC9;}
+a{background-color:transparent;}
+ul.sup_menu .icon,ul.sup_menu span{display:inline-block;vertical-align:middle;}
+ul.sup_menu a:hover{text-decoration:none;}
+ul.sup_menu a span{position:relative;margin-left:5px;line-height:1.4em;}
+ul.sup_menu a span:after{content:'';position:absolute;bottom:2px;left:0;width:100%;border-bottom:1px solid #3F8AC9;}
+#header{padding-bottom:10px;}
+header .header-hr{margin:30px 0 10px;}
+.change-language{float:right;width:10%;text-align:right;cursor:pointer;margin-top:10px;position:relative;height:23px;}
+#change-language-div{border:1px dashed;z-index:1;background:white;line-height:16px;text-transform:uppercase;display:inline-block;position:absolute;right:0;color:#3f8ac9;}
+#change-language-span{font-size:14px;vertical-align:middle;padding:0 5px;}
+#change-language-div ul{display:none;padding:0;background:white;}
+#change-language-div span.icon{width:20px;height:15px;display:inline-block;margin-right:6px;margin-bottom:2px;vertical-align:middle;background-size:contain;text-decoration:none;}
+#change-language-div .icon-flag_ru{background-image:url('https://forum.elma-bpm.ru/images/ru.png');}
+.secondaryContent{background:none;border-bottom:1px solid #cecece;}
+.sharePage .twitter-share{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/twitter.svg');}
+.sharePage .secondaryContent > div{display:inline-block;vertical-align:top;}
+.sharePage .fb-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/facebook.svg');}
+.sharePage .linkedin-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/linkedin.svg');}
+.sharePage .vk-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/vk.svg');}
+.sharePage .fb-share,.sharePage .vk-share,.sharePage .linkedin-share{display:inline-block;vertical-align:middle;height:24px;}
+.sidebar .avatarList .username{margin-top:18px;}
+.xenForm .ctrlUnit.submitUnit > dd{width:75%;}
+.useful_links a{font-size:14px;display:block;margin-bottom:5px;}
+.useful_links li a:before{content:'';width:20px;height:19px;margin-right:5px;display:inline-block;vertical-align:middle;}
+.useful_links .knowledge_base:before{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjAuMyAxOC40IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMC4zIDE4LjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojM0Y4QkM3O30uc3Qxe2ZpbGw6I0ZGRkZGRjt9LnN0MntmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMzNEExRUE7c3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLXdpZHRoOjAuOTcyNjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9LnN0M3tmb250LWZhbWlseTonT3BlblNhbnMnO30uc3Q0e2ZvbnQtc2l6ZTo5LjEzNTVweDt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTAuOCwxLjRMMS45LDEuNEMxLjMsMS40LDAuOCwyLDAuOCwyLjZ2N2MwLDAuNiwwLjUsMS4yLDEuMiwxLjJsMC40LDB2Mi44bDMuMy0yLjhsNS4xLDBjMC42LDAsMS4yLTAuNSwxLjItMS4ydi03QzExLjksMS45LDExLjQsMS40LDEwLjgsMS40eiIvPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMi44LDEzLjhsLTMuNSwwYy0wLjgsMC0xLjQtMC42LTEuNC0xLjR2LTdDNy44LDQuNiw4LjUsNCw5LjMsNGw4LjgsMC4xYzAuOCwwLDEuNCwwLjYsMS40LDEuNHY3YzAsMC44LTAuNiwxLjQtMS40LDEuNGwtMS43LDB2My4yTDEyLjgsMTMuOHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNOS4zLDQuMmw4LjgsMC4xYzAuNiwwLDEuMiwwLjUsMS4yLDEuMnY3YzAsMC42LTAuNSwxLjItMS4yLDEuMmMwLDAsMCwwLDAsMGwtMS45LDB2Mi45bC0zLjMtM2wtMy42LDBjLTAuNiwwLTEuMi0wLjUtMS4yLTEuMnYtN0M4LjEsNC44LDguNiw0LjIsOS4zLDQuMiBNOS4zLDMuN0w5LjMsMy43Yy0wLjksMC0xLjcsMC43LTEuNywxLjd2N2MwLDAuOSwwLjcsMS43LDEuNywxLjdsMy41LDBsMy4yLDIuOWwwLjgsMC43di0xLjF2LTIuNGwxLjQsMGMwLDAsMCwwLDAsMGMwLjksMCwxLjctMC43LDEuNy0xLjd2LTdjMC0wLjktMC43LTEuNy0xLjctMS43TDkuMywzLjdMOS4zLDMuN0w5LjMsMy43eiIvPjwvZz48Zz48bGluZSBjbGFzcz0ic3QyIiB4MT0iMTAuMiIgeTE9IjYuNiIgeDI9IjE3IiB5Mj0iNi43Ii8+PGxpbmUgY2xhc3M9InN0MiIgeDE9IjEwLjIiIHkxPSI4LjYiIHgyPSIxNyIgeTI9IjguNyIvPjxsaW5lIGNsYXNzPSJzdDIiIHgxPSIxMC4xIiB5MT0iMTAuNiIgeDI9IjE3IiB5Mj0iMTAuNyIvPjwvZz48dGV4dCB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDMuNTc2MiA5LjE1MTEpIiBjbGFzcz0ic3QxIHN0MyBzdDQiPj88L3RleHQ+PC9zdmc+) center no-repeat;}
+.useful_links .help:before{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIuNCAxNi4xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMi40IDE2LjE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojM0Y4QkM3O30uc3Qxe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRkZGRjtzdHJva2U6IzNGOEJDNztzdHJva2Utd2lkdGg6MC41MDc0O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoyMi45MjU2O30uc3Qye2ZpbGw6I0ZGRkZGRjt9LnN0M3tmb250LWZhbWlseTonQXJpYWxNVCc7fS5zdDR7Zm9udC1zaXplOjguODE3cHg7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTAuNCwxLjdoMTEuMmwwLDExLjJMMS42LDEyLjhjLTAuNC0wLjEtMS0wLjQtMS4xLTEuMlYxLjd6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTEuOSwwLjdoOS4yYy0wLjQsMC4xLTAuOCwwLjUtMC44LDAuN2MwLDAuMiwwLDAuNSwwLjYsMC43bC05LjIsMGMtMC42LDAtMS4yLTAuNC0xLjItMC44UzEsMC43LDEuOSwwLjd6Ii8+PHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIyLjQsMTIuNCAyLjQsMTUuNSA0LjEsMTQuOCA1LjcsMTUuNSA1LjcsMTIuNCAiLz48Zz48dGV4dCB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDMuNDQwNyAxMC4zNzk4KSIgY2xhc3M9InN0MiBzdDMgc3Q0Ij4/PC90ZXh0PjwvZz48L3N2Zz4=) center no-repeat;}
+.useful_links .blog:before{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTYuOSAxMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTYuOSAxMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiM5RENCNDM7fS5zdDF7ZmlsbDojM0E4OUM3O30uc3Qye2ZpbGw6I0ZGRkZGRjt9LnN0M3tmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOm5vbmU7c3Ryb2tlOiMzNEExRUE7c3Ryb2tlLXdpZHRoOjAuNTE2NTtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9LnN0NHtmaWxsOm5vbmU7c3Ryb2tlOiMzQTg5Qzc7c3Ryb2tlLXdpZHRoOjAuNDYzMztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTQuMSw4LjVDMTQuMSw4LjUsMTQsOC40LDE0LjEsOC41TDE0LjEsOC41TDE0LjEsOC41eiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNS44LDEuOHYtMWwtMC4xLTAuMWMwLDAtMS4yLTAuNS0yLjgtMC41Yy0xLjcsMC0zLjIsMC41LTQuMywxLjVjLTEuMi0xLTIuNi0xLjUtNC4zLTEuNWMtMS42LDAtMi44LDAuNS0yLjgsMC41TDEuMiwwLjh2MC45QzAuNywxLjgsMC40LDIsMC40LDIuM3Y5LjZoNy4xYzAuMiwwLjIsMC42LDAuNCwxLDAuNGMwLjQsMCwwLjgtMC4xLDEtMC40aDYuOVYyLjNDMTYuNCwyLjEsMTYuMiwxLjksMTUuOCwxLjhMMTUuOCwxLjh6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTguNCwxMS4xYy0wLjYtMC4yLTIuNi0xLTQuNi0xYy0wLjgsMC0xLjUsMC4xLTIuMSwwLjRWMS4xQzIsMSwzLDAuNyw0LjEsMC43YzEuNiwwLDMuMiwwLjcsNC4zLDEuNnY1LjFWMTEuMXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTUuMywxMC41Yy0wLjctMC4zLTEuNC0wLjQtMi4yLTAuNGMtMiwwLTQsMC44LTQuNSwxVjcuNHYtNWMxLjEtMC45LDIuNy0xLjYsNC4zLTEuNkMxNCwwLjcsMTUsMSwxNS4zLDEuMVYxMC41eiIvPjxnPjxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik03LjIsM0M2LDIuMSw0LjIsMS45LDIuMywyLjMiLz48cGF0aCBjbGFzcz0ic3Q0IiBkPSJNNy4yLDUuM0M2LDQuNCw0LjIsNC4yLDIuMyw0LjYiLz48cGF0aCBjbGFzcz0ic3Q0IiBkPSJNNy4yLDcuMkM2LDYuMyw0LjIsNiwyLjMsNi40Ii8+PHBhdGggY2xhc3M9InN0NCIgZD0iTTcuMiw4LjdDNiw3LjgsNC4yLDcuNiwyLjMsOCIvPjwvZz48Zz48cGF0aCBjbGFzcz0ic3Q0IiBkPSJNOS43LDNjMS4yLTAuOSwzLjEtMS4xLDQuOS0wLjciLz48cGF0aCBjbGFzcz0ic3Q0IiBkPSJNOS43LDUuM2MxLjItMC45LDMuMS0xLjEsNC45LTAuNyIvPjxwYXRoIGNsYXNzPSJzdDQiIGQ9Ik05LjcsNy4yYzEuMi0wLjksMy4xLTEuMSw0LjktMC43Ii8+PHBhdGggY2xhc3M9InN0NCIgZD0iTTkuNyw4LjdjMS4yLTAuOSwzLjEtMS4xLDQuOS0wLjciLz48L2c+PC9zdmc+) center no-repeat;}
+.useful_links .video:before{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTcuNiAxNy4xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNy42IDE3LjE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojM0Y4QkM3O30uc3Qxe2ZpbGw6I0ZGRkZGRjt9PC9zdHlsZT48Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSI4LjYiIGN5PSI4LjciIHI9IjcuNSIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik02LDUuNXY2LjJjMCwwLjIsMC4yLDAuMywwLjMsMC4ybDQuOC0zLjFjMC4xLTAuMSwwLjEtMC4zLDAtMC4zTDYuMyw1LjRDNi4yLDUuMyw2LDUuNCw2LDUuNXoiLz48L3N2Zz4=) center no-repeat;}
+header .menu .kb{padding-left:25px;padding-top:2px;background-image:url(https://forum.elma-bpm.ru/images/icons_new_for_kb.png);background-position:0px -22px;background-repeat:no-repeat;}
+header .menu .academy{padding-left:25px;padding-top:2px;background-image:url(https://forum.elma-bpm.ru/images/academy.png);background-position:0px 2px;background-repeat:no-repeat;}
+/*! CSS Used from: https://forum.elma-bpm.ru/css.php?css=bb_code,new_adaptive,node_category,node_forum,node_list,profile_post_list_simple,sidebar_share_page,thread_list_simple,wf_default&style=2&dir=LTR&d=1605699363 */
+@media (max-width:1200px){
+  #header{width:100%;}
+  .content{width:100%;}
+  .content{padding-left:0;padding-right:0;}
+  .footer{width:100%;}
 }
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+@media (max-width:800px){
+  #header{width:100%;}
+  .search-block{float:none;margin-top:55px;}
+  .search-block .textCtrl{width:calc(100% - 32px);}
+  header .breadBoxTop{width:80%;}
+  .change-language{width:15%;}
+  .content{width:100%;padding-left:0;padding-right:0;}
+  .content .pageWidth{padding-left:0;padding-right:0;}
+  aside .sidebar{width:100%;}
+  .footer{width:100%;}
 }
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+@media (max-width:610px){
+  #header{width:100%;}
+  header .logo{float:none;}
+  .search-block{float:none;width:100%;}
+  .search-block .textCtrl{width:calc(100% - 32px);}
+  header .breadBoxTop{float:none;}
+  .change-language{width:100%;}
+  ul.sup_menu{width:100%;margin-top:10px;}
+  ul.sup_menu li:first-child{margin-left:0;}
+  ul.sup_menu li:last-child{float:right;}
+  .content{width:100%;padding-left:0;padding-right:0;}
+  .content .pageWidth{padding:0;}
+  aside .sidebar{width:100%;}
+  .Responsive #content .pageContent{padding-left:0;padding-right:0;}
+  .Responsive .mainContainer{margin-bottom:40px;}
+  .nodeList .node.forum .nodeInfo .nodeText{display:block;margin-left:0;}
+  .nodeList .node.forum .nodeInfo .nodeLatestMessage{display:block;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding-left:0;}
+  .node .nodeStats.pairsInline{margin-top:10px;}
+  .footer{width:100%;}
+  .Responsive .xenForm .ctrlUnit > dd > input{margin:10px 0;display:inline-block;}
+  .submitUnit .button{min-width:70px;}
+  .button{margin-left:0;margin-right:0;padding:5px 9px;}
+  .xenForm .ctrlUnit.submitUnit > dd{width:100%;}
 }
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+@media (max-width:480px){
+  ul.sup_menu{margin-top:20px;margin-bottom:20px;float:none;}
+  ul.sup_menu li{margin-left:0;float:none;}
+  ul.sup_menu li:last-child{margin-left:0;float:none;}
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+.nodeList{zoom:1;}
+.nodeList .node{zoom:1;vertical-align:bottom;}
+.nodeList .node.level_1{margin-bottom:20px;}
+.nodeList .node.level_1:last-child{margin-bottom:0;}
+.node .nodeInfo{overflow:hidden;zoom:1;position:relative;}
+.node .nodeInfo.primaryContent{padding:0;}
+.node .nodeText{margin:10px 270px 10px 56px;}
+.node .nodeText .nodeTitle{font-size:12pt;}
+.node .unread .nodeText .nodeTitle{font-weight:bold;}
+.node .nodeDescription{font-size:11px;}
+.node .nodeStats{font-size:11px;margin-top:2px;}
+.nodeDescriptionTip{padding:4px 10px;margin-top:-22px;line-height:1.5;width:350px;height:auto;}
+.nodeDescriptionTip .arrow{border:6px solid transparent;border-right-color:rgb(0,0,0);border-right-color:rgba(0,0,0, 0.6);_border-right-color:rgb(0,0,0);border-left:1px none black;top:6px;left:-6px;bottom:auto;}
+.nodeList .forumNodeInfo{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px;border-bottom:1px solid #d7edfc;padding:0;}
+.nodeList .categoryStrip{font-size:11px;font-family:'Open Sans', sans-serif;color:#6d3f03;background:#f9d9b0 url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/category-23px-light.png') repeat-x top;padding:5px 10px;margin:3px auto 0;border-top:1px solid #f9d9b0;border-bottom:1px solid #f9bc6d;padding:5px 10px;margin:0;border-bottom-color:#f9bc6d;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;min-height:6px;}
+.nodeList .categoryStrip .nodeTitle{font-size:10pt;color:#6d3f03;}
+.nodeList .categoryStrip .nodeTitle a{color:#6d3f03;}
+.nodeList .categoryStrip .nodeDescription{font-size:10px;color:#6d3f03;}
+.nodeStats{overflow:hidden;zoom:1;}
+.nodeStats dl{float:left;display:block;margin-right:3px;}
+@media (max-width:610px){
+  .Responsive .node .nodeText{margin-right:0;}
+  .Responsive .node .nodeDescription{display:none;}
+  .Responsive .nodeDescriptionTip{width:auto;max-width:350px;}
 }
-
-/*my*/
-.content {
-  box-sizing:border-box;
+@media (max-width:480px){
+  .Responsive .sidebar .sharePage{display:none;}
 }
-.slider {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 39px 40px 0;
-  box-sizing: border-box;
+.WidgetFramework_WidgetRenderer_Threads_Sidebar.avatarList .username{display:inline;font-size:inherit;margin:0;}
+/*! CSS Used from: Embedded */
+#content.content .pageContent{background:none;box-shadow:none;}
+/*! CSS Used from: Embedded */
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;}
+.fb_reset>div{overflow:hidden;}
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .flag_en_blue{fill:#091c5a;}
+  .st1{fill:#fff;}
+  .st2{fill:#ed171f;}
 }
-.elma-slider {
-  background: url('/images/slider-background.png') center no-repeat;
-  padding: 36px 351px 46px 51px;
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .st3{fill:#fe000c;}
+  .st4{fill:#ff0;}
 }
-.elma-slider .item-type {
-  display:inline-block;
-  color:#fff;
-  font-weight:700;
-  text-transform:uppercase;
-  font-size: 16px;
-  padding: 1px 3px;
-  background-color: rgb(233, 77, 67);
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .st0{fill:#f23b5e;}
 }
-.elma-slider .item-date {
-  display:inline-block;
-  color:#fff;
-  font-size: 16px;
-  margin-left: 2px;
-  letter-spacing: -0.01em;
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .st0{fill:#e2e2e2;}
 }
-.elma-slider .item-heading {
-  color:#fff;
-  text-transform:uppercase;
-  display:block;
-  font-weight: 700;
-  font-size: 29px;
-  line-height: 41px;
-  margin-top: 16px;
-  letter-spacing: 0.017em;
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .st0{fill:#e2e2e2;}
 }
-.elma-slider .item-button {
-  display:inline-block;
-  padding: 15px 20px;
-  color:#fff;
-  text-decoration:none;
-  font-size: 16px;
-  background-color: rgb(70, 160, 216);
-  margin-top: 30px;
-  border-radius: 3px;
+/*! CSS Used from: Embedded ; media=all */
+@media all{
+  .st0{fill:#5cd65f;}
 }
-.elma-slider .item-button:hover {
-  text-decoration:none;
-  opacity:0.95;
-}
+/*! CSS Used from: Embedded */
+.content{box-sizing:border-box;}
+.slider{width:1200px;margin:0 auto;padding:39px 40px 0;box-sizing:border-box;}
+.elma-slider{background:url(https://forum.elma-bpm.ru/images/slider-background.png) center no-repeat;padding:36px 351px 46px 51px;}
+.elma-slider .item-type{display:inline-block;color:#fff;font-weight:700;text-transform:uppercase;font-size:16px;padding:1px 3px;background-color:rgb(233, 77, 67);}
+.elma-slider .item-date{display:inline-block;color:#fff;font-size:16px;margin-left:2px;letter-spacing:-0.01em;}
+.elma-slider .item-heading{color:#fff;text-transform:uppercase;display:block;font-weight:700;font-size:29px;line-height:41px;margin-top:16px;letter-spacing:0.017em;}
+.elma-slider .item-button{display:inline-block;padding:15px 20px;color:#fff;text-decoration:none;font-size:16px;background-color:rgb(70, 160, 216);margin-top:30px;border-radius:3px;}
+.elma-slider .item-button:hover{text-decoration:none;opacity:0.95;}
+/*! CSS Used fontfaces */
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hmIqOjjg.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hvIqOjjg.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hnIqOjjg.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hoIqOjjg.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hkIqOjjg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hlIqOjjg.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWyV9hrIqM.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Udc1UAw.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0ddc1UAw.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Vdc1UAw.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0adc1UAw.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Wdc1UAw.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Xdc1UAw.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem6YaGs126MiZpBA-UFUK0Zdc0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhmIqOjjg.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhvIqOjjg.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhnIqOjjg.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhoIqOjjg.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhkIqOjjg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhlIqOjjg.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKXGUdhrIqM.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhmIqOjjg.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhvIqOjjg.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhnIqOjjg.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhoIqOjjg.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhkIqOjjg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhlIqOjjg.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKWiUNhrIqM.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hmIqOjjg.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hvIqOjjg.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hnIqOjjg.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hoIqOjjg.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hkIqOjjg.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hlIqOjjg.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/memnYaGs126MiZpBA-UFUKW-U9hrIqM.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OX-hpOqc.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OVuhpOqc.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OXuhpOqc.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OUehpOqc.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OXehpOqc.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OXOhpOqc.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWJ0bbck.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFUZ0bbck.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWZ0bbck.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVp0bbck.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWp0bbck.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOX-hpOqc.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOVuhpOqc.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOXuhpOqc.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOUehpOqc.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOXehpOqc.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOXOhpOqc.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOUuhp.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOX-hpOqc.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOVuhpOqc.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOXuhpOqc.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOUehpOqc.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOXehpOqc.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOXOhpOqc.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOX-hpOqc.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOVuhpOqc.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOXuhpOqc.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOUehpOqc.woff2) format('woff2');unicode-range:U+0370-03FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOXehpOqc.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOXOhpOqc.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOUuhp.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}

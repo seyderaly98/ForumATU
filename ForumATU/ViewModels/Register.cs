@@ -1,20 +1,11 @@
 ﻿using System;
-using Microsoft.AspNetCore.Identity;
+using ForumATU.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace ForumATU.Models
+namespace ForumATU.ViewModels
 {
-    public enum Faculty
-    {
-        
-    }
 
-    public enum Gender 
-    {
-        None,
-        Man,
-        Woman
-    }
-    public class User : IdentityUser
+    public class Register
     {
         public string Name { get; set; }
         public string Surname { get; set; }

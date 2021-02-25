@@ -1,24 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@ViewData["Title"] - ForumATU</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - ForumATU</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="https://forum.elma-bpm.ru/">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    @* <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> *@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,800italic,700,700italic,400italic,600,600italic,300italic&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css.php?css=xenforo,form,public&amp;style=2&amp;dir=LTR&amp;d=1605699363">
-    <link rel="stylesheet" href="/css.php?css=bb_code,new_adaptive,node_category,node_forum,node_list,profile_post_list_simple,sidebar_share_page,thread_list_simple,wf_default&amp;style=2&amp;dir=LTR&amp;d=1605699363">
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css"/>
-    <style>
-        #content.content .pageContent {
-            background: none;
-            box-shadow: none;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/style.css">
+   
 </head>
 <body>
 <header>
@@ -94,7 +88,7 @@
     </div>
 </header>
 
-<div class="container">
+<div class="main-container">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>

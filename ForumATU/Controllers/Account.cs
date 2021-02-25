@@ -35,7 +35,7 @@ namespace ForumATU.Controllers
                     var result = await _signInManager.PasswordSignInAsync(
                         userAuthorizing,
                         model.Password,
-                        model.RememberMe,
+                        false,
                         false
                     );
                     if (result.Succeeded)
@@ -45,6 +45,13 @@ namespace ForumATU.Controllers
                     ModelState.AddModelError("","Неверный пароль или логин пользователя ");
             }
             return View(model);
+        }
+        
+        public IActionResult Register()
+        {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Index","Home");
+            return View();
         }
         
         
