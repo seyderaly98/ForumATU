@@ -13,102 +13,170 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/css/style.css">
-   
 </head>
 <body>
-<header>
-    <div id="header">
-        <div class="logo">
-            <a class="img" asp-action="Index" asp-controller="Home">
-                <svg class="icon icon-logo icon-logo-al"></svg>
+<div>
+    
+    <header>
+        <div id="header">
+            <div class="logo">
+                <a class="img" asp-action="Index" asp-controller="Home">
+                    <svg class="icon icon-logo icon-logo-al"></svg>
+                </a>
+                <a class="logo-link" asp-action="Index" asp-controller="Home">
+                    <span>Community</span>
+                </a>
+                @* <span class="subtitle">Forum of students of Almaty Technological University</span> *@
+                <!--<span class="subtitle">Форум студентов of Almaty Technological University</span>-->
+                <span class="subtitle">Форум студентов Алматинского технологического университета</span>
+            </div>
+
+            <ul class="menu sup_menu">
                 
-            </a>
-            <a class="logo-link" asp-action="Index" asp-controller="Home"><span>Community</span>
-            </a>
-            @* <span class="subtitle">Forum of students of Almaty Technological University</span> *@
-            <!--<span class="subtitle">Форум студентов of Almaty Technological University</span>-->
-            <span class="subtitle">Форум студентов Алматинского технологического университета</span>
-        </div>
+                <li>
+                    <a href="https://eva.elma-bpm.ru/" target="_blank" class="academy">
+                        <span>Академия</span>
+                    </a>
+                </li>
 
-        <ul class="menu sup_menu">
-            <li><a href="https://eva.elma-bpm.ru/" target="_blank" class="academy"><span>Академия</span></a></li>
-            <li>
-                <a href="https://atu.kz/" target="_blank">
-                    <svg class="icon icon-demo icon-demo-al"></svg>
-                    <span>Сайт</span></a></li>
-            <li>
-                <a href="https://univer.atu.kz/" target="_blank" class="kb"><span>База знаний</span></a></li>
-            <li>
-                <a href="login" class="OverlayTrigger">
-                    <svg class="icon icon-input icon-input-al"></svg>
-                    <span>Войти</span></a>
-            </li>
-        </ul>
+                <li>
+                    <a href="https://atu.kz/" target="_blank">
+                        <svg class="icon icon-demo icon-demo-al"></svg>
+                        <span>Сайт</span></a>
+                </li>
+
+                <li>
+                    <a href="https://univer.atu.kz/" target="_blank" class="kb"><span>База знаний</span></a>
+                </li>
+
+                <li>
+                    <a href="#" class="OverlayTrigger">
+                        <svg class="icon icon-input icon-input-al"></svg>
+                        <span>Войти</span></a>
+                </li>
+
+            </ul>
 
 
-        <div class="search-block">
-            <span id="QuickSearchPlaceholder" title="Поиск">Поиск</span>
-            <form action="search/search" method="post" class="">
-                <input type="search" name="keywords" value="" class="textCtrl" placeholder="Поиск..." title="Введите параметры поиска и нажмите ввод" id="QuickSearchQuery">
-                <button type="submit" value="Поиск" class="" title="Искать">
-                    <svg class="icon icon-search">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://forum.elma-bpm.ru/#elma-search"></use>
-                        <svg id="elma-search" viewBox="0 0 32 32"><g fill="none" stroke="#3E8ACA" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="12.467" cy="12.175" r="8.422"></circle><path d="M17.957 18.555l9.998 10.746"></path></g></svg>
-                    </svg>
-                </button>
-                <input type="hidden" name="_xfToken" value="">
-            </form>
-        </div>
-        <div class="clearfix"></div>
-        <div class="header-hr"></div>
-        <div class="breadBoxTop ">
-            <nav>
-                <span class="crumbs">
-                </span>
-            </nav>
-        </div>
+            <div class="search-block">
+                <span id="QuickSearchPlaceholder" title="Поиск">Поиск</span>
+                <form action="search/search" method="post" class="">
+                    <input type="search" name="keywords" value="" class="textCtrl" placeholder="Поиск..." title="Введите параметры поиска и нажмите ввод" id="QuickSearchQuery">
+                    <button type="submit" value="Поиск" class="" title="Искать">
+                        <svg class="icon icon-search">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://forum.elma-bpm.ru/#elma-search"></use>
+                            <svg id="elma-search" viewBox="0 0 32 32"><g fill="none" stroke="#3E8ACA" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="12.467" cy="12.175" r="8.422"></circle><path d="M17.957 18.555l9.998 10.746"></path></g></svg>
+                        </svg>
+                    </button>
+                    <input type="hidden" name="_xfToken" value="">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+            <div class="header-hr"></div>
+            <div class="breadBoxTop ">
+                <nav>
+                    <span class="crumbs">
+                    </span>
+                </nav>
+            </div>
 
-        <div class="change-language" id="change-language">
-            <div id="change-language-div" onclick="this.getElementsByTagName('ul')[0].classList.toggle('active')">
-                <span id="change-language-span">
-                    <span class="icon icon-flag_ru"></span>RUS</span>
-                <ul>
-                </ul></div>
-        </div>
-        <script>
-                window.onload = function () {
-                    document.body.onclick = function (e) {
-                        e = e || event;
-                        target = e.target || e.srcElement;
-                        if (target.id == "change-language" || target.id == "change-language-div" || target.id == "change-language-span") {
-                        } else {
-                            document.getElementById('change-language').getElementsByTagName('ul')[0].classList.remove('active');
+            <div class="change-language" id="change-language">
+                <div id="change-language-div" onclick="this.getElementsByTagName('ul')[0].classList.toggle('active')">
+                    <span id="change-language-span">
+                        <span class="icon icon-flag_ru"></span>RUS</span>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                    window.onload = function () {
+                        document.body.onclick = function (e) {
+                            e = e || event;
+                            target = e.target || e.srcElement;
+                            if (target.id == "change-language" || target.id == "change-language-div" || target.id == "change-language-span") {
+                            } else {
+                                document.getElementById('change-language').getElementsByTagName('ul')[0].classList.remove('active');
+                            }
                         }
                     }
+                </script>
+            <div style="clear:both;"></div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <style>
+                .content {
+                    box-sizing:border-box;
                 }
-            </script>
-        <div style="clear:both;"></div>
-    </div>
-</header>
+                .slider {
+                    width: 1200px;
+                    margin: 0 auto;
+                    padding: 39px 40px 0;
+                    box-sizing: border-box;
+                }
+                .elma-slider {
+                    background: url('/images/slider-background.png') center no-repeat;
+                    padding: 36px 351px 46px 51px;
+                }
+                .elma-slider .item-type {
+                    display:inline-block;
+                    color:#fff;
+                    font-weight:700;
+                    text-transform:uppercase;
+                    font-size: 16px;
+                    padding: 1px 3px;
+                    background-color: rgb(233, 77, 67);
+                }
+                .elma-slider .item-date {
+                    display:inline-block;
+                    color:#fff;
+                    font-size: 16px;
+                    margin-left: 2px;
+                    letter-spacing: -0.01em;
+                }
+                .elma-slider .item-heading {
+                    color:#fff;
+                    text-transform:uppercase;
+                    display:block;
+                    font-weight: 700;
+                    font-size: 29px;
+                    line-height: 41px;
+                    margin-top: 16px;
+                    letter-spacing: 0.017em;
+                }
+                .elma-slider .item-button {
+                    display:inline-block;
+                    padding: 15px 20px;
+                    color:#fff;
+                    text-decoration:none;
+                    font-size: 16px;
+                    background-color: rgb(70, 160, 216);
+                    margin-top: 30px;
+                    border-radius: 3px;
+                }
+                .elma-slider .item-button:hover {
+                    text-decoration:none;
+                    opacity:0.95;
+                }
+            </style>
 
-<div class="main-container">
-    <main role="main" class="pb-3">
         @RenderBody()
-    </main>
-</div>
+    </div>
 
+</div>
 <footer >
     <div class="footer">
-            <div class="pageContent">
-                <ul class="footerLinks">
-                    <li><a href="misc/contact" class="OverlayTrigger" data-overlayoptions="{&quot;fixed&quot;:false}">Обратная связь</a></li>
-                    <li><a href="help/">Помощь</a></li>
-                    <li><a href="https://forum.elma-bpm.ru/" class="homeLink">Главная</a></li>
-                    <li><a href="#header" onclick="window.scrollTo(0, 0); return false;" class="topLink">Вверх</a></li>
-                </ul>
-                <span class="helper"></span>
-            </div>
+        <div class="pageContent">
+            <ul class="footerLinks">
+                <li><a href="misc/contact" class="OverlayTrigger" data-overlayoptions="{&quot;fixed&quot;:false}">Обратная связь</a></li>
+                <li><a href="help/">Помощь</a></li>
+                <li><a href="https://forum.elma-bpm.ru/" class="homeLink">Главная</a></li>
+                <li><a href="#header" onclick="window.scrollTo(0, 0); return false;" class="topLink">Вверх</a></li>
+            </ul>
+            <span class="helper"></span>
         </div>
+    </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

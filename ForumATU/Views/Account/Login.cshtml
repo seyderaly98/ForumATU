@@ -4,5 +4,83 @@
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+<div class="slider">
+    
+</div>
 
-<h2>title</h2>
+<div id="content" class="content login">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<!-- main content area -->
+			<!--[if lt IE 8]>
+							<p class="importantMessage">Вы используете устаревший браузер. Этот и другие сайты могут отображаться в нём некорректно.<br />Необходимо обновить браузер или попробовать использовать <a href="https://www.google.com/chrome/browser/" target="_blank">другой</a>.</p>
+						<![endif]-->
+			<!-- h1 title, description -->
+							<div class="titleBar">
+								
+								<h1>Вход</h1>
+								
+							</div>
+			
+						<!-- main template -->
+
+<!--<form action="login/login" method="post" class="xenForm" id="pageLogin">-->
+<form action="/login/login" method="post" class="xenForm" id="pageLogin"> 
+
+	<!--<h2 class="textHeading">Войти или зарегистрироваться</h2>-->
+
+	<dl class="ctrlUnit">
+		<dt><label for="ctrl_pageLogin_login">Ваш e-mail:</label></dt>
+		<dd><input type="text" name="login" value="" id="ctrl_pageLogin_login" class="textCtrl" tabindex="1" autofocus="autofocus"></dd>
+	</dl>
+
+
+	<dl class="ctrlUnit">
+		<!--<dt><label for="ctrl_pageLogin_password">У Вас уже есть учётная запись?</label></dt>-->
+		<dt><label for="ctrl_pageLogin_password">Пароль</label></dt>
+		<dd>
+			<ul>
+				<!--<li><label for="ctrl_pageLogin_not_registered"><input type="radio" name="register" value="1" id="ctrl_pageLogin_not_registered" tabindex="5" />
+					Нет, зарегистрироваться сейчас.</label></li>
+				<li><label for="ctrl_pageLogin_registered"><input type="radio" name="register" value="0" id="ctrl_pageLogin_registered" checked="checked" class="Disabler" tabindex="5" />
+					Да, мой пароль:</label></li>-->
+				<li id="ctrl_pageLogin_registered_Disabler">
+					<input type="password" name="password" class="textCtrl" id="ctrl_pageLogin_password" tabindex="2">					
+					<div><a href="lost-password/" class="OverlayTrigger OverlayCloser" tabindex="6">Забыли пароль?</a></div>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+
+	<dl class="ctrlUnit submitUnit">
+		<div style="text-align:center;">
+			<input type="submit" class="button primary" value="Вход" data-loginphrase="Вход" data-signupphrase="Регистрация" tabindex="4">
+			<!--<label class="rememberPassword"><input type="checkbox" name="remember" value="1" id="ctrl_pageLogin_remember" tabindex="3" /> Запомнить меня</label>-->
+		</div>
+	</dl>
+	<input type="hidden" name="cookie_check" value="1">
+	<input type="hidden" name="xfToken" value="">
+	<input type="hidden" name="target_path" value="https://forum.elma-bpm.ru/">
+	<input type="hidden" name="fail_path" value="https://forum.elma-bpm.ru/login">
+	
+</form>
+
+<script>
+	$(function()
+	{
+		var $button = $('#pageLogin input.button.primary');
+		$('#pageLogin input[name="register"]').click(function()
+		{
+			$button.val(
+				$('#pageLogin input[name="register"]:checked').val() == '1'
+				? $button.data('signupphrase')
+				: $button.data('loginphrase')
+			);
+		});
+	});
+</script>
+			
+		</div>
+	</div>
+</div>
+

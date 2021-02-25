@@ -1,6 +1,7 @@
 ﻿body{
     background-color: rgb(240,240,240);
 }
+
 .icon-demo-al{
     background-image: url(../images/icon/planet.svg)!important;
 }
@@ -9,7 +10,9 @@
 }
 .icon-logo-al{
     background: url(../images/Logo/logo-atu.png)!important;
+    
+}
 
-
-
+.content {
+    min-height: calc(74vh - 80px);
 }
