@@ -54,6 +54,14 @@ namespace ForumATU.Controllers
             return View();
         }
         
+        [HttpPost]
+        public IActionResult Register(Register model)
+        {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Index","Home");
+            return View();
+        }
+        
         
     }
 }

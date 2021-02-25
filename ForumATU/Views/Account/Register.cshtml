@@ -5,4 +5,100 @@
     Layout = "_Layout";
 }
 
-<h2>title</h2>
+
+<div class="slider">
+
+</div>
+
+<div id="content" class="content Multilang_forumRegister">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<!-- main content area -->
+			<!--[if lt IE 8]>
+				<p class="importantMessage">Вы используете устаревший браузер. Этот и другие сайты могут отображаться в нём некорректно.<br />Необходимо обновить браузер или попробовать использовать <a href="https://www.google.com/chrome/browser/" target="_blank">другой</a>.</p>
+			<![endif]-->
+			<!-- h1 title, description -->
+			<div class="titleBar">
+				<h1>Регистрация</h1>
+			</div>
+			<!-- main template -->
+			<form class="xenForm" asp-action="Register" asp-controller="Account" method="POST">
+
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="Name" style="font-weight: normal;" >Имя:</label>
+					</dt>
+					<dd>
+						<input type="text" asp-for="Name" value="" class="textCtrl">
+						<span asp-validation-for="Name"></span>
+					</dd>
+				</dl>
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="Surname" style="font-weight: normal;">Фамилия:</label>
+					</dt>
+					<dd>
+						<input type="text" asp-for="Surname" value="" class="textCtrl">
+						<span asp-validation-for="Surname"></span>
+					</dd>
+				</dl>
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="UserName"style="font-weight: normal;">Логин:</label>
+					</dt>
+					<dd>
+						<input type="text" asp-for="UserName" value="" class="textCtrl">
+						<p class="explain">Это 'login' будет отображаться в Ваших сообщениях. Можно использовать любое имя. Его нельзя будет поменять после регистрации.</p>
+						<span asp-validation-for="UserName"></span>
+						</dd>
+				</dl>
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="Email"style="font-weight: normal;">E-mail:</label>
+					</dt>
+					<dd>
+						<input type="text" asp-for="Email" value="" class="textCtrl">
+						<span asp-validation-for="Email"></span>
+					</dd>
+				</dl>
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="Password"style="font-weight: normal;">Пароль:</label>
+					</dt>
+					<dd>
+						<input type="password" asp-for="Password" value="" class="textCtrl">
+						<span asp-validation-for="Password"></span>
+					</dd>
+				</dl>
+				<dl class="ctrlUnit">
+					<dt>
+						<label asp-for="Password"style="font-weight: normal;">Подтвердите пароль:</label>
+					</dt>
+					<dd>
+						<input type="password" asp-for="ConfirmPassword" value="" class="textCtrl">
+						<span asp-validation-for="ConfirmPassword"></span>
+					</dd>
+				</dl>
+				
+				<dl class="ctrlUnit submitUnit">
+					<dt></dt>
+					<dd>
+						<input type="submit" name="register" value="Регистрация" accesskey="s" class="button primary" id="SubmitButton">
+					</dd>
+				</dl>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+@section Scripts
+{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
+
+
+

@@ -20,25 +20,28 @@
 			<div class="titleBar">
 				<h1>Вход</h1>
 			</div>
+			<div asp-validation-summary="ModelOnly"></div>
 			<form asp-action="Login" asp-controller="Account" method="post" class="xenForm" id="pageLogin">
 				<dl class="ctrlUnit">
 					<dt>
-						<label for="ctrl_pageLogin_login">Ваш e-mail:</label>
+						<label asp-for="EmailAndUserName" for="ctrl_pageLogin_login" style="font-weight: normal;">E-mail/Логин:</label>
 					</dt>
 					<dd>
-						<input asp-for="EmailAndUserName" type="text" name="login" value="" id="ctrl_pageLogin_login" class="textCtrl" tabindex="1" autofocus="autofocus">
-					</dd>
+						<input asp-for="EmailAndUserName" type="text" value="" id="ctrl_pageLogin_login" class="textCtrl" tabindex="1" autofocus="autofocus">
+							<span asp-validation-for="EmailAndUserName"></span>
+						</dd>
 				</dl>
 				
 				<dl class="ctrlUnit">
 					<dt>
-						<label asp-for-label="" for="ctrl_pageLogin_password">Пароль</label>
+						<label asp-for="Password"  asp-for-label="" for="ctrl_pageLogin_password" style="font-weight: normal;">Пароль</label>
 					</dt>
 					<dd>
 						<ul>
 							<li id="ctrl_pageLogin_registered_Disabler">
-								<input asp-for="Password" type="password" name="password" class="textCtrl" id="ctrl_pageLogin_password" tabindex="2">
-								<div>
+								<input asp-for="Password" type="password" class="textCtrl" id="ctrl_pageLogin_password" tabindex="2">
+								<span asp-validation-for="Password"></span>
+								<div class="zb-password">
 									<a href="#" class="OverlayTrigger OverlayCloser" tabindex="6">Забыли пароль?</a>
 								</div>
 							</li>
@@ -63,7 +66,9 @@
 
 @section Scripts
 {
-	
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
 
 

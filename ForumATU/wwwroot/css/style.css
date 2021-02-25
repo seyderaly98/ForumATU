@@ -16,4 +16,11 @@
 .content {
     min-height: calc(74vh - 80px);
 }
-
+.field-validation-error{
+    padding-left: 3px;
+    font-size: 12px;
+    color: red;
+}
+.zb-password{
+    text-align: end;
+}

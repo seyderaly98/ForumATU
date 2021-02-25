@@ -9,7 +9,7 @@ namespace ForumATU.ViewModels
         
         [Required(ErrorMessage = "Это поле необходимо заполнить.")]
         [DataType(DataType.Password)]
-        [MinLength(6,ErrorMessage = "Пароль должен содержать не менее 8 символов.")]
+        [MinLength(3,ErrorMessage = "Пароль должен содержать не менее 8 символов.")]
         public string Password { get; set; }
 
         public bool Remember { get; set; }
