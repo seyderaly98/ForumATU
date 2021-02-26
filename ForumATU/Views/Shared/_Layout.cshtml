@@ -53,9 +53,9 @@
                     
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a asp-action="Logout" asp class="OverlayTrigger">
+                        <a asp-action="Logout" asp-controller="Account" asp class="OverlayTrigger">
                             <svg class="icon icon-input icon-input-al"></svg>
-                            <span>@User.Identity.Name</span>
+                            <span>Выйти</span>
                         </a>
                     }
                     else
