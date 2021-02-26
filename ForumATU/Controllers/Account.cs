@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using ForumATU.Models;
 using ForumATU.Models.Data;
@@ -47,7 +48,7 @@ namespace ForumATU.Controllers
             return View(model);
         }
         
-        public IActionResult Register()
+        public IActionResult Regist()
         {
             if (User.Identity.IsAuthenticated)
                 return RedirectToAction("Index","Home");
@@ -55,11 +56,23 @@ namespace ForumATU.Controllers
         }
         
         [HttpPost]
-        public IActionResult Register(Register model)
+        public async Task<IActionResult> Regist(Register model)
         {
-            if (User.Identity.IsAuthenticated)
-                return RedirectToAction("Index","Home");
-            return View();
+            if(ModelState.IsValid)
+            {
+                User newUser = new User(model);
+                var result = await _userManager.CreateAsync(newUser, model.Password);
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(newUser, "Student");
+                    await _db.SaveChangesAsync();
+                    await _signInManager.SignInAsync(newUser, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError(String.Empty, error.Description);
+            }
+            return View(model);
         }
         
         

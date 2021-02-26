@@ -22,8 +22,8 @@
 				<h1>Регистрация</h1>
 			</div>
 			<!-- main template -->
-			<form class="xenForm" asp-action="Register" asp-controller="Account" method="POST">
-
+			<form class="xenForm" asp-action="Regist" asp-controller="Account" method="POST">
+			<div asp-validation-summary="All"></div>
 				<dl class="ctrlUnit">
 					<dt>
 						<label asp-for="Name" style="font-weight: normal;" >Имя:</label>
@@ -79,11 +79,11 @@
 						<span asp-validation-for="ConfirmPassword"></span>
 					</dd>
 				</dl>
-				
+				<button type="submit">suub</button>
 				<dl class="ctrlUnit submitUnit">
 					<dt></dt>
 					<dd>
-						<input type="submit" name="register" value="Регистрация" accesskey="s" class="button primary" id="SubmitButton">
+						<input type="submit" value="Регистрация" class="button primary" >
 					</dd>
 				</dl>
 			</form>

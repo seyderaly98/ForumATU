@@ -1,4 +1,5 @@
 ﻿using System;
+using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace ForumATU.Models
@@ -36,5 +37,19 @@ namespace ForumATU.Models
         public int Course { get; set; }
 
         public Gender Gender { get; set; }
+
+
+        public User()
+        {
+            
+        }
+        public User(Register model)
+        {
+            Name = model.Name;
+            Surname = model.Surname;
+            Email = model.Email;
+            UserName = model.UserName.ToLower();
+            
+        }
     }
 }

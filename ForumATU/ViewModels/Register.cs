@@ -13,6 +13,7 @@ namespace ForumATU.ViewModels
         public string Name { get; set; }
         [Required(ErrorMessage = "Это поле необходимо заполнить.")]
         public string Surname { get; set; }
+        [Remote("CheckUserName","Validation",ErrorMessage = "Данный логин используется другим аккаунтом.")]
         [Required(ErrorMessage = "Это поле необходимо заполнить.")]
         public string UserName { get; set; }
         
@@ -33,30 +34,5 @@ namespace ForumATU.ViewModels
         public string ConfirmPassword { get; set; }
     }
 
-    public class DetailedRegister : Register
-    {
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        public DateTime DateBirth { get; set; }
-        
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        
-        /// <summary>
-        /// Факультет
-        /// </summary>
-        public Faculty Faculty { get; set; }
-        
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        /// <summary>
-        /// Специальность 
-        /// </summary>
-        public string Specialty { get; set; }
-        
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        /// <summary>
-        /// Курс
-        /// </summary>
-        public int Course { get; set; }
-        
-        public Gender Gender { get; set; }
-    }
+   
 }
