@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ForumATU.Models;
 using ForumATU.Models.Data;
+using ForumATU.Services;
 using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -64,7 +65,7 @@ namespace ForumATU.Controllers
                 var result = await _userManager.CreateAsync(newUser, model.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(newUser, "Student");
+                    await _userManager.AddToRoleAsync(newUser, Convert.ToString(RoleInitializer.Roles.Student));
                     await _db.SaveChangesAsync();
                     await _signInManager.SignInAsync(newUser, false);
                     return RedirectToAction("Index", "Home");
