@@ -46,13 +46,26 @@
                 </li>
 
                 <li>
-                    <a href="https://univer.atu.kz/" target="_blank" class="kb"><span>База знаний</span></a>
+                    <a href="https://univer.atu.kz/" target="_blank" class="kb"><span>Univer</span></a>
                 </li>
 
                 <li>
-                    <a href="#" class="OverlayTrigger">
-                        <svg class="icon icon-input icon-input-al"></svg>
-                        <span>Войти</span></a>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-action="Logout" asp class="OverlayTrigger">
+                            <svg class="icon icon-input icon-input-al"></svg>
+                            <span>@User.Identity.Name</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="Login" asp-controller="Account" class="OverlayTrigger">
+                            <svg class="icon icon-input icon-input-al"></svg>
+                            <span>Войти</span>
+                        </a>
+                    }
+
                 </li>
 
             </ul>

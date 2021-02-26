@@ -5,21 +5,32 @@ using ForumATU.Models;
 using ForumATU.Models.Data;
 using ForumATU.Services;
 using ForumATU.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 
 namespace ForumATU.Controllers
 {
     public class AccountController : Controller
     {
-        public UserManager<User> _userManager { get; set; }
-        public RoleManager<IdentityRole> _roleManager { get; set; }
-        public SignInManager<User> _signInManager { get; set; }
-        public ForumContext _db { get; set; }
-        public IHostEnvironment _environment { get; set; }
-        
-        public IActionResult Login()
+        UserManager<User> _userManager { get; set; }
+        RoleManager<IdentityRole> _roleManager { get; set; }
+        SignInManager<User> _signInManager { get; set; }
+         ForumContext _db { get; set; }
+         IHostEnvironment _environment { get; set; }
+
+         public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, SignInManager<User> signInManager, ForumContext db, IHostEnvironment environment)
+         {
+             _userManager = userManager;
+             _roleManager = roleManager;
+             _signInManager = signInManager;
+             _db = db;
+             _environment = environment;
+         }
+
+         public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
                 return RedirectToAction("Index","Home");
@@ -74,6 +85,13 @@ namespace ForumATU.Controllers
                     ModelState.AddModelError(String.Empty, error.Description);
             }
             return View(model);
+        }
+        
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login","Account");
         }
         
         
