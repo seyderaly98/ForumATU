@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ForumATU.Controllers
 {
-    public class Account : Controller
+    public class AccountController : Controller
     {
         public UserManager<User> _userManager { get; set; }
         public RoleManager<IdentityRole> _roleManager { get; set; }
@@ -43,7 +43,7 @@ namespace ForumATU.Controllers
                         return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("","Неверный пароль или логин пользователя ");
+                    ModelState.AddModelError("","Неверный пароль или логин пользователя");
             }
             return View(model);
         }

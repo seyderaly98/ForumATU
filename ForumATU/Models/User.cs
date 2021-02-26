@@ -36,8 +36,12 @@ namespace ForumATU.Models
         /// </summary>
         public int Course { get; set; }
 
-        public Gender Gender { get; set; }
+        public Gender Gender { get; set; } = Gender.None;
 
+        
+        #region Конструктор
+        
+        public string AvatarPath { get; set; }
 
         public User()
         {
@@ -51,5 +55,7 @@ namespace ForumATU.Models
             UserName = model.UserName.ToLower();
             
         }
+        
+        #endregion
     }
 }
