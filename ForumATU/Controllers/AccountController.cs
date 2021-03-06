@@ -15,13 +15,17 @@ namespace ForumATU.Controllers
 {
     public class AccountController : Controller
     {
+        #region поле 
         UserManager<User> _userManager { get; set; }
         RoleManager<IdentityRole> _roleManager { get; set; }
         SignInManager<User> _signInManager { get; set; }
-         ForumContext _db { get; set; }
-         IHostEnvironment _environment { get; set; }
+        ForumContext _db { get; set; }
+        IHostEnvironment _environment { get; set; }
+        
+        #endregion
 
-         public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, SignInManager<User> signInManager, ForumContext db, IHostEnvironment environment)
+        #region конструктор
+        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, SignInManager<User> signInManager, ForumContext db, IHostEnvironment environment)
          {
              _userManager = userManager;
              _roleManager = roleManager;
@@ -29,7 +33,10 @@ namespace ForumATU.Controllers
              _db = db;
              _environment = environment;
          }
-
+       
+        #endregion
+        
+        #region actions
          public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
@@ -94,6 +101,7 @@ namespace ForumATU.Controllers
             return RedirectToAction("Login","Account");
         }
         
-        
+        #endregion
+
     }
 }
