@@ -2,103 +2,146 @@
 
 @{
     ViewBag.Title = "Регистрация";
-    Layout = "_Layout";
+    Layout = "_LayoutAccount";
 }
 
 
-<div class="slider">
+<login-dialog class="ng-isolate-scope">
+    <div class="container desktop" ng-class="{'mobile': $ctrl.isMobile(), 'desktop': !$ctrl.isMobile(), 'new': $ctrl.isRedesign()}">
 
-</div>
+        <div class="header" ng-class="{'new': $ctrl.isRedesign()}">
+            <img alt="Wix" class="wix-logo ng-scope" ng-if="$ctrl.showWixLogo()" relative-src="images/wix-logo.svg" src="/images/Logo/wix-logo.png">
+        </div>
 
-<div id="content" class="content Multilang_forumRegister">
-	<div class="pageWidth">
-		<div class="pageContent">
-			<!-- main content area -->
-			<!--[if lt IE 8]>
-				<p class="importantMessage">Вы используете устаревший браузер. Этот и другие сайты могут отображаться в нём некорректно.<br />Необходимо обновить браузер или попробовать использовать <a href="https://www.google.com/chrome/browser/" target="_blank">другой</a>.</p>
-			<![endif]-->
-			<!-- h1 title, description -->
-			<div class="titleBar">
-				<h1>Регистрация</h1>
-			</div>
-			<!-- main template -->
-			<form class="xenForm" asp-action="Regist" asp-controller="Account" method="POST">
-			<div asp-validation-summary="ModelOnly"></div>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="Name" style="font-weight: normal;" >Имя:</label>
-					</dt>
-					<dd>
-						<input type="text" asp-for="Name" value="" class="textCtrl">
-						<span asp-validation-for="Name"></span>
-					</dd>
-				</dl>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="Surname" style="font-weight: normal;">Фамилия:</label>
-					</dt>
-					<dd>
-						<input type="text" asp-for="Surname" value="" class="textCtrl">
-						<span asp-validation-for="Surname"></span>
-					</dd>
-				</dl>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="UserName"style="font-weight: normal;">Логин:</label>
-					</dt>
-					<dd>
-						<input type="text" asp-for="UserName" value="" class="textCtrl">
-						<p class="explain">Это 'login' будет отображаться в Ваших сообщениях. Можно использовать любое имя. Его нельзя будет поменять после регистрации.</p>
-						<span asp-validation-for="UserName"></span>
-						</dd>
-				</dl>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="Email"style="font-weight: normal;">E-mail:</label>
-					</dt>
-					<dd>
-						<input type="text" asp-for="Email" value="" class="textCtrl">
-						<span asp-validation-for="Email"></span>
-					</dd>
-				</dl>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="Password"style="font-weight: normal;">Пароль:</label>
-					</dt>
-					<dd>
-						<input type="password" asp-for="Password" value="" class="textCtrl">
-						<span asp-validation-for="Password"></span>
-					</dd>
-				</dl>
-				<dl class="ctrlUnit">
-					<dt>
-						<label asp-for="Password"style="font-weight: normal;">Подтвердите пароль:</label>
-					</dt>
-					<dd>
-						<input type="password" asp-for="ConfirmPassword" value="" class="textCtrl">
-						<span asp-validation-for="ConfirmPassword"></span>
-					</dd>
-				</dl>
-				<button type="submit">suub</button>
-				<dl class="ctrlUnit submitUnit">
-					<dt></dt>
-					<dd>
-						<input type="submit" value="Регистрация" class="button primary" >
-					</dd>
-				</dl>
-			</form>
+        <signup ng-if="$ctrl.getContext() === 'signup'" class="ng-scope ng-isolate-scope">
+            <div ng-include="$ctrl.userDeviceType.isMobile() ? 'views/mobile/signup.html' : 'views/desktop/signup.html'" class="ng-scope">
+                <div asp-validation-summary="ModelOnly"></div>
+                <form class="signup ng-pristine ng-scope ng-valid-email ng-invalid ng-invalid-required ng-valid-match ng-valid-minlength" asp-action="Regist" asp-controller="Account" method="post">
+                    <h1 class="sign-up-title title ng-binding">Регистрация в Atu Study Space</h1>
 
-		</div>
-	</div>
-</div>
+                    <div class="already-user" ng-show="$ctrl.showLoginLink">
+                        <span ng-show="!$ctrl.educationType" translate-values="{brand: $ctrl.getBrandName()}" translate="signup.already_have" class="ng-scope">У вас уже есть аккаунт?</span>
+                      
+                        <a class="login-link ng-binding" asp-action="Login" asp-controller="Account">Войти</a>
+                    </div>
+
+                    <div class="signin-section">
+                        <div class="signin-with-email">
+
+                            <desktop-input class="email-confirm ng-isolate-scope" >
+                                <md-input-container class="tooltip-holder ng-isolate-scope has-error">
+                                    <input asp-for="UserName" placeholder="Логин" class="ng-pristine ng-untouched ng-scope ng-isolate-scope md-input ng-empty ng-invalid ng-invalid-required ng-valid-match ng-valid-email" id="input_1">
+                                    <span asp-validation-for="UserName"></span>
+                                </md-input-container>
+                            </desktop-input>
+
+                            <desktop-input class="email ng-isolate-scope">
+                                <md-input-container class="tooltip-holder ng-isolate-scope has-error md-input-invalid">
+                                    <input placeholder="Эл. почта" type="email" asp-for="Email" class="ng-pristine ng-scope md-input ng-empty ng-valid-email ng-invalid ng-invalid-required ng-touched" id="input_0" style="">
+                                    <span asp-validation-for="Email"></span>
+                                </md-input-container>
+                            </desktop-input>
+
+                            <desktop-input class="password ng-isolate-scope" field="signupForm.password" label="'signup.password'" server-error="$ctrl.serverError">
+                                <md-input-container class="tooltip-holder ng-isolate-scope has-error">
+                                    <input asp-for="Password" placeholder="Придумайте пароль " class="ng-pristine ng-untouched ng-scope ng-isolate-scope md-input ng-empty ng-invalid ng-invalid-required ng-valid-match" type="password" id="input_2">
+                                    <span asp-validation-for="Password"></span>
+                                </md-input-container>
+                            </desktop-input>
+
+                            <desktop-input class="password-confirm ng-isolate-scope" field="signupForm.passwordConfirm" label="'signup.confirm_password'" server-error="$ctrl.serverError">
+                                <md-input-container class="tooltip-holder ng-isolate-scope has-error">
+                                    <input asp-for="ConfirmPassword" placeholder="Повторите пароль" type="password" class="ng-pristine ng-untouched ng-scope ng-isolate-scope md-input ng-empty ng-invalid ng-invalid-required ng-valid-match" id="input_3">
+                                    <span asp-validation-for="ConfirmPassword"></span>
+                                </md-input-container>
+                            </desktop-input>
+
+                            <div class="recaptcha-widget" id="recaptcha-widget"></div>
+                            <div class="login-button">
+                                <div class="button-spinner ">
+                                    <button class="signup-btn signup-btn-my wix-button ng-binding " type="submit">Создать</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <social-signin template-url="'views/social-signin.html'" class="ng-isolate-scope">
+                            <!-- ngInclude: $ctrl.templateUrl -->
+                            <div ng-include="$ctrl.templateUrl" class="ng-scope">
+                                <div class="sozial-buttons new ng-scope">
+                                    <!-- ngIf: !$ctrl.isEducation -->
+                                    <div class="social-button facebook-button ng-scope" ng-if="!$ctrl.isEducation">
+                                        <button class="buttonContentWrapper social-btn ng-isolate-scope" facebook-login="" fb-error="$ctrl.fbError" fb-loading="$ctrl.fbLoading" ng-click="$ctrl.socialClicked('facebook')" ng-show="!$ctrl.fbLoading" tabindex="0" type="button">
+                                            <div class="buttonIcon">
+                                                <div class="buttonSvgImage"></div>
+                                            </div>
+                                            <!-- ngIf: $ctrl.fbButtonText -->
+                                            <!-- ngIf: !$ctrl.fbButtonText --><span class="buttonContents ng-binding ng-scope" ng-if="!$ctrl.fbButtonText">Продолжить с Facebook</span><!-- end ngIf: !$ctrl.fbButtonText -->
+                                        </button>
+                                        <div ng-show="$ctrl.fbLoading" class="ng-hide">
+                                            <bouncing-points class="color ng-isolate-scope">
+                                                <div class="points">
+                                                    <div class="point bounce point1">
+                                                    </div>
+                                                    <div class="point bounce point2">
+                                                    </div>
+                                                    <div class="point bounce point3">
+                                                    </div>
+                                                </div>
+                                            </bouncing-points>
+                                        </div>
+                                    </div><!-- end ngIf: !$ctrl.isEducation -->
+                                    <div class="social-button google-button">
+                                        <button class="buttonContentWrapper social-btn ng-isolate-scope" google-error="$ctrl.googleError" google-loading="$ctrl.googleLoading" google-login="" ng-click="$ctrl.socialClicked('google')" ng-show="!$ctrl.googleLoading" tabindex="0" type="button">
+                                            <div class="buttonIcon">
+                                                <div class="buttonSvgImage"></div>
+                                            </div>
+                                            <!-- ngIf: $ctrl.googleButtonText -->
+                                            <!-- ngIf: !$ctrl.googleButtonText --><span class="buttonContents ng-binding ng-scope" ng-if="!$ctrl.googleButtonText">Продолжить с Google</span><!-- end ngIf: !$ctrl.googleButtonText -->
+                                        </button>
+                                        <div ng-show="$ctrl.googleLoading" class="ng-hide">
+                                            <bouncing-points class="color ng-isolate-scope">
+                                                <div class="points">
+                                                    <div class="point bounce point1">
+                                                    </div>
+                                                    <div class="point bounce point2">
+                                                    </div>
+                                                    <div class="point bounce point3">
+                                                    </div>
+                                                </div>
+                                            </bouncing-points>
+                                        </div>
+                                    </div>
+                                    <!-- ngIf: $ctrl.shouldShowApple && !$ctrl.isEducation -->
+                                    <div class="error-message ng-binding ng-hide" ng-show="$ctrl.googleError">Вход через Google временно не работает. Попробуйте позже.</div>
+                                    <div class="error-message ng-binding ng-hide" ng-show="$ctrl.fbError">Вход через Facebook временно не работает. Попробуйте позже.</div>
+                                    <div class="error-message ng-binding ng-hide" ng-show="$ctrl.appleError">Вход через Apple временно не работает. Попробуйте позже.</div>
+                                </div>
+                            </div>
+                        </social-signin>
+
+                    </div>
+                    
+                    <terms-of-use mode="$ctrl.isEducation ? 'education' : 'signup'" class="ng-isolate-scope">
+                        <div ng-class="{'terms-of-use': true, 'terms-education': $ctrl.isWixEducation()}" translate="terms_of_use.signup" translate-values="{
+                  termsOfUse: $ctrl.getTermsOfUseLinkTag(),
+                  privacyPolicy: $ctrl.getPrivacyPolicyLinkTag(),
+                  brand: $ctrl.getBrand(),
+                  educationTermsOfUse: $ctrl.getEducationTermsOfUseLinkTag(),
+                  educationPrivacyPolicy: $ctrl.getEducationPrivacyPolicyLinkTag()
+                }" class="ng-scope terms-of-use">* Регистрируясь, вы принимаете <a href="#" target="_blank">условия использования</a>, соглашаетесь получать новости ATU и подтверждаете, что ознакомились с <a href="#" target="_blank">политикой конфиденциальности</a>.</div>
+                    </terms-of-use>
+                </form>
+            </div>
+        </signup>
+    </div>
+</login-dialog>
 
 
 @section Scripts
 {
-	@{
-		await Html.RenderPartialAsync("_ValidationScriptsPartial");
-	}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
-
-
-

@@ -49,8 +49,6 @@ namespace ForumATU.Models
         }
         public User(Register model)
         {
-            Name = model.Name;
-            Surname = model.Surname;
             Email = model.Email;
             UserName = model.UserName.ToLower();
             

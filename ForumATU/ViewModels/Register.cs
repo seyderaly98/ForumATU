@@ -9,10 +9,7 @@ namespace ForumATU.ViewModels
 
     public class Register
     {
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        public string Name { get; set; }
-        [Required(ErrorMessage = "Это поле необходимо заполнить.")]
-        public string Surname { get; set; }
+
         [Remote("CheckUserName","Validation",ErrorMessage = "Данный логин используется другим аккаунтом.")]
         [Required(ErrorMessage = "Это поле необходимо заполнить.")]
         public string UserName { get; set; }
