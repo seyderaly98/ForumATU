@@ -33,7 +33,7 @@ namespace ForumATU.Services
                 {
                     Email = adminEmail,
                     EmailConfirmed = true,
-                    UserName = "Admin",
+                    UserName = "admin",
                     Name = "SuperAdmin",
                     Surname = "Adm"
                 };

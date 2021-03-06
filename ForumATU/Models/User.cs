@@ -51,7 +51,6 @@ namespace ForumATU.Models
         {
             Email = model.Email;
             UserName = model.UserName.ToLower();
-            
         }
         
         #endregion

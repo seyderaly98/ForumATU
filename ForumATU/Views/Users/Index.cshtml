@@ -1,0 +1,190 @@
+﻿@model User
+
+@{
+    ViewBag.Title = "Личный кабинет";
+    Layout = "_Layout";
+}
+
+
+<div id="content" class="content account_personal_details">
+<div class="pageWidth">
+<div class="pageContent">
+<!-- main content area -->
+<!--[if lt IE 8]>
+	<p class="importantMessage">Вы используете устаревший браузер. Этот и другие сайты могут отображаться в нём некорректно.<br />Необходимо обновить браузер или попробовать использовать <a href="https://www.google.com/chrome/browser/" target="_blank">другой</a>.</p>
+<![endif]-->
+<!-- h1 title, description -->
+<div class="titleBar">
+	<h1>Персональная информация</h1>
+</div>
+
+<!-- main template -->
+
+<div class="container" style="padding: 0">
+<div class="navigationSideBar ToggleTriggerAnchor account_sidebar">
+	<h4 class="heading ToggleTrigger" data-target="> ul" data-toggle-if-pointer="yes">Учётная запись <span></span></h4>
+	<ul data-toggle-class="menuVisible">
+		<li class="section">
+			<ul>
+				<li>
+					<a class="secondaryContent" href="#">Персональная информация</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Оповещения</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Новостная лента</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Полученные симпатии</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Отслеживаемые темы</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Отслеживаемые разделы</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- slot: pre_conversations -->
+
+		<li class="section">
+			<h4 class="subHeading">Переписки</h4>
+			<ul>
+				<li>
+					<a class="primaryContent" href="#">Просмотр переписок</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Начать новую переписку</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- slot: pre_settings -->
+
+		<li class="section">
+			<h4 class="subHeading">Настройки</h4>
+			<ul>
+				<li>
+					<a class="primaryContent" href="#">Подпись</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Конфиденциальность</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Настройки</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Настройки оповещений</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Подписка</a>
+				</li>
+				<li>
+					<a class="primaryContent" href="#">Игнорируемые пользователи</a>
+				</li>
+			</ul>
+		</li>
+
+		<li class="section">
+			<ul>
+				<li>
+					<a asp-action="Logout" asp-controller="Account" class="LogOut primaryContent">Выход</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div class="mainContentBlock section sectionMain insideSidebar">
+	
+	<form method="post" class="xenForm personalDetailsForm AutoValidator">
+		
+		<dl class="ctrlUnit">
+			<dt>
+				<label style="font-weight: normal"  for="ctrl_status">Сообщение статуса:</label>
+			</dt>
+			<dd>
+				<input name="status" class="textCtrl StatusEditor UserTagger Elastic OptOut">
+				<span id="statusEditorCounter" title="Осталось символов" class="statusEditorCounter">140</span>
+				<div class="explain">
+					<h3 class="statusHeader">Текущий статус:</h3> <span class="CurrentStatus">Online</span><!--TODO: clearing-->
+				</div>
+			</dd>
+		</dl>
+		
+		<fieldset>
+			<dl class="ctrlUnit avatarEditor">
+				<dt>
+					<label style="font-weight: normal">Аватар:</label>
+				</dt>
+				<dd>
+					<a href="#" class="avatar Av1913m OverlayTrigger" data-avatarhtml="true">
+						<img class="img m" src="/images/img/avatar_non.png" alt="">
+					</a>
+					<p class="explain">Нажмите на изображение, чтобы изменить Ваш аватар.</p>
+				</dd>
+			</dl>
+		</fieldset>
+		
+		<fieldset>
+
+		</fieldset>
+
+		<dl class="ctrlUnit">
+			<dt><label style="font-weight: normal"  for="ctrl_users">Имя:</label></dt>
+			<dd>
+				<input type="text" asp-for="Name"  class="textCtrl AutoComplete" id="ctrl_users" >
+			</dd>
+		</dl>
+		<dl class="ctrlUnit">
+			<dt><label style="font-weight: normal"  for="ctrl_users">Фамилия:</label></dt>
+			<dd>
+				<input type="text" asp-for="Surname"   class="textCtrl AutoComplete"  >
+			</dd>
+		</dl>
+		<dl class="ctrlUnit">
+			<dt><label style="font-weight: normal"  for="ctrl_users">Дата рождения:</label></dt>
+			<dd>
+				<input type="date" asp-for="DateBirth"   class="textCtrl AutoComplete"  >
+			</dd>
+		</dl>
+		<dl class="ctrlUnit">
+			<dt>
+				<label style="font-weight: normal" for="ctrl_language_id">Пол:</label>
+			</dt>
+			<dd>
+				<select asp-for="Gender" class="textCtrl" id="ctrl_language_id">
+					<option value="@Gender.None" selected="selected">не указано...</option>
+					<option value="@Gender.Man">Мужской</option>
+					<option value="@Gender.Woman">Женский</option>
+				</select>
+			</dd>
+		</dl>
+		
+		<dl class="ctrlUnit">
+			<dt><label style="font-weight: normal"  for="ctrl_users">Фамилия:</label></dt>
+			<dd>
+				<input type="text" asp-for="Surname"   class="textCtrl AutoComplete"  >
+			</dd>
+		</dl>
+
+
+
+		<dl class="ctrlUnit submitUnit">
+			<dt></dt>
+			<dd>
+				<input type="submit" name="save" value="Сохранить изменения" accesskey="s" class="button primary">
+			</dd>
+		</dl>
+
+		<input type="hidden" name="_xfToken" value="1913,1615031056,5aac3e462c16d4202274c8ae42618c37366e5bc5">
+	</form>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>

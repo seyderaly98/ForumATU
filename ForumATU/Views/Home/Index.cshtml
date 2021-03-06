@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Официальный форум Almaty Technological University";
+    ViewData["Title"] = "учебное пространство";
 }
     
 <style>
@@ -19,7 +19,7 @@
         </div>
         <!-- просто картинка -->
         <div class="elma-slider-tips" style="margin-bottom:-16px;">
-            <a href="https://eva.elma-bpm.ru/" target="_blank">
+            <a href="#" target="_blank">
                 <img src="https://www.elma-bpm.ru/images/forum/banner_forum.png" style="width:100%;">
             </a>
         </div>
@@ -458,7 +458,7 @@
                                 <div class="secondaryContent">
                                     <a href="#" class="avatar Av1913m" data-avatarhtml="true"><img src="/images/img/avatar_non.png" width="96" height="96" alt=""></a>
                                     <div class="visitorText">
-                                        <h2><span class="muted">Вы вошли как:</span> <a class="username NoOverlay" href="#">@User.Identity.Name</a></h2>
+                                        <h2><span class="muted">Вы вошли как:</span> <a class="username NoOverlay" asp-action="Index" asp-controller="Users">@User.Identity.Name</a></h2>
                                         <div class="stats">
                                             <dl class="pairsJustified"><dt>Сообщения:</dt> <dd>12</dd></dl>
                                             <dl class="pairsJustified"><dt>Симпатии:</dt> <dd>500</dd></dl>
@@ -471,38 +471,40 @@
                                 </div>
                             </div>
                         }
-                        else
+                        else 
                         {
-                            <!-- Форма регистрации -->
-                            <div class="section login-form">
-                                <h3>Вход</h3>
-                                <h3>|</h3>
-                                <h3>
-                                    <a asp-action="Regist" asp-controller="Account">Регистрация</a>
-                                </h3>
-                                <form asp-action="Login" asp-controller="Account" method="post" class="xenForm authorization-form" id="authorization">
-                                    <div class="ctrlWrapper">
-                                        <dl class="ctrlUnit">
-                                            <dd>
-                                                <input type="text" name="EmailAndUserName" id="LoginControl" class="textCtrl" placeholder="e-mail">
-                                            </dd>
-                                        </dl>
-                                        <dl class="ctrlUnit">
-                                            <dd>
-                                                <input type="password" name="Password" class="textCtrl" id="ctrl_password" placeholder="password">
-                                            </dd>
-                                        </dl>
-                                        <dl class="ctrlUnit submitUnit">
-                                            <dd>
-                                                <input type="submit" class="button primary" value="Вход">
-                                                <div class="lostPasswordLogin">
-                                                    <a href="#" class="OverlayTrigger OverlayCloser" tabindex="106">Забыли пароль?</a>
-                                                </div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </form>
-                            </div>
+                            #region Это кусок кода сейчас не нужен
+                        // <!-- Форма регистрации -->
+                        //     <div class="section login-form">
+                        //         <h3>Вход</h3>
+                        //         <h3>|</h3>
+                        //         <h3>
+                        //             <a asp-action="Regist" asp-controller="Account">Регистрация</a>
+                        //         </h3>
+                        //         <form asp-action="Login" asp-controller="Account" method="post" class="xenForm authorization-form" id="authorization">
+                        //             <div class="ctrlWrapper">
+                        //                 <dl class="ctrlUnit">
+                        //                     <dd>
+                        //                         <input type="text" name="EmailAndUserName" id="LoginControl" class="textCtrl" placeholder="e-mail">
+                        //                     </dd>
+                        //                 </dl>
+                        //                 <dl class="ctrlUnit">
+                        //                     <dd>
+                        //                         <input type="password" name="Password" class="textCtrl" id="ctrl_password" placeholder="password">
+                        //                     </dd>
+                        //                 </dl>
+                        //                 <dl class="ctrlUnit submitUnit">
+                        //                     <dd>
+                        //                         <input type="submit" class="button primary" value="Вход">
+                        //                         <div class="lostPasswordLogin">
+                        //                             <a href="#" class="OverlayTrigger OverlayCloser" tabindex="106">Забыли пароль?</a>
+                        //                         </div>
+                        //                     </dd>
+                        //                 </dl>
+                        //             </div>
+                        //         </form>
+                        //     </div>
+                            #endregion
                         }
                     <div class="section widget-single">
                         <div class="secondaryContent widget sidebar-widget WidgetFramework_WidgetRenderer_Threads" id="widget-21">
