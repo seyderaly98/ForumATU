@@ -1,7 +1,7 @@
 ﻿@model Login
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Вход в систему - ATU Study Space";
     Layout = "_LayoutAccount";
 }
 
@@ -10,6 +10,7 @@
         <div class="body-wrapper">
             <div class="inner-wrapper">
                 <div class="inner-wrapper__body">
+                    <div asp-validation-summary="ModelOnly"></div>
                     <form class="auth-form" method="post" asp-action="Login" asp-controller="Account">
                         <a href="https://atu.edu.kz/" class="auth-form__logo">
                             <svg viewBox="0 0 65 19">
@@ -20,12 +21,9 @@
 
                         <h1 class="auth-form__heading">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Добро пожаловать назад</font>
+                                <font style="vertical-align: inherit;">Добро пожаловать</font>
                             </font>
                         </h1>
-
-                        <input type="hidden" name="_formtoken" value="fa1e3dbfb774dadc911f6646e70e15dc1bcb5d6c478357e10bcebab07ce12e7c2abe2cd8705100ea">
-
 
                         <div class="form-group">
                             <label class="screenreader-only">
@@ -33,7 +31,7 @@
                                     <font style="vertical-align: inherit;">Имя пользователя</font>
                                 </font>
                             </label>
-                            <input class="form-control form-control--stacked form-control--rounded-top" name="username" id="username" type="text" required="" title="Имя пользователя" placeholder="Имя пользователя" autocomplete="username" autofocus="">
+                            <input asp-for="EmailAndUserName" class="form-control form-control--stacked form-control--rounded-top" id="username" type="text" title="Имя пользователя" placeholder="Имя пользователя">
                         </div>
 
                         <div class="form-group">
@@ -42,12 +40,13 @@
                                     <font style="vertical-align: inherit;">Пароль</font>
                                 </font>
                             </label>
-                            <input class="form-control form-control--rounded-bottom" name="password" id="password" type="password" required="" title="Пароль" placeholder="Пароль" autocomplete="current-password">
-                        </div>
-
+                            <input asp-for="Password" class="form-control form-control--rounded-bottom" id="password" type="password" required="" title="Пароль" placeholder="Пароль" autocomplete="current-password">
+                            <span asp-validation-for="Password"></span>
+                            </div>
+                            
                         <div class="field-group">
                             <label class="checkbox">
-                                <input name="autologin" id="autologin" type="checkbox" value="1" checked="">
+                                <input asp-for="Remember" id="autologin" type="checkbox"  checked="">
                                 <b class="checkbox__button"></b>
                                 <span>
                                     <font style="vertical-align: inherit;">
@@ -56,7 +55,7 @@
                                 </span>
                             </label>
 
-                            <a href="https://www.mollie.com/dashboard/passwordrecovery?lang=en" class="auth-form__forgot-password">
+                            <a href="#" class="auth-form__forgot-password">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">Забыли Ваш пароль?</font>
                                 </font>
@@ -76,7 +75,7 @@
                                         Еще нет аккаунта?
                                     </font>
                                 </font>
-                                <a href="https://www.mollie.com/dashboard/signup?lang=en">
+                                <a asp-action="Regist" asp-controller="Account">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Подписаться</font>
                                     </font>
@@ -90,107 +89,11 @@
         </div>
     </div>
 
-    <script async="" src="//www.google-analytics.com/analytics.js"></script><script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-8558488-2', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'forceSSL', true);
-    ga('require', 'displayfeatures');
-
-    
-    
-        ga(function (tracker) {
-        var originalSendTask = tracker.get('sendHitTask');
-
-        tracker.set('sendHitTask', function (model) {
-            try {
-                var hitPayload = model.get('hitPayload');
-                var hitType = model.get('hitType');
-                var nonInteraction = model.get('nonInteraction');
-                var cd1Param = '&cd1=';
-
-                                if (nonInteraction !== true && (hitType === 'pageview' || hitType === 'event')) {
-                    _refreshSessionTypeCookie();
-                }
-
-                                if (hitPayload.indexOf(cd1Param) === -1) {
-                    var sessionType = _getSessionTypeCookie() === 'signup' ? 'Signup' : 'Authenticated';
-                    if (!hitPayload.indexOf(cd1Param) > -1) {
-                        hitPayload = hitPayload + cd1Param + sessionType;
-                        model.set('hitPayload', hitPayload, true);
-                    }
-                }
-            } finally {
-                                originalSendTask(model);
-            }
-        });
-    });
-
-        function _refreshSessionTypeCookie(value) {
-        if (value !== 'signup') {
-                        value = _getSessionTypeCookie() === 'signup' ? 'signup' : 'active';
-        }
-        var d = new Date();
-        d.setTime(d.getTime() + 1000 * 60 * 30);
-        document.cookie = 'm_session_type=' + value + '; expires=' + d.toUTCString() + '; path=/; domain=' + '.mollie.com';
-    }
-
-    function _getSessionTypeCookie() {
-        var match = document.cookie.match('m_session_type=([^;]*)');
-        return match && match[1];
-    }
-
-    
-            ga('send', 'pageview');
-    </script>
-    <img height="0" width="0" style="display:none" src="https://www.facebook.com/tr?id=1706907912915336&amp;ev=PageView">
-
-    <script src="/dist/auth.ed0e1265d12e5be6c887.js"></script>
-    <div id="goog-gt-tt" class="skiptranslate" dir="ltr">
-        <div style="padding: 8px;">
-            <div>
-                <div class="logo">
-                    <img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Переводчик">
-                </div>
-            </div>
-        </div>
-        <div class="top" style="padding: 8px; float: left; width: 100%;">
-            <h1 class="title gray">Исходный текст</h1>
-        </div>
-        <div class="middle" style="padding: 8px;">
-            <div class="original-text"></div>
-        </div>
-        <div class="bottom" style="padding: 8px;">
-            <div class="activity-links">
-                <span class="activity-link">Предложить лучший вариант перевода</span><span class="activity-link"></span>
-            </div>
-            <div class="started-activity-container">
-                <hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;">
-                <div class="activity-root"></div>
-            </div>
-        </div>
-        <div class="status-message" style="display: none;"></div>
-    </div>
 
 
-    <div class="goog-te-spinner-pos">
-        <div class="goog-te-spinner-animation">
-            <svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66">
-                <circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-            </svg>
-        </div>
-    </div>
+
+
+  
 </div>
 
 
