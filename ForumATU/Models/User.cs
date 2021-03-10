@@ -70,5 +70,21 @@ namespace ForumATU.Models
         }
         
         #endregion
+
+        /// <summary>
+        /// Данный метод обновляет поля текущего экземпляра на UserData (model)
+        /// </summary>
+        /// <param name="model">Request typeof(UserData)</param>
+        public void Edit(UserData model)
+        {
+            Name = model.Name;
+            Surname = model.Surname;
+            DateBirth = model.DateBirth;
+            Faculty = model.Faculty;
+            Specialty = model.Specialty;
+            Course = model.Course;
+            Status = model.Status;
+            Gender = model.Gender;
+        }
     }
 }

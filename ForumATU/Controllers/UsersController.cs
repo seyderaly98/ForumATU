@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using ForumATU.Models;
 using ForumATU.Models.Data;
@@ -36,11 +37,34 @@ namespace ForumATU.Controllers
         [ActionName("Index")]
         public async Task<IActionResult> UserEdit(UserData model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                
+                /// Валидация request
+                if (ModelState.IsValid)                                                                  
+                {       
+                    // Получаем Id авторизованного пользователя 
+                    var userId = _userManager.GetUserId(User);       
+                    // Получаем экземпляр самого пользовтеля
+                    var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == userId);                 
+                    if (user != null) // user не должно быть null (страховка)                            
+                    {         
+                        // Редактируем даные пользователя. В данном случае используем метод Edit класса User
+                        user.Edit(model);    
+                        /// Обновляем Db
+                        await _userManager.UpdateAsync(user);
+                        /// Переадресуем на Get Index
+                        return RedirectToAction("Index");                                                       
+                    }    
+                    /// Если Пользовтель не найден (такого не должно быть) возвращаем статус кода 404
+                    return NotFound();                                                                   
+                }    
+                /// Если Request (model) не проходит валидацию, тогда возвращаем ошибку валидации
+                return View(model);                                                                      
             }
-            return View(model);
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
