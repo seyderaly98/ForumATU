@@ -47,6 +47,9 @@ namespace ForumATU.ViewModels
         public string AvatarPath { get; set; }
 
         public IFormFile File { get; set; }
+
+        public string Group { get; set; }
+        public string AboutMe { get; set; }
         
         
         #endregion
@@ -67,6 +70,8 @@ namespace ForumATU.ViewModels
             Status = user.Status;
             Gender = user.Gender;
             AvatarPath = user.AvatarPath;
+            Group = user.Group;
+            AboutMe = user.AboutMe;
         }
         
 

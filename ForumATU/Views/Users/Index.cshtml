@@ -99,11 +99,11 @@
 
 <div class="mainContentBlock section sectionMain insideSidebar">
 	
-	<form method="post" asp-action="Index" asp-controller="Users" class="xenForm personalDetailsForm AutoValidator">
-		
+	<form class="xenForm personalDetailsForm AutoValidator">
+
 		<dl class="ctrlUnit">
 			<dt>
-				<label style="font-weight: normal"  for="ctrl_status">Сообщение статуса:</label>
+				<label style="font-weight: normal" for="ctrl_status">Сообщение статуса:</label>
 			</dt>
 			<dd>
 				<input name="status" class="textCtrl StatusEditor UserTagger Elastic OptOut">
@@ -113,6 +113,9 @@
 				</div>
 			</dd>
 		</dl>
+	</form>
+	
+	<form method="post" asp-action="Index" asp-controller="Users" class="xenForm personalDetailsForm AutoValidator">
 		
 		<fieldset>
 			<dl class="ctrlUnit avatarEditor">
@@ -127,58 +130,68 @@
 				</dd>
 			</dl>
 		</fieldset>
-		
+
 		<fieldset>
 
 		</fieldset>
-		<dl class="ctrlUnit">
-			<dt><label style="font-weight: normal"  asp-for="UserName">Логин:</label></dt>
+		<dl class="ctrlUnit" style="margin-bottom: 10px;">
+			<dt><label style="font-weight: normal" asp-for="UserName">Логин:</label></dt>
 			<dd>
-				<input type="text" asp-for="UserName"  disabled class="textCtrl AutoComplete" id="ctrl_users" >
+				<input type="text" asp-for="UserName" style="background-color: rgb(233 236 239)" disabled class="textCtrl AutoComplete ">
+				<p class="explain">Чтобы людям было проще находить ваш аккаунт, используйте имя, под которым вас знают: ваше имя и фамилию, никнейм или название компании.
+					<br><br>Изменить имя можно не более двух раз в течение 14 дней.</p>
+			</dd>
+		</dl>
+		<dl class="ctrlUnit ctrlUnit-my">
+			<dt><label style="font-weight: normal"></label></dt>
+			<dd>
+				<p class="explain">
+					<span class="ctrlUnit-my-span">Личная информация</span> <br>
+					Укажите личную информацию, даже если аккаунт будет использоваться для компании, домашнего животного или в других целях. Эти сведения не будут показываться в вашем общедоступном профиле.</p>
 			</dd>
 		</dl>
 		<dl class="ctrlUnit">
-			<dt><label style="font-weight: normal"  asp-for="Email">E-mail:</label></dt>
-			<dd>
-				<input type="email" asp-for="Email"  disabled class="textCtrl AutoComplete" id="ctrl_users" >
+			<dt><label style="font-weight: normal" asp-for="Email">E-mail:</label></dt>
+			<dd >
+				<input type="email" asp-for="Email" style="background-color: rgb(233 236 239)" disabled class="textCtrl AutoComplete ">
 			</dd>
-		</dl>
+		</dl >
 
 		<dl class="ctrlUnit">
-			<dt><label style="font-weight: normal"  asp-for="Name">Имя:</label></dt>
+			<dt><label style="font-weight: normal" asp-for="Name">Имя:</label></dt>
 			<dd>
-				<input type="text" asp-for="Name"  class="textCtrl AutoComplete" id="ctrl_users" >
+				<input type="text" asp-for="Name" class="textCtrl AutoComplete" id="ctrl_users">
 				<span asp-validation-for="Name"></span>
 			</dd>
 		</dl>
 		<dl class="ctrlUnit">
-			<dt><label style="font-weight: normal"  asp-for="Surname">Фамилия:</label></dt>
+			<dt><label style="font-weight: normal" asp-for="Surname">Фамилия:</label></dt>
 			<dd>
-				<input type="text" asp-for="Surname"   class="textCtrl AutoComplete"  >
+				<input type="text" asp-for="Surname" class="textCtrl AutoComplete">
 				<span asp-validation-for="Surname"></span>
 			</dd>
 		</dl>
 		<dl class="ctrlUnit">
-			<dt><label style="font-weight: normal"  asp-for="DateBirth">Дата рождения:</label></dt>
+			<dt><label style="font-weight: normal" asp-for="DateBirth">Дата рождения:</label></dt>
 			<dd>
-				<input type="date" asp-for="DateBirth"   class="textCtrl AutoComplete"  >
+				<input type="date" asp-for="DateBirth" class="textCtrl AutoComplete">
 				<span asp-validation-for="DateBirth"></span>
 			</dd>
 		</dl>
-		<dl class="ctrlUnit">
+		<dl class="ctrlUnit" style="margin-bottom: 35px;">
 			<dt>
 				<label style="font-weight: normal" asp-for="Gender">Пол:</label>
 			</dt>
 			<dd>
 				<select asp-for="Gender" class="textCtrl" id="ctrl_language_id">
-					<option value="@Gender.None" >не указано...</option>
+					<option value="@Gender.None">не указано...</option>
 					<option value="@Gender.Man">Мужской</option>
 					<option value="@Gender.Woman">Женский</option>
 				</select>
 				<span asp-validation-for="Gender"></span>
 			</dd>
 		</dl>
-		
+
 		<dl class="ctrlUnit">
 			<dt>
 				<label style="font-weight: normal" asp-for="Faculty">Факультет:</label>
@@ -194,28 +207,56 @@
 				<span asp-validation-for="Faculty"></span>
 			</dd>
 		</dl>
-				<dl class="ctrlUnit">
-        			<dt>
-        				<label style="font-weight: normal" asp-for="Course">Курс:</label>
-        			</dt>
-        			<dd>
-	                    <select asp-for="Course" class="textCtrl" id="ctrl_language_id">
-		                    <option value="1" selected="selected">1</option>
-		                    <option value="2">2</option>
-		                    <option value="3">3</option>
-		                    <option value="4">4</option>
-		                    <option value="5">5</option>
-	                    </select>
-	                    <span asp-validation-for="Course"></span>
-                    </dd>
-        		</dl>
+		<dl class="ctrlUnit">
+			<dt>
+				<label style="font-weight: normal" asp-for="Specialty">Специальность:</label>
+			</dt>
+			<dd>
+				<select asp-for="Specialty" class="textCtrl">
+					<option value="ВТиПО">ВТиПО</option>
+				</select>
+				<span asp-validation-for="Faculty"></span>
+			</dd>
+		</dl>
+		<dl class="ctrlUnit">
+			<dt><label style="font-weight: normal" asp-for="Group">Группа:</label></dt>
+			<dd>
+				<input type="text" asp-for="Group" class="textCtrl AutoComplete">
+				<span asp-validation-for="Group"></span>
+			</dd>
+		</dl>
 
+		<dl class="ctrlUnit" style="margin-bottom: 35px;">
+			<dt>
+				<label style="font-weight: normal" asp-for="Course">Курс:</label>
+			</dt>
+			<dd>
+				<select asp-for="Course" class="textCtrl" id="ctrl_language_id">
+					<option value="1" selected="selected">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<span asp-validation-for="Course"></span>
+			</dd>
+		</dl>
+
+		<dl class="ctrlUnit" style="margin-bottom: 20px;!important;">
+			<dt>
+				<label style="font-weight: normal" asp-for="AboutMe">О Себе:</label>
+			</dt>
+			<dd>
+				<textarea  rows="2" asp-for="AboutMe" placeholder="#HelloWorld" cols="60" autofocus="autofocus" class="textCtrl StatusEditor UserTagger Elastic OptOut" ></textarea>
+				<span asp-validation-for="AboutMe"></span>
+			</dd>
+		</dl>
 
 
 		<dl class="ctrlUnit submitUnit">
 			<dt></dt>
-			<dd>
-				<input type="submit"  value="Сохранить изменения" accesskey="s" class="button primary">
+			<dd style="text-align: end">
+				<input type="submit" value="Сохранить изменения" accesskey="s" class="button primary">
 			</dd>
 		</dl>
 

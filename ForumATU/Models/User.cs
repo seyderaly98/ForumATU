@@ -54,6 +54,8 @@ namespace ForumATU.Models
         public string Status { get; set; }
         public Gender Gender { get; set; }
         public string AvatarPath { get; set; }
+        public string Group{ get; set; }
+        public string AboutMe { get; set; }
 
         
         #region Конструктор
@@ -85,6 +87,8 @@ namespace ForumATU.Models
             Course = model.Course;
             Status = model.Status;
             Gender = model.Gender;
+            Group = model.Group;
+            AboutMe = model.AboutMe;
         }
     }
 }
