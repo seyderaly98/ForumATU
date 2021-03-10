@@ -90,5 +90,6 @@ namespace ForumATU.Models
             Group = model.Group;
             AboutMe = model.AboutMe;
         }
+        
     }
 }
