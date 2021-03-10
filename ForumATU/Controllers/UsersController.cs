@@ -32,7 +32,7 @@ namespace ForumATU.Controllers
             var user =await _db.Users.FirstOrDefaultAsync(u => u.Id == userId);
             return View(new UserData(user));
         }
-
+                            
         [HttpPost]
         [ActionName("Index")]
         public async Task<IActionResult> UserEdit(UserData model)
