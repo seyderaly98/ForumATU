@@ -44,6 +44,7 @@ namespace ForumATU.Controllers
             return View();
         }
         
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> Login(Login model)
         {
@@ -74,6 +75,7 @@ namespace ForumATU.Controllers
             return View();
         }
         
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> Regist(Register model)
         {
@@ -94,6 +96,7 @@ namespace ForumATU.Controllers
             return View(model);
         }
         
+        [ValidateAntiForgeryToken]
         [Authorize]
         public async Task<IActionResult> Logout()
         {

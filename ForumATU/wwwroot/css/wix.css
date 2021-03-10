@@ -1,6 +1,6 @@
-﻿@media (min-width: 1366px) {
+﻿@media (min-width: 1900px) {
     .ng-isolate-scope{
-        margin-top: 0px;
+        margin-top: 0px;!important;
     }
 }
 

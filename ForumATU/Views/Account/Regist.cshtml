@@ -13,7 +13,7 @@
             <img alt="Wix" class="wix-logo ng-scope" ng-if="$ctrl.showWixLogo()" relative-src="images/wix-logo.svg" src="/images/Logo/wix-logo.png">
         </div>
 
-        <signup ng-if="$ctrl.getContext() === 'signup'" class="ng-scope ng-isolate-scope">
+        <signup ng-if="$ctrl.getContext() === 'signup'" class="ng-scope ng-isolate-scope" style=" margin-top: 0px;">
             <div ng-include="$ctrl.userDeviceType.isMobile() ? 'views/mobile/signup.html' : 'views/desktop/signup.html'" class="ng-scope">
                 <div asp-validation-summary="ModelOnly"></div>
                 <form class="signup ng-pristine ng-scope ng-valid-email ng-invalid ng-invalid-required ng-valid-match ng-valid-minlength" asp-action="Regist" asp-controller="Account" method="post">

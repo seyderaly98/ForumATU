@@ -1,6 +1,6 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using ForumATU.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -30,6 +30,4 @@ namespace ForumATU.ViewModels
         [MinLength(3,ErrorMessage = "Пароль должен содержать не менее 8 символов.")]
         public string ConfirmPassword { get; set; }
     }
-
-   
 }
