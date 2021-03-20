@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ForumATU.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -25,10 +26,6 @@ namespace ForumATU.Models.Data
             base.OnModelCreating(builder);
             builder.Entity<User>().HasData(user);
 
-            Statistics statistics = new Statistics(){UserId = user.Id};
-            base.OnModelCreating(builder);
-            builder.Entity<Statistics>().HasData(statistics);
-            
             List<ItemEvent> itemEvents = new List<ItemEvent>()
             {
                 new ItemEvent(){Id = 1,Name = "Кейсы и новости",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
@@ -64,6 +61,10 @@ namespace ForumATU.Models.Data
             };
             base.OnModelCreating(builder);
             builder.Entity<TopicEvent>().HasData(topicEvents);
+            
+            Statistics _statistics = new Statistics(){Id = 1 ,UserId = "2d8e581a-3813-44c2-86a4-4d779034541d",Topic = (itemEvents.Count + topicEvents.Count),Users = 1};
+            base.OnModelCreating(builder);
+            builder.Entity<Statistics>().HasData(_statistics);
 
         }
     }

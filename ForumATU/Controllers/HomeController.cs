@@ -29,6 +29,7 @@ namespace ForumATU.Controllers
         {
             var itemEvents = _db.ItemEvents.Include(i=>i.Topics).ThenInclude(t =>t.Author).ToList();
             ViewBag.User = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
+            ViewBag.Statistics = await _db.Statistics.Include(u => u.User).FirstOrDefaultAsync();
             return View(itemEvents);
         }
 

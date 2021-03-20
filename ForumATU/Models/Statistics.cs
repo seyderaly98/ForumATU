@@ -24,15 +24,15 @@ namespace ForumATU.Models.Data
         /// <summary>
         /// Новы пользователь
         /// </summary>
-        public string User { get; set; }
+        public User User { get; set; }
 
         public void Update(ForumContext _db)
         {
             Topic = _db.Topics.Count();
             Topic += _db.TopicEvents.Count();
             Topic += _db.ItemEvents.Count();
-
             Message = _db.Messages.Count();
+            Users = _db.Users.Count();
             _db.Statistics.Update(this);
         }
     }
