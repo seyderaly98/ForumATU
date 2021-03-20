@@ -61,7 +61,11 @@ namespace ForumATU.Models
         public string AboutMe { get;  set; }
 
         public DateTime CrateDate { get;} = DateTime.Now;
-        public DateTime ChangeDate { get; private set; } 
+        public DateTime ChangeDate { get; private set; }
+        public double Rating { get;  }
+        public int Like { get;  }
+        public int MessageNumber { get; set; }
+        public int NewMessageNumber { get; set; }
 
         [NotMapped]
         private Random Random = new Random();

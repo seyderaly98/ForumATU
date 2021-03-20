@@ -46,9 +46,9 @@ namespace ForumATU.Models.Data
                 new TopicEvent(){Id = 6,ItemEventId = 2,Name = "Новое (новые версии, обновления, новости)",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 new TopicEvent(){Id = 7,ItemEventId = 2,Name = "Как перейти на грант",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 
-                new TopicEvent(){Id = 8,ItemEventId = 3,Name = "Факультет Инжиниринга и Информационных Технологий",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 9,ItemEventId = 3,Name = "Факультет Легкой Промышленности и Дизайна",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 10,ItemEventId = 3,Name = "Факультет Пищевых Производств",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 8,ItemEventId = 3,Name = "Факультет инжиниринга и информационных технологий",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 9,ItemEventId = 3,Name = "Факультет легкой промышленности и дизайна",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 10,ItemEventId = 3,Name = "Факультет пищевых производств",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 new TopicEvent(){Id = 11,ItemEventId = 3,Name = "Факультет экономики и бизнеса",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 new TopicEvent(){Id = 12,ItemEventId = 3,Name = "Факультет дистанционного обучения",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 

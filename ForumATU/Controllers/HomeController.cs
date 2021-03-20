@@ -25,9 +25,10 @@ namespace ForumATU.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var itemEvents = _db.ItemEvents.Include(i=>i.Topics).ThenInclude(t =>t.Author).ToList();
+            ViewBag.User = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
             return View(itemEvents);
         }
 

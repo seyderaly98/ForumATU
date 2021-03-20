@@ -90,15 +90,16 @@
                     <div class="sidebar">
                         @if (User.Identity.IsAuthenticated)
                         {
+                            
                             <div class="section visitorPanel">
                                 <div class="secondaryContent">
                                     <a href="#" class="avatar Av1913m" data-avatarhtml="true"><img src="/images/img/avatar_non.png" width="96" height="96" alt=""></a>
                                     <div class="visitorText">
-                                        <h2><span class="muted">Вы вошли как:</span> <a class="username NoOverlay" asp-action="Index" asp-controller="Users">@User.Identity.Name</a></h2>
+                                        <h2><span class="muted">Вы вошли как:</span> <a class="username NoOverlay" asp-action="Index" asp-controller="Users">@ViewBag.User.Name</a></h2>
                                         <div class="stats">
-                                            <dl class="pairsJustified"><dt>Сообщения:</dt> <dd>12</dd></dl>
-                                            <dl class="pairsJustified"><dt>Симпатии:</dt> <dd>500</dd></dl>
-                                            <dl class="pairsJustified"><dt>Баллы:</dt> <dd>1000</dd></dl>
+                                            <dl class="pairsJustified"><dt style="font-weight: normal">Сообщения:</dt> <dd>@ViewBag.User.MessageNumber</dd></dl>
+                                            <dl class="pairsJustified"><dt style="font-weight: normal">Симпатии:</dt> <dd>@ViewBag.User.Like</dd></dl>
+                                            <dl class="pairsJustified"><dt style="font-weight: normal">Рейтинг:</dt> <dd>@ViewBag.User.Rating</dd></dl>
 				
                                         </div>
 			
@@ -175,10 +176,10 @@
 
                             </h3>
                             <ul class="useful_links">
-                                <li><a class="knowledge_base" href="https://www.elma-bpm.ru/kb/"><span>База знаний</span></a></li>
-                                <li><a class="help" href="https://www.elma-bpm.ru/kb/help/"><span>Справка</span></a></li>
-                                <li><a class="blog" href="https://www.elma-bpm.ru/journal/"><span>Журнал</span></a></li>
-                                <li><a class="video" href="https://www.elma-bpm.ru/video/"><span>Видео</span></a></li>
+                                <li><a class="knowledge_base" href="#"><span style="font-weight: normal">База знаний</span></a></li>
+                                <li><a class="help" href="https://register.atu.kz/ru_RU/%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d1%8c%d0%bd%d1%8b%d0%b9-%d0%b4%d0%b5%d0%ba%d0%b0%d0%bd%d0%b0%d1%82/"><span style="font-weight: normal">Виртуальный деканат</span></a></li>
+                                <li><a class="blog" href="https://register.atu.kz/ru_RU/%d0%b2%d0%b8%d1%80%d1%82%d1%83%d0%b0%d0%bb%d1%8c%d0%bd%d1%8b%d0%b9-%d0%be%d1%84%d0%b8%d1%81-%d1%80%d0%b5%d0%b3%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d0%be%d1%80%d0%b0/"><span style="font-weight: normal">Офис-регистратора</span></a></li>
+                                <li><a class="video" href="#"><span style="font-weight: normal">Видео</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -186,9 +187,7 @@
                     <div class="section widget-single">
                         <div class="secondaryContent widget sidebar-widget WidgetFramework_WidgetRenderer_Users" id="widget-14">
                             <h3>
-
                                 Топ пользователей
-
                             </h3>
                             <ul class="followedOnline">
                                 <li class="Tooltip user-49">
@@ -218,14 +217,14 @@
 
                             </h3>
                             <div class="pairsJustified">
-                                <dl class="discussionCount"><dt>Темы:</dt>
+                                <dl class="discussionCount"><dt style="font-weight: normal">Темы:</dt>
                                     <dd>954</dd></dl>
-                                <dl class="messageCount"><dt>Сообщения:</dt>
+                                <dl class="messageCount"><dt style="font-weight: normal">Сообщения:</dt>
                                     <dd>3.355</dd></dl>
-                                <dl class="memberCount"><dt>Пользователи:</dt>
+                                <dl class="memberCount"><dt style="font-weight: normal">Пользователи:</dt>
                                     <dd>1.882</dd></dl>
-                                <dl><dt>Новый пользователь:</dt>
-                                    <dd><a href="members/1910/" class="username" dir="auto">Dmitriy Smirnov</a></dd></dl>
+                                <dl><dt style="font-weight: normal">Новый пользователь:</dt>
+                                    <dd><a href="#" class="username" >Dmitriy Smirnov</a></dd></dl>
                                 <!-- slot: forum_stats_extra -->
                             </div>
                         </div>
