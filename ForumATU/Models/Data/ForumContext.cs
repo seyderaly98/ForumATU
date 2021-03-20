@@ -12,6 +12,7 @@ namespace ForumATU.Models.Data
         public DbSet<ItemEvent> ItemEvents { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Statistics> Statistics { get; set; }
         
         public ForumContext(DbContextOptions<ForumContext> options) : base(options) {}
         protected override void OnModelCreating(ModelBuilder builder)
@@ -23,6 +24,10 @@ namespace ForumATU.Models.Data
             };
             base.OnModelCreating(builder);
             builder.Entity<User>().HasData(user);
+
+            Statistics statistics = new Statistics(){UserId = user.Id};
+            base.OnModelCreating(builder);
+            builder.Entity<Statistics>().HasData(statistics);
             
             List<ItemEvent> itemEvents = new List<ItemEvent>()
             {
