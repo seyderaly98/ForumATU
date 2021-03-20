@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace ForumATU.Models
 {
+    #region enum
     public enum Faculty
     {
         /// <summary>
@@ -34,7 +36,8 @@ namespace ForumATU.Models
         Man,
         Woman
     }
-    public class User : IdentityUser
+    #endregion
+    public sealed class User : IdentityUser
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -55,13 +58,16 @@ namespace ForumATU.Models
         public Gender Gender { get; set; }
         public string AvatarPath { get; set; }
         public string Group{ get; set; }
-        public string AboutMe { get; set; }
+        public string AboutMe { get;  set; }
 
+        [NotMapped]
+        private Random Random = new Random();
         
+
         #region Конструктор
         public User()
         {
-            AvatarPath = "/images/img/avatar_non.png";
+            AvatarPath = $"/images/avatar/{Random.Next(1,10)}.png";
             Status = "Online";
             Gender = Gender.None;
         }
@@ -69,6 +75,9 @@ namespace ForumATU.Models
         {
             Email = model.Email;
             UserName = model.UserName.ToLower();
+            AvatarPath = $"/images/avatar/{Random.Next(1,10)}.png";
+            Status = "Online";
+            Gender = Gender.None;
         }
         
         #endregion
@@ -85,7 +94,6 @@ namespace ForumATU.Models
             Faculty = model.Faculty;
             Specialty = model.Specialty;
             Course = model.Course;
-            Status = model.Status;
             Gender = model.Gender;
             Group = model.Group;
             AboutMe = model.AboutMe;
