@@ -96,7 +96,7 @@ namespace ForumATU.Controllers
             return View(model);
         }
         
-        [ValidateAntiForgeryToken]
+        
         [Authorize]
         public async Task<IActionResult> Logout()
         {

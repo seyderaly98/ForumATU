@@ -9,11 +9,6 @@
 <div id="content" class="content account_personal_details">
 <div class="pageWidth">
 <div class="pageContent">
-<!-- main content area -->
-<!--[if lt IE 8]>
-	<p class="importantMessage">Вы используете устаревший браузер. Этот и другие сайты могут отображаться в нём некорректно.<br />Необходимо обновить браузер или попробовать использовать <a href="https://www.google.com/chrome/browser/" target="_blank">другой</a>.</p>
-<![endif]-->
-<!-- h1 title, description -->
 <div class="titleBar">
 	<h1>Персональная информация</h1>
 </div>
@@ -99,17 +94,17 @@
 
 <div class="mainContentBlock section sectionMain insideSidebar">
 	
-	<form class="xenForm personalDetailsForm AutoValidator">
+	<form onsubmit="updateStatus(event);" method="post" class="xenForm personalDetailsForm AutoValidator" id="formStatus">
 
 		<dl class="ctrlUnit">
 			<dt>
-				<label style="font-weight: normal" for="ctrl_status">Сообщение статуса:</label>
+				<label style="font-weight: normal" >Сообщение статуса:</label>
 			</dt>
 			<dd>
-				<input name="status" class="textCtrl StatusEditor UserTagger Elastic OptOut">
-				<span id="statusEditorCounter" title="Осталось символов" class="statusEditorCounter">140</span>
+				<input type="text" maxlength="140" name="status" id="input-user-status" placeholder=" Для сохранения нажмите клавишу enter" class="textCtrl StatusEditor UserTagger Elastic OptOut">
+				<span id="statusEditorCounter" class="statusEditorCounter">140</span>
 				<div class="explain">
-					<h3 class="statusHeader">Текущий статус:</h3> <span class="CurrentStatus">@Model.Status</span><!--TODO: clearing-->
+					<h3 class="statusHeader">Текущий статус:</h3> <span id="currentStatus" class="CurrentStatus">@Model.Status</span><!--TODO: clearing-->
 				</div>
 			</dd>
 		</dl>
@@ -273,4 +268,30 @@
 @section Scripts
 {
 	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+	
+	<script> 
+	 function updateStatus(event) {
+                event.preventDefault();
+                    $.ajax({
+                        url: '@Url.Action("UpdateStatus", "Users")',
+                        data: $('#formStatus').serialize(),
+                        type: 'POST',
+                        success: function (data) {
+                            if (data === true) {
+                            	$('#currentStatus').text($('#input-user-status').val())
+                            	$('#input-user-status').val('');
+          
+                            }
+                            else {
+                                if (data === false) {
+                                    alert("Статус не сохранен")
+                                }
+                                else {
+                                    alert(data);
+                                }
+                            }
+                        }
+                    })
+            }
+	</script>
 }
