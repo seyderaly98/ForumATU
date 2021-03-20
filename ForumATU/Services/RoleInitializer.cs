@@ -31,7 +31,7 @@ namespace ForumATU.Services
             {
                 User admin = new User
                 {
-                    Id = "2d8e581a-3813-44c2-86a4-4d779034541d",
+                    Id = "1",
                     Email = adminEmail,
                     EmailConfirmed = true,
                     UserName = "admin",
