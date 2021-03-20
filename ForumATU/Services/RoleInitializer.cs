@@ -31,11 +31,12 @@ namespace ForumATU.Services
             {
                 User admin = new User
                 {
+                    Id = "2d8e581a-3813-44c2-86a4-4d779034541d",
                     Email = adminEmail,
                     EmailConfirmed = true,
                     UserName = "admin",
-                    Name = "SuperAdmin",
-                    Surname = "Adm"
+                    Name = "Admin",
+                    Surname = string.Empty
                 };
                 var result = await userManager.CreateAsync(admin, adminPassword);
                 if (result.Succeeded)
