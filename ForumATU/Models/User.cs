@@ -60,6 +60,9 @@ namespace ForumATU.Models
         public string Group{ get; set; }
         public string AboutMe { get;  set; }
 
+        public DateTime CrateDate { get;} = DateTime.Now;
+        public DateTime ChangeDate { get; private set; } 
+
         [NotMapped]
         private Random Random = new Random();
         
@@ -97,6 +100,7 @@ namespace ForumATU.Models
             Gender = model.Gender;
             Group = model.Group;
             AboutMe = model.AboutMe;
+            ChangeDate = DateTime.Now;
         }
         
     }
