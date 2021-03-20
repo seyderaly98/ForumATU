@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<ItemEvent>
+
+@{
     ViewData["Title"] = "учебное пространство";
 }
     
@@ -36,413 +38,47 @@
                         <!-- main template -->
 
                         <ol class="nodeList sectionMain" id="forums">
-
-                            <li class="node category level_1 node_60" id="60">
-
-                                <div class="nodeInfo categoryNodeInfo categoryStrip">
-
-                                    <div class="categoryText">
-                                        <h3 class="nodeTitle"><a href="categories/60/">Кейсы и новости</a></h3>
+                            @foreach (var itemEvent in Model)
+                            {
+                                <li class="node category level_1 node_60" id="60">
+                                    <div class="nodeInfo categoryNodeInfo categoryStrip">
+                                        <div class="categoryText">
+                                            <h3 class="nodeTitle">
+                                                <a  href="">@itemEvent.Name</a>
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
-
-
-                                <ol class="nodeList">
-
-                                    <li class="node forum level_2  node_40">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/40/" data-description="#nodeDescription-40">Примеры реальных проектов</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>3</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>33</dd></dl>
+                                    <ol class="nodeList">
+                                        @foreach (var topic in itemEvent.Topics)
+                                        {
+                                            <li class="node forum level_2  node_40">
+                                                <div class="nodeInfo forumNodeInfo primaryContent unread">
+                                                    <div class="nodeText">
+                                                        <h3 class="nodeTitle">
+                                                            <a href="" style="font-weight: normal" data-description="#nodeDescription-40">@topic.Name</a>
+                                                        </h3>
+                                                        <div class="nodeStats pairsInline">
+                                                            <dl >
+                                                                <dt style="font-weight: normal">Темы:</dt> <dd>@topic.TopicNumber</dd>
+                                                            </dl>
+                                                            <dl >
+                                                                <dt style="font-weight: normal">Сообщения:</dt> <dd>@topic.MessageNumber</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="nodeLatestMessage">
+                                                        <span class="date-last">
+                                                            <span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="6 авг 2020 в 10:10">6 авг 2020</span>
+                                                        </span>
+                                                        <a href="" class="username" >@topic.Author.Name</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="6 авг 2020 в 10:10">6 авг 2020</span></span>
-                                                <a href="members/887/" class="username" dir="auto">ahkyamov</a>
-                                            </div>
-
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_62">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/62/" data-description="#nodeDescription-62">Новые вебинары</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>3</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>7</dd></dl>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="17 июл 2018 в 09:22">17 июл 2018</span></span>
-                                                <a href="members/49/" class="username" dir="auto">pushkarev</a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_63">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/63/" data-description="#nodeDescription-63">Советы</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>3</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>7</dd></dl>
-                                                </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="9 апр 2020 в 09:00">9 апр 2020</span></span>
-                                                <a href="members/887/" class="username" dir="auto">ahkyamov</a>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-
-                                <span class="tlc"></span>
-                                <span class="trc"></span>
-                                <span class="blc"></span>
-                                <span class="brc"></span>
-                            </li>
-
-                            <li class="node category level_1 node_37" id="37">
-
-                                <div class="nodeInfo categoryNodeInfo categoryStrip">
-
-                                    <div class="categoryText">
-                                        <h3 class="nodeTitle"><a href="categories/37/">Общие вопросы</a></h3>
-                                        <blockquote class="nodeDescription baseHtml">Вопросы по использованию ELMA Community Edition. Информация про новые релизы версии. Ваши отзывы и предложения по улучшению</blockquote>
-                                    </div>
-
-                                </div>
-
-
-                                <ol class="nodeList">
-                                    <li class="node forum level_2  node_39">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/39/" data-description="#nodeDescription-39">Для чего мне ELMA</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>3</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>18</dd></dl>
-                                                </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="12 июл 2018 в 07:41">12 июл 2018</span></span>
-                                                <a href="members/642/" class="username" dir="auto">Констанция</a>
-
-                                            </div>
-
-                                        </div>
-
-                                    </li>
-
-                                    <li class="node forum level_2  node_41">
-
-
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/41/" data-description="#nodeDescription-41">Отзывы</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>1</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>9</dd></dl>
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="24 мар 2017 в 16:36">24 мар 2017</span></span>
-                                                <a href="members/45/" class="username" dir="auto">Ma100doNNt</a>
-
-                                            </div>
-
-                                        </div>
-
-                                    </li>
-
-                                    <li class="node forum level_2  node_42">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/42/" data-description="#nodeDescription-42">Новое (новые версии, обновления, новости)</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>2</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>21</dd></dl>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="13 янв 2020 в 12:39">13 янв 2020</span></span>
-                                                <a href="members/1/" class="username" dir="auto">admin</a>
-
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_43">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/43/" data-description="#nodeDescription-43">Как перейти на коммерческую</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>3</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>15</dd></dl>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="28 фев 2020 в 22:50">28 фев 2020</span></span>
-                                                <a href="members/49/" class="username" dir="auto">pushkarev</a>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                </ol>
-
-
-                                <span class="tlc"></span>
-                                <span class="trc"></span>
-                                <span class="blc"></span>
-                                <span class="brc"></span>
-                            </li>
-
-                            <li class="node category level_1 node_38" id="38">
-
-                                <div class="nodeInfo categoryNodeInfo categoryStrip">
-
-                                    <div class="categoryText">
-                                        <h3 class="nodeTitle"><a href="categories/38/">Технические вопросы</a></h3>
-                                        <blockquote class="nodeDescription baseHtml">Описание технических вопросов, возникающих при работе, и способов их решения</blockquote>
-                                    </div>
-
-                                </div>
-
-
-                                <ol class="nodeList">
-
-                                    <li class="node forum level_2  node_44">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/44/" data-description="#nodeDescription-44">С чего начать (как установить, как развернуть)</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>34</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>181</dd></dl>
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="26 май 2020 в 12:28">26 май 2020</span></span>
-                                                <a href="members/1849/" class="username" dir="auto">Александр_</a>
-
-                                            </div>
-
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_45">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/45/" data-description="#nodeDescription-45">Вопросы по функционалу</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>221</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>878</dd></dl>
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><abbr class="DateTime muted lastThreadDate" data-latest="Последнее: " data-time="1611584266" data-diff="143749" data-datestring="25 янв 2021" data-timestring="17:17" title="25 янв 2021 в 17:17">Понедельник в 17:17</abbr></span>
-                                                <a href="members/1834/" class="username" dir="auto">Turuhansky</a>
-
-                                            </div>
-
-                                        </div>
-
-                                    </li>
-
-                                    <li class="node forum level_2  node_46">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/46/" data-description="#nodeDescription-46">Разработчикам</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>263</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>1.062</dd></dl>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="20 янв 2021 в 15:07">20 янв 2021</span></span>
-                                                <a href="members/1311/" class="username" dir="auto">MikeG</a>
-
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_47">
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/47/" data-description="#nodeDescription-47">Консультантам</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>4</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>10</dd></dl>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="1 дек 2020 в 08:48">1 дек 2020</span></span>
-                                                <a href="members/464/" class="username" dir="auto">Юлия</a>
-
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_48">
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/48/" data-description="#nodeDescription-48">Проблемы/ошибки</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>213</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>880</dd></dl>
-                                                </div>
-                                            </div>
-                                            <div class="nodeLatestMessage">
-
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="18 янв 2021 в 12:22">18 янв 2021</span></span>
-                                                <a href="members/1202/" class="username" dir="auto">Sergiy</a>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-
-
-                                <span class="tlc"></span>
-                                <span class="trc"></span>
-                                <span class="blc"></span>
-                                <span class="brc"></span>
-                            </li>
-
-                            <li class="node category level_1 node_50" id="50">
-
-                                <div class="nodeInfo categoryNodeInfo categoryStrip">
-
-                                    <div class="categoryText">
-                                        <h3 class="nodeTitle"><a href="categories/50/">Специалистам, работа</a></h3>
-                                        <blockquote class="nodeDescription baseHtml">Приглашайте специалистов и специалисты предлагайтесь</blockquote>
-                                    </div>
-
-                                </div>
-
-                                <ol class="nodeList">
-
-                                    <li class="node forum level_2  node_52">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/52/" data-description="#nodeDescription-52">Специалистам, работа</a></h3>
-
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>12</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>18</dd></dl>
-                                                </div>
-                                            </div>
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="28 окт 2020 в 10:51">28 окт 2020</span></span>
-                                                <a href="members/137/" class="username" dir="auto">audita</a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="node forum level_2  node_53">
-
-                                        <div class="nodeInfo forumNodeInfo primaryContent unread">
-
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/53/" data-description="#nodeDescription-53">Вакансии</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>1</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>1</dd></dl>
-                                                </div>
-                                            </div>
-
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last"><span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="6 апр 2017 в 15:26">6 апр 2017</span></span>
-                                                <a href="members/57/" class="username" dir="auto">Миннизянов Рамиль</a>
-                                            </div>
-                                        </div>
-
-                                    </li>
-
-                                    <li class="node forum level_2  node_54">
-                                        <div class="nodeInfo forumNodeInfo primaryContent ">
-                                            <div class="nodeText">
-                                                <h3 class="nodeTitle"><a href="forums/54/" data-description="#nodeDescription-54">Резюме</a></h3>
-                                                <div class="nodeStats pairsInline">
-                                                    <dl><dt>Темы:</dt> <dd>0</dd></dl>
-                                                    <dl><dt>Сообщения:</dt> <dd>0</dd></dl>
-                                                </div>
-                                            </div>
-                                            <div class="nodeLatestMessage">
-                                                <span class="date-last">Нет сообщений</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ol>
-
-                                <span class="tlc"></span>
-                                <span class="trc"></span>
-                                <span class="blc"></span>
-                                <span class="brc"></span>
-                            </li>
+                                            </li>
+                                        }
+                                    </ol>
+
+                                </li>
+                            }
                         </ol>
                         
                     </div>
