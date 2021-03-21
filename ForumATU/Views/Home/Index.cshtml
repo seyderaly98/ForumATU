@@ -1,7 +1,7 @@
 ﻿@model List<TitleEvent>
 
 @{
-    ViewData["Title"] = "учебное пространство";
+    ViewData["Title"] = "Учебное пространство";
 }
     
 <style>
@@ -12,8 +12,6 @@
         </style>
 
     <div class="slider">
-
-
         <!-- просто картинка -->
         <div class="elma-slider-tips" style="margin-bottom:-16px;">
             <a href="#" target="_blank">
@@ -64,7 +62,7 @@
                             
                             <div class="section visitorPanel">
                                 <div class="secondaryContent">
-                                    <a href="#" class="avatar Av1913m" data-avatarhtml="true"><img src="/images/img/avatar_non.png" width="96" height="96" alt=""></a>
+                                    <a href="#" class="avatar Av1913m" data-avatarhtml="true"><img src="~/@ViewBag.User.AvatarPath" width="96" height="96" alt=""></a>
                                     <div class="visitorText">
                                         <h2><span class="muted">Вы вошли как:</span> <a class="username NoOverlay" asp-action="Index" asp-controller="Users">@ViewBag.User.UserName</a></h2>
                                         <div class="stats">
