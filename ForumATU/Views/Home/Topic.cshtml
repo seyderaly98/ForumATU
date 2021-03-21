@@ -1,0 +1,117 @@
+﻿@model TopicEvent
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div>
+
+	<div class="slider">
+
+	</div>
+
+	<div id="content" class="content forum_view">
+		<div class="pageWidth">
+			<div class="pageContent">
+				<div class="titleBar">
+					<h1>@Model.Name</h1>
+					<p id="pageDescription" class="muted baseHtml">@Model.Description</p>
+				</div>
+				<!-- main template -->
+				<div class="pageNavLinkGroup">
+					<div class="linkGroup SelectionCountContainer">
+						<a href="#" class="OverlayTrigger" data-cacheoverlay="false">Отслеживать раздел</a>
+					</div>
+				</div>
+				<div class="discussionList section sectionMain">
+					<form  class="DiscussionList InlineModForm" data-cookiename="threads" data-controls="#InlineModControls" data-imodoptions="#ModerationSelect option">
+						<table>
+							<tbody>
+							<tr class="table-heading">
+								<th></th>
+								<th colspan="2" class="threadlist-maintitle">Заголовок</th>
+								<th class="threadlist-date">Дата создания</th>
+								<th class="threadlist-replies">Ответов</th>
+								<th class="threadlist-views">Просмотров</th>
+								<th class="threadlist-lastmessage">Последнее сообщение</th>
+							</tr>
+							@if (Model.Topics is null || Model.Topics.Count == 0)
+							{
+								<tr class="no-results">
+									<td colspan="7">Пока нет ни одной темы.</td>
+								</tr>
+							}
+							else
+							{
+								foreach (var topic in Model.Topics)
+								{
+									
+									<tr id="thread-935" class="discussionListItem visible  " data-author="@topic.Author.UserName">
+										<td class="threadlist-controls">
+										</td>
+										<td class="threadlist-avatar">
+											<span class="avatarContainer">
+												<a href="#" class="avatar Av1745s" data-avatarhtml="true"><img src="@topic.Author.AvatarPath" width="36" height="36" alt="@Model.Author.UserName"></a>
+											</span>
+										</td>
+										<td class="threadlist-title">
+											<div class="titleText">
+												<h3 class="title">
+													<a href="#" title="" class="PreviewTooltip" data-previewurl="threads/935/preview">@topic.Name</a>
+												</h3>
+			
+												<div class="secondRow">
+													<div class="posterDate">
+														<a href="#" class="username" dir="auto" title="Автор темы">@topic.Author.UserName</a><span class="startDate">,
+															<a href="" class="faint"><span class="DateTime" >@topic.CrateDate.ToLongDateString()</span></a></span>
+													</div>
+													<div class="controls faint">
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="threadlist-date">
+											<span class="DateTime" title="Перейти к первому сообщению в теме">@topic.CrateDate.ToLongDateString()</span>
+										</td>
+										<td class="threadlist-replies">
+											<span>@topic.AnswerNumber</span>
+										</td>
+										<td class="threadlist-views">
+											<span>@topic.ViewsNumber</span>
+										</td>
+										<td class="threadlist-lastmessage">
+											<dl class="lastPostInfo">
+												<a href="#" class="username" >@topic.AuthorLastMessage.UserName</a>, 
+												<a href="#"  class="dateTime"><span class="DateTime" >@topic.ChangeDate.ToLongDateString()</span></a>
+											</dl>
+										</td>
+									</tr>
+								}
+							}
+							</tbody>
+						</table>
+						<input type="hidden" name="_xfToken" value="1913,1616302133,21d0bf12f4602a3cec9ef0fb014720c6be63b042">
+					</form>
+					<div id="PreviewTooltip">
+						<span class="arrow">
+							<span></span>
+						</span>
+						<div class="section">
+							<div class="primaryContent previewContent">
+								<span class="PreviewContents">Загрузка...</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div style="margin-top: 20px" class="pageNavLinkGroup afterDiscussionListHandle">
+                	<div class="linkGroup">
+	                    <a style="height: 30px" href="#" class="callToAction"><span>Создать тему</span></a>
+                    </div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

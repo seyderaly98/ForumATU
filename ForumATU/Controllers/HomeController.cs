@@ -43,6 +43,16 @@ namespace ForumATU.Controllers
             }
             return NotFound();
         }
+
+        public async Task<IActionResult> Topic(int topicEventId)
+        {
+            var topicEvent = await _db.TopicEvents.Include(t=>t.Topics).ThenInclude(t=>t.Author).FirstOrDefaultAsync(t=>t.Id == topicEventId);
+            if (topicEvent != null)
+            {
+                return View(topicEvent);
+            }
+            return NotFound();
+        }
         
     }
 }
