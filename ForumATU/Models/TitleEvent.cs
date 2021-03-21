@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using ForumATU.ViewModels;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ForumATU.Models
 {
@@ -27,6 +28,8 @@ namespace ForumATU.Models
         public string Description { get; set; }
         public virtual List<Topic> Topics { get; set; }
 
+        public string AuthorChangeId { get; set; }
+        public User AuthorChange { get; set; }
         public string AuthorId { get; set; }
         public virtual User Author { get; set; }
 
