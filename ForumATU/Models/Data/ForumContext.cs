@@ -39,24 +39,24 @@ namespace ForumATU.Models.Data
 
             List<TopicEvent> topicEvents = new List<TopicEvent>()
             {
-                new TopicEvent(){Id = 1,TitleEventId = 1,Name = "Примеры реальных проектов",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 2,TitleEventId = 1,Name = "Новые вебинары",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 3,TitleEventId = 1,Name = "Советы",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 1,TitleEventId = 1,Name = "Примеры реальных проектов",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 2,TitleEventId = 1,Name = "Новые вебинары",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 3,TitleEventId = 1,Name = "Советы",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 
-                new TopicEvent(){Id = 4,TitleEventId = 2,Name = "Для чего мне studyspace",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 5,TitleEventId = 2,Name = "Отзывы",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 6,TitleEventId = 2,Name = "Новое (новые версии, обновления, новости)",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 7,TitleEventId = 2,Name = "Как перейти на грант",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 4,TitleEventId = 2,Name = "Для чего мне studyspace",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 5,TitleEventId = 2,Name = "Отзывы",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 6,TitleEventId = 2,Name = "Новое (новые версии, обновления, новости)",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 7,TitleEventId = 2,Name = "Как перейти на грант",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 
-                new TopicEvent(){Id = 8,TitleEventId = 3,Name = "Факультет инжиниринга и информационных технологий",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 9,TitleEventId = 3,Name = "Факультет легкой промышленности и дизайна",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 10,TitleEventId = 3,Name = "Факультет пищевых производств",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 11,TitleEventId = 3,Name = "Факультет экономики и бизнеса",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 12,TitleEventId = 3,Name = "Факультет дистанционного обучения",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 8,TitleEventId = 3,Name = "Факультет инжиниринга и информационных технологий",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 9,TitleEventId = 3,Name = "Факультет легкой промышленности и дизайна",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 10,TitleEventId = 3,Name = "Факультет пищевых производств",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 11,TitleEventId = 3,Name = "Факультет экономики и бизнеса",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 12,TitleEventId = 3,Name = "Факультет дистанционного обучения",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 
-                new TopicEvent(){Id = 13,TitleEventId = 4,Name = "Специалистам, работа",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 14,TitleEventId = 4,Name = "Вакансии",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое предложение о работе"},
-                new TopicEvent(){Id = 15,TitleEventId = 4,Name = "Резюме",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое резюме или вопросы, связанные с его составлением"},
+                new TopicEvent(){Id = 13,TitleEventId = 4,Name = "Специалистам, работа",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 14,TitleEventId = 4,Name = "Вакансии",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое предложение о работе",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 15,TitleEventId = 4,Name = "Резюме",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое резюме или вопросы, связанные с его составлением",AuthorChangeId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
 
             };
             base.OnModelCreating(builder);
