@@ -23,7 +23,7 @@ namespace ForumATU.Models
         public int MessageNumber { get; set; }
         public DateTime CrateDate { get; } = DateTime.Now;
         public DateTime ChangeDate { get;  } = DateTime.Now;
-        
+        public string Description { get; set; }
         public List<Topic> Topics { get; set; }
 
         public string AuthorId { get; set; }

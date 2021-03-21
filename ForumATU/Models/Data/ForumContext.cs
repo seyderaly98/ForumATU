@@ -55,8 +55,8 @@ namespace ForumATU.Models.Data
                 new TopicEvent(){Id = 12,TitleEventId = 3,Name = "Факультет дистанционного обучения",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
                 
                 new TopicEvent(){Id = 13,TitleEventId = 4,Name = "Специалистам, работа",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 14,TitleEventId = 4,Name = "Вакансии",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
-                new TopicEvent(){Id = 15,TitleEventId = 4,Name = "Резюме",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d"},
+                new TopicEvent(){Id = 14,TitleEventId = 4,Name = "Вакансии",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое предложение о работе"},
+                new TopicEvent(){Id = 15,TitleEventId = 4,Name = "Резюме",AuthorId = "2d8e581a-3813-44c2-86a4-4d779034541d",Description = "Разместите здесь свое резюме или вопросы, связанные с его составлением"},
 
             };
             base.OnModelCreating(builder);
