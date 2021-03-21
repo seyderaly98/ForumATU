@@ -1,4 +1,4 @@
-﻿@model List<ItemEvent>
+﻿@model List<TitleEvent>
 
 @{
     ViewData["Title"] = "учебное пространство";
@@ -13,12 +13,7 @@
 
     <div class="slider">
 
-        <div class="elma-slider" style="display:none;">
-            <span class="item-type">Вебинар</span>
-            <span class="item-date">8 февраля 2018. Начало в 11:00 (мск)</span>
-            <h2 class="item-heading">Создаем инструмент для совместной работы филиальной сети</h2>
-            <a href="https://www.elma-bpm.ru/landing/customer-cases/" target="_blank" class="item-button">Участвовать бесплатно</a>
-        </div>
+
         <!-- просто картинка -->
         <div class="elma-slider-tips" style="margin-bottom:-16px;">
             <a href="#" target="_blank">
@@ -38,42 +33,20 @@
                         <!-- main template -->
 
                         <ol class="nodeList sectionMain" id="forums">
-                            @foreach (var itemEvent in Model)
+                            @foreach (var titleEvent in Model)
                             {
                                 <li class="node category level_1 node_60" id="60">
                                     <div class="nodeInfo categoryNodeInfo categoryStrip">
                                         <div class="categoryText">
                                             <h3 class="nodeTitle">
-                                                <a  href="">@itemEvent.Name</a>
+                                                <a asp-action="TitleEvent" asp-controller="Home" asp-route-titleEventId="@titleEvent.Id">@titleEvent.Name</a>
                                             </h3>
                                         </div>
                                     </div>
                                     <ol class="nodeList">
-                                        @foreach (var topic in itemEvent.Topics)
+                                        @foreach (var topicEvent in titleEvent.TopicEvents)
                                         {
-                                            <li class="node forum level_2  node_40">
-                                                <div class="nodeInfo forumNodeInfo primaryContent unread">
-                                                    <div class="nodeText">
-                                                        <h3 class="nodeTitle">
-                                                            <a href="" style="font-weight: normal" data-description="#nodeDescription-40">@topic.Name</a>
-                                                        </h3>
-                                                        <div class="nodeStats pairsInline">
-                                                            <dl >
-                                                                <dt style="font-weight: normal">Темы:</dt> <dd>@topic.TopicNumber</dd>
-                                                            </dl>
-                                                            <dl >
-                                                                <dt style="font-weight: normal">Сообщения:</dt> <dd>@topic.MessageNumber</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                    <div class="nodeLatestMessage">
-                                                        <span class="date-last">
-                                                            <span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="6 авг 2020 в 10:10">6 авг 2020</span>
-                                                        </span>
-                                                        <a href="" class="username" >@topic.Author.Name</a>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                             await  Html.RenderPartialAsync("Partial/TopicEventPartial",topicEvent);
                                         }
                                     </ol>
 

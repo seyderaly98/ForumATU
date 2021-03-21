@@ -30,7 +30,7 @@ namespace ForumATU.Models.Data
         {
             Topic = _db.Topics.Count();
             Topic += _db.TopicEvents.Count();
-            Topic += _db.ItemEvents.Count();
+            Topic += _db.TitleEvents.Count();
             Message = _db.Messages.Count();
             Users = _db.Users.Count();
             _db.Statistics.Update(this);

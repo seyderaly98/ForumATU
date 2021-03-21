@@ -1,0 +1,23 @@
+﻿@model TitleEvent
+
+
+<div>
+	<div class="slider">
+
+	</div>
+	<div id="content" class="content category_view">
+		<div class="pageWidth">
+			<div class="pageContent">
+				<div class="titleBar">
+					<h1>@Model.Name</h1>
+				</div>
+				<ol class="nodeList section sectionMain">
+					@foreach (var topicEvent in Model.TopicEvents)
+					{
+						await Html.RenderPartialAsync("Partial/TopicEventPartial",topicEvent);
+					}
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>

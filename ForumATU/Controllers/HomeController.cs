@@ -27,12 +27,22 @@ namespace ForumATU.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var itemEvents = _db.ItemEvents.Include(i=>i.Topics).ThenInclude(t =>t.Author).ToList();
+            var titleEvents = _db.TitleEvents.Include(i=>i.TopicEvents).ThenInclude(t =>t.Author).ToList();
             ViewBag.User = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
             ViewBag.Statistics = await _db.Statistics.Include(u => u.User).FirstOrDefaultAsync();
-            return View(itemEvents);
+            return View(titleEvents);
         }
 
+        [Authorize]
+        public async Task<IActionResult> TitleEvent(int titleEventId)
+        {
+            var titleEvent = await _db.TitleEvents.Include(i=>i.TopicEvents).ThenInclude(t => t.Author).FirstOrDefaultAsync(i => i.Id == titleEventId);
+            if (titleEvent != null)
+            {
+                return View(titleEvent);
+            }
+            return NotFound();
+        }
         
     }
 }

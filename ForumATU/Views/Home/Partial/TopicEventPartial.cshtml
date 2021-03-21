@@ -1,0 +1,27 @@
+﻿@model TopicEvent
+<div>
+	<li class="node forum level_2  node_40">
+		<div class="nodeInfo forumNodeInfo primaryContent unread">
+			<div class="nodeText">
+				<h3 class="nodeTitle">
+					<a href="#" data-description="#nodeDescription-40">@Model.Name</a>
+				</h3>
+				<div class="nodeStats pairsInline">
+					<dl>
+						<dt style="font-weight: normal">Темы:</dt> <dd>@Model.TopicNumber</dd>
+					</dl>
+					<dl>
+						<dt style="font-weight: normal">Сообщения:</dt> <dd>@Model.MessageNumber</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="nodeLatestMessage">
+
+				<span class="date-last">
+					<span class="DateTime muted lastThreadDate" data-latest="Последнее: " title="@Model.ChangeDate.ToUniversalTime()">@Model.ChangeDate.ToLongDateString()</span>
+				</span>
+				<a href="#" class="username">@Model.Author.Name</a>
+			</div>
+		</div>
+	</li>
+</div>
