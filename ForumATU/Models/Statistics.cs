@@ -37,5 +37,9 @@ namespace ForumATU.Models
             _db.Statistics.Update(this);
         }
 
+        public void UpdateTopic()
+        {
+            this.Topic += 1;
+        }
     }
 }

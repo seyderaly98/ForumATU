@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ForumATU.Models;
 using ForumATU.Models.Data;
+using ForumATU.Services;
 using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -75,6 +76,14 @@ namespace ForumATU.Controllers
                     string authorId = UserManager.GetUserId(User);
                     Topic topic = new Topic(model,authorId);
                     await _db.Topics.AddAsync(topic);
+                    var statistics = await _db.Statistics.FirstOrDefaultAsync();
+                    statistics.Topic += 1;
+                    var topicEvent = await _db.TopicEvents.FirstOrDefaultAsync(t => t.Id == model.TopicEventId);
+                    topicEvent.MessageNumber += 1;
+                    topicEvent.TopicNumber += 1;
+                    topicEvent.AuthorChangeId = UserManager.GetUserId(User);
+                    _db.TopicEvents.Update(topicEvent);
+                    _db.Statistics.Update(statistics);
                     await _db.SaveChangesAsync();
                     return RedirectToAction("Topic", model.TopicEventId);
                 }

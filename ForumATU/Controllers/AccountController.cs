@@ -53,12 +53,7 @@ namespace ForumATU.Controllers
                 User userAuthorizing = _db.Users.FirstOrDefault(u => u.Email == model.EmailAndUserName || u.UserName == model.EmailAndUserName);
                 if (userAuthorizing != null)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(
-                        userAuthorizing,
-                        model.Password,
-                        false,
-                        false
-                    );
+                    var result = await _signInManager.PasswordSignInAsync(userAuthorizing, model.Password, false, false);
                     if (result.Succeeded)
                         return RedirectToAction("Index", "Home");
                 }

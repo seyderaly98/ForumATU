@@ -27,7 +27,7 @@ namespace ForumATU.Models
         public DateTime ChangeDate { get;  } = DateTime.Now;
         public string Description { get; set; }
         public virtual List<Topic> Topics { get; set; }
-
+        
         public string AuthorChangeId { get; set; }
         public User AuthorChange { get; set; }
         public string AuthorId { get; set; }
