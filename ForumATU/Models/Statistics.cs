@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using ForumATU.Models.Data;
 
-namespace ForumATU.Models.Data
+namespace ForumATU.Models
 {
     public class Statistics
     {
@@ -24,7 +25,7 @@ namespace ForumATU.Models.Data
         /// <summary>
         /// Новы пользователь
         /// </summary>
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         public void Update(ForumContext _db)
         {
@@ -35,5 +36,6 @@ namespace ForumATU.Models.Data
             Users = _db.Users.Count();
             _db.Statistics.Update(this);
         }
+
     }
 }

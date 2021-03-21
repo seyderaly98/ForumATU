@@ -11,9 +11,9 @@ namespace ForumATU.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime CrateDate { get; } = DateTime.Now;
-        public List<TopicEvent> TopicEvents { get; set; }
+        public virtual List<TopicEvent> TopicEvents { get; set; }
         public string AuthorId { get; set; }
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
     }
 
     public class TopicEvent
@@ -25,13 +25,13 @@ namespace ForumATU.Models
         public DateTime CrateDate { get; } = DateTime.Now;
         public DateTime ChangeDate { get;  } = DateTime.Now;
         public string Description { get; set; }
-        public List<Topic> Topics { get; set; }
+        public virtual List<Topic> Topics { get; set; }
 
         public string AuthorId { get; set; }
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public int TitleEventId { get; set; }
-        public TitleEvent TitleEvent { get; set; }
+        public virtual TitleEvent TitleEvent { get; set; }
 
     }
 
@@ -52,16 +52,16 @@ namespace ForumATU.Models
 
         public DateTime DateLastMessage { get; set; }
 
-        public List<Message> Messages { get; set; }
+        public virtual List<Message> Messages { get; set; }
         
         public string AuthorLastMessageId { get; set; }
-        public User AuthorLastMessage { get; set; }
+        public virtual User AuthorLastMessage { get; set; }
         
         public string AuthorId { get; set; }
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public int TopicEventId { get; set; }
-        public TopicEvent TopicEvent { get; set; }
+        public virtual TopicEvent TopicEvent { get; set; }
         
         public Topic(){}
         public Topic(TopicViewModel model,string authorId)
@@ -83,9 +83,9 @@ namespace ForumATU.Models
         public DateTime ChangeDate { get;  } = DateTime.Now;
 
         public string UserId { get; set; }
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
         
         public int TopicId { get; set; }
-        public Topic Topic { get; set; }
+        public virtual Topic Topic { get; set; }
     }
 }

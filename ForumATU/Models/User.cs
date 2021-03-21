@@ -37,7 +37,7 @@ namespace ForumATU.Models
         Woman
     }
     #endregion
-    public sealed class User : IdentityUser
+    public class User : IdentityUser
     {
         public string Name { get; set; }
         public string Surname { get; set; }

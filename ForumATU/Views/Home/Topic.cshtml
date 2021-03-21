@@ -52,7 +52,7 @@
 										</td>
 										<td class="threadlist-avatar">
 											<span class="avatarContainer">
-												<a href="#" class="avatar Av1745s" data-avatarhtml="true"><img src="~/@topic.Author.AvatarPath" width="36" height="36" alt="@Model.Author.UserName"></a>
+												<a href="#" class="avatar Av1745s" data-avatarhtml="true"><img src="~/@topic.Author.AvatarPath" width="36" height="36" alt=""></a>
 											</span>
 										</td>
 										<td class="threadlist-title">
@@ -81,10 +81,19 @@
 											<span>@topic.ViewsNumber</span>
 										</td>
 										<td class="threadlist-lastmessage">
-											<dl class="lastPostInfo">
-												@* <a href="#" class="username" >@topic.AuthorLastMessage.UserName</a>,  *@
-												<a href="#"  class="dateTime"><span class="DateTime" >@topic.ChangeDate.ToLongDateString()</span></a>
-											</dl>
+											@if (topic.AuthorLastMessage != null)
+											{
+												<dl class="lastPostInfo">
+													<a href="#" class="username">
+														<span>@topic.AuthorLastMessage.UserName</span>
+													</a>,
+													<a href="#" class="dateTime"><span class="DateTime">@topic.ChangeDate.ToLongDateString()</span></a>
+												</dl>
+											}
+											else
+											{
+												<span><i class="far fa-comment-dots"></i></span>
+											}
 										</td>
 									</tr>
 								}

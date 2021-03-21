@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace ForumATU
 {
@@ -28,7 +30,7 @@ namespace ForumATU
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ForumContext>(options => options.UseNpgsql(connection))
+            services.AddDbContext<ForumContext>(options => options.UseNpgsql(connection).UseLazyLoadingProxies())
                 .AddIdentity<User, IdentityRole>(options =>
                 {
                     options.Password.RequiredLength = 3; // минимальная длина
