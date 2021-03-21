@@ -86,6 +86,10 @@ namespace ForumATU.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(newUser, Convert.ToString(RoleInitializer.Roles.Student));
+                    var statistics = await _db.Statistics.FirstOrDefaultAsync();
+                    statistics.UserId = newUser.Id;
+                    statistics.Users += 1;
+                    _db.Statistics.Update(statistics);
                     await _db.SaveChangesAsync();
                     await _signInManager.SignInAsync(newUser, false);
                     return RedirectToAction("Index", "Home");
