@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ForumATU.Models;
 using ForumATU.Models.Data;
+using ForumATU.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForumATU.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private UserManager<User> UserManager { get; }
@@ -24,7 +26,7 @@ namespace ForumATU.Controllers
             _db = db;
         }
 
-        [Authorize]
+
         public async Task<IActionResult> Index()
         {
             var titleEvents = _db.TitleEvents.Include(i=>i.TopicEvents).ThenInclude(t =>t.Author).ToList();
@@ -33,7 +35,7 @@ namespace ForumATU.Controllers
             return View(titleEvents);
         }
 
-        [Authorize]
+
         public async Task<IActionResult> TitleEvent(int titleEventId)
         {
             var titleEvent = await _db.TitleEvents.Include(i=>i.TopicEvents).ThenInclude(t => t.Author).FirstOrDefaultAsync(i => i.Id == titleEventId);
@@ -54,5 +56,34 @@ namespace ForumATU.Controllers
             return NotFound();
         }
         
+
+        public async Task<IActionResult> CreateThread(int topicEventId)
+        {
+            var topicEvent = await _db.TopicEvents.FirstOrDefaultAsync(t => t.Id == topicEventId);
+            if (topicEvent == null) return NotFound();
+            var topicViewModel = new TopicViewModel{TopicEventId = topicEvent.Id, TopicEventDescription = topicEvent.Description};
+            return View(topicViewModel);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> CreateThread(TopicViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (await _db.TopicEvents.AnyAsync(t => t.Id == model.TopicEventId))
+                {
+                    string authorId = UserManager.GetUserId(User);
+                    Topic topic = new Topic(model,authorId);
+                    await _db.Topics.AddAsync(topic);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction("Topic", model.TopicEventId);
+                }
+                else
+                    ModelState.AddModelError("","Ошибка!! Попробуйте перезагрузить страницу");
+            }
+            return View(model);
+        }
+
+
     }
 }

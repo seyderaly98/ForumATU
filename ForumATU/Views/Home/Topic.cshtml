@@ -52,7 +52,7 @@
 										</td>
 										<td class="threadlist-avatar">
 											<span class="avatarContainer">
-												<a href="#" class="avatar Av1745s" data-avatarhtml="true"><img src="@topic.Author.AvatarPath" width="36" height="36" alt="@Model.Author.UserName"></a>
+												<a href="#" class="avatar Av1745s" data-avatarhtml="true"><img src="~/@topic.Author.AvatarPath" width="36" height="36" alt="@Model.Author.UserName"></a>
 											</span>
 										</td>
 										<td class="threadlist-title">
@@ -82,7 +82,7 @@
 										</td>
 										<td class="threadlist-lastmessage">
 											<dl class="lastPostInfo">
-												<a href="#" class="username" >@topic.AuthorLastMessage.UserName</a>, 
+												@* <a href="#" class="username" >@topic.AuthorLastMessage.UserName</a>,  *@
 												<a href="#"  class="dateTime"><span class="DateTime" >@topic.ChangeDate.ToLongDateString()</span></a>
 											</dl>
 										</td>
@@ -107,7 +107,7 @@
 				
 				<div style="margin-top: 20px" class="pageNavLinkGroup afterDiscussionListHandle">
                 	<div class="linkGroup">
-	                    <a style="height: 30px" href="#" class="callToAction"><span>Создать тему</span></a>
+	                    <a style="height: 30px" asp-action="CreateThread" asp-controller="Home" asp-route-topicEventId="@Model.Id" class="callToAction"><span>Создать тему</span></a>
                     </div>
 				</div>
 				

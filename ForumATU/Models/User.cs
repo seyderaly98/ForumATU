@@ -74,7 +74,7 @@ namespace ForumATU.Models
         #region Конструктор
         public User()
         {
-            AvatarPath = $"/images/avatar/{Random.Next(1,10)}.png";
+            AvatarPath = $"images/avatar/{Random.Next(1,10)}.png";
             Status = "Online";
             Gender = Gender.None;
         }
@@ -82,7 +82,7 @@ namespace ForumATU.Models
         {
             Email = model.Email;
             UserName = model.UserName.ToLower();
-            AvatarPath = $"/images/avatar/{Random.Next(1,10)}.png";
+            AvatarPath = $"images/avatar/{Random.Next(1,10)}.png";
             Status = "Online";
             Gender = Gender.None;
         }

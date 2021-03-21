@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using ForumATU.ViewModels;
 
 namespace ForumATU.Models
 {
@@ -38,10 +39,16 @@ namespace ForumATU.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public int AnswerNumber { get; set; }
         public int ViewsNumber { get; set; }
         public DateTime CrateDate { get; set; } = DateTime.Now;
         public DateTime ChangeDate { get;  } = DateTime.Now;
+        /// <summary>
+        /// Метки 
+        /// </summary>
+        /// Несколько меток разделены запятыми.
+        public string Marks { get; set; }
 
         public DateTime DateLastMessage { get; set; }
 
@@ -52,6 +59,19 @@ namespace ForumATU.Models
         
         public string AuthorId { get; set; }
         public User Author { get; set; }
+
+        public int TopicEventId { get; set; }
+        public TopicEvent TopicEvent { get; set; }
+        
+        public Topic(){}
+        public Topic(TopicViewModel model,string authorId)
+        {
+            Name = model.TopicTitle;
+            Marks = model.Marks;
+            Description = model.Description;
+            TopicEventId = model.TopicEventId;
+            AuthorId = authorId;
+        }
         
     }
 

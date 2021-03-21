@@ -1,0 +1,249 @@
+﻿@model TopicViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div>
+<div class="slider">
+</div>
+
+<div id="content" class="content thread_create">
+<div class="pageWidth">
+<div class="pageContent">
+
+<!-- h1 title, description -->
+<div class="titleBar">
+	<h1>Создать тему</h1>
+	<p id="pageDescription" class="muted baseHtml">@Model.TopicEventDescription</p>
+</div>
+<!-- main template -->
+
+<div asp-validation-summary="ModelOnly"></div>
+<form asp-action="CreateThread" asp-controller="Home" method="post" id="ThreadCreate" class="xenForm Preview AutoValidator" >
+<input asp-for="TopicEventId" type="hidden">
+<input asp-for="TopicEventDescription" type="hidden">
+<fieldset>
+	<dl class="ctrlUnit fullWidth surplusLabel">
+		<dt>
+			<label asp-for="TopicTitle">Заголовок:</label>
+		</dt>
+		<dd>
+			<input type="text" asp-for="TopicTitle" class="textCtrl titleCtrl" id="ctrl_title_thread_create" maxlength="100"  placeholder="Заголовок темы..." data-livetitletemplate="Создать тему: <em>%s</em>">
+			<span asp-validation-for="TopicTitle"></span>
+		</dd>
+	</dl>
+	<dl class="ctrlUnit fullWidth">
+		<dt></dt>
+		<dd>
+			<div>
+				<div class="bbCodeEditorContainer">
+					<textarea asp-for="Description" class="textCtrl Elastic" rows="5"  style="overflow-y: hidden;"></textarea>
+					<div>
+						<a href="javascript:">Использовать полнофункциональный редактор</a>
+					</div>
+				</div>
+				<span asp-validation-for="Description"></span>
+			
+			</div>
+		</dd>
+	</dl>
+</fieldset>
+<!-- slot: after_editor -->
+
+<dl class="ctrlUnit">
+	<dt>Метки:</dt>
+	<dd>
+		<input type="text" name="tags" value="" class="textCtrl TagInput" data-extra-class="verticalShift" id="XenForoUniq0" style="display: none;">
+		<div id="XenForoUniq0_tagsinput" class="taggingInput textCtrl verticalShift" style="height: 100%;">
+			<div id="XenForoUniq0_addTag" class="addTag">
+				<input asp-for="Marks" id="XenForoUniq0_tag" value="" data-default="" class="AcSingle" autocomplete="off" style="width: 100%;">
+			</div>
+			<div class="tagsClear"></div>
+		</div>
+		<p class="explain">
+			Несколько меток могут быть разделены запятыми.
+		</p>
+	</dd>
+</dl>
+<dl class="ctrlUnit submitUnit">
+	<dt></dt>
+	<dd>
+		<input type="submit" value="Создать тему" accesskey="s" class="button primary">
+		<input type="button" value="Предварительный просмотр..." class="button PreviewButton JsOnly">
+	</dd>
+</dl>
+<dl class="ctrlUnit AttachedFilesUnit" style="display: none;">
+	<dt>Вложения:</dt>
+	<dd>
+		<div class="AttachmentEditor">
+			<div class="NoAttachments"></div>
+
+			<div class="secondaryContent AttachmentInsertAllBlock JsOnly">
+				<span></span>
+				<div class="AttachmentText">
+					<div class="label">Вставить все изображения как...</div>
+					<div class="controls">
+						<!--<input type="button" value="Удалить всё" class="button _smallButton AttachmentDeleteAll" />-->
+						<input type="button" value="Миниатюра" class="button smallButton AttachmentInsertAll" name="thumb">
+						<!--<input type="button" value="Полное изображение" class="button smallButton AttachmentInsertAll" name="image" />-->
+					</div>
+				</div>
+			</div>
+
+			<ol class="AttachmentList New">
+				<li id="AttachedFileTemplate" class="AttachedFile  secondaryContent">
+
+					<div class="Thumbnail">
+						<span class="genericAttachment"></span>
+					</div>
+
+					<div class="AttachmentText">
+						<div class="Filename">
+							<a href="attachments/" target="_blank"></a>
+						</div>
+						<input type="button" value="Отмена" class="button smallButton AttachmentCanceller">
+
+						<span class="ProgressMeter">
+							<span class="ProgressGraphic">&nbsp;</span><span class="ProgressCounter">0%</span>
+						</span>
+
+					</div>
+				</li>
+			</ol>
+			<input type="hidden" name="attachment_hash" value="bb359aca3ac40db72f98b087d254c561">
+		</div>
+
+	</dd>
+</dl>
+<!-- slot: after_attachment -->
+<fieldset>
+	<dl class="ctrlUnit">
+		<dt>Настройки:</dt>
+		<dd>
+			<ul>
+				<li>
+					<label for="ctrl_watch_thread">
+						<input type="checkbox" asp-for="TrackTopic" id="ctrl_watch_thread" class="Disabler" checked="checked"> Отслеживать эту тему...
+					</label>
+					<ul id="ctrl_watch_thread_Disabler">
+						<li>
+							<label for="ctrl_watch_thread_email">
+								<input type="checkbox" asp-for="Notifications" id="ctrl_watch_thread_email" checked="checked"> и получать уведомления на электронную почту
+							</label>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+</fieldset>
+<!-- slot: after_options -->
+
+<div class="center_option">
+	<span class="more_options_heading button">Дополнительные настройки</span>
+</div>
+
+<div id="more_options" style="display:none;">
+	<h3 class="textHeading">Добавить голосование</h3>
+	<dl class="ctrlUnit">
+		<dt>
+			<label for="ctrl_poll_question">Вопрос:</label>
+		</dt>
+		<dd>
+			<input type="text" name="poll[question]" class="textCtrl" id="ctrl_poll_question" maxlength="100" value="">
+		</dd>
+	</dl>
+	<dl class="ctrlUnit">
+		<dt>Возможные варианты ответа:</dt>
+		<dd>
+			<ul class="PollResponseContainer">
+				<li>
+					<input type="text" name="poll[responses][]" class="textCtrl" placeholder="Вариант ответа..." maxlength="100">
+				</li>
+				<li>
+					<input type="text" name="poll[responses][]" class="textCtrl" placeholder="Вариант ответа..." maxlength="100">
+				</li>
+			</ul>
+			<input type="button" value="Добавить дополнительные варианты ответа" class="button smallButton FieldAdder JsOnly" data-source="ul.PollResponseContainer li" data-maxfields="10">
+		</dd>
+	</dl>
+
+	<!-- slot: after_poll_responses -->
+	<dl class="ctrlUnit">
+		<dt>Максимум разрешённых ответов:</dt>
+		<dd>
+			<ul>
+				<li>
+					<label><input type="radio" name="poll[max_votes_type]" value="single" checked="checked"> Один</label>
+				</li>
+				<li>
+					<label><input type="radio" name="poll[max_votes_type]" value="unlimited"> Без ограничения</label>
+				</li>
+				<li>
+					<input type="radio" name="poll[max_votes_type]" value="number" class="Disabler" id="ctrl_max_votes_type_value">
+					<span id="ctrl_max_votes_type_value_Disabler" class="disabled">
+						<input type="text" class="textCtrl number SpinBox disabled" name="poll[max_votes_value]" value="2" min="1" step="1" autocomplete="off" disabled=""><input type="button" class="button spinBoxButton up disabled" value="+" data-plusminus="+" tabindex="-1" disabled=""><input type="button" class="button spinBoxButton down disabled" value="-" data-plusminus="-" tabindex="-1" disabled="">
+					</span>
+				</li>
+			</ul>
+			<p class="explain">Максимальное число ответов, которое пользователь может выбрать при голосовании.</p>
+		</dd>
+	</dl>
+
+	<dl class="ctrlUnit">
+		<dt>Настройки:</dt>
+		<dd>
+			<ul>
+				<li>
+					<label><input type="checkbox" name="poll[change_vote]" value="1" checked="checked"> Разрешить проголосовавшим изменять их голос</label>
+				</li>
+
+				<li>
+					<label><input type="checkbox" name="poll[public_votes]" value="1"> Разрешить видеть, кто как проголосовал</label>
+				</li>
+
+				<li>
+					<label><input type="checkbox" name="poll[view_results_unvoted]" value="1" checked="checked"> Разрешить видеть результаты тем, кто ещё не голосовал</label>
+				</li>
+
+				<li>
+					<label><input type="checkbox" name="poll[close]" value="1" class="Disabler" id="ctrl_poll_close"> Закрыть голосование после этой даты:</label>
+					<ul id="ctrl_poll_close_Disabler" class="disabled">
+						<li>
+							<input type="text" size="5" name="poll[close_length]" value="7" class="textCtrl autoSize disabled" disabled="">
+							<select name="poll[close_units]" class="textCtrl autoSize disabled" disabled="">
+								<option value="hours">Часов</option>
+								<option value="days" selected="selected">Дней</option>
+								<option value="weeks">Недель</option>
+								<option value="months">Месяцев</option>
+							</select>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+	<dl class="ctrlUnit submitUnit">
+		<dt></dt>
+		<dd>
+			<input type="submit" value="Создать тему" class="button primary">
+			<input type="button" value="Предварительный просмотр..." class="button PreviewButton JsOnly">
+		</dd>
+	</dl>
+</div>
+
+<input type="hidden" name="_xfToken" value="1913,1616305588,98d80277b7cc47c8ac298628db45005a4d935b08">
+</form>
+</div>
+</div>
+</div>
+</div>
+
+@section Scripts
+{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
