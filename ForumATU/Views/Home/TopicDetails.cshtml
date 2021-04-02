@@ -138,7 +138,7 @@
 <form  onsubmit="CommentSend(event);"  method="post" class="AutoValidator blendedEditor" id="QuickReply">
 	<div>
 	<div class="bbCodeEditorContainer" style="padding-right: 30px;">
-		<textarea class="textCtrl Elastic" rows="5" name="comment" style="overflow-y: hidden;"></textarea>
+		<textarea id="inputCommnet" class="textCtrl Elastic" rows="5" name="comment" style="overflow-y: hidden;"></textarea>
 		<div>
 			<a href="javascript:">Использовать полнофункциональный редактор</a>
 		</div>
@@ -193,6 +193,8 @@
                         type: 'POST',
                         success: function (data) {
                             $('#messageList').append(data);
+                            $('#inputCommnet').val('');
+
                         }
                     })
             }

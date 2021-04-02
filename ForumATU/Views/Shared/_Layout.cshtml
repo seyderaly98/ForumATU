@@ -104,18 +104,7 @@
                     </ul>
                 </div>
             </div>
-            <script>
-                    window.onload = function () {
-                        document.body.onclick = function (e) {
-                            e = e || event;
-                            target = e.target || e.srcElement;
-                            if (target.id == "change-language" || target.id == "change-language-div" || target.id == "change-language-span") {
-                            } else {
-                                document.getElementById('change-language').getElementsByTagName('ul')[0].classList.remove('active');
-                            }
-                        }
-                    }
-                </script>
+
             <div style="clear:both;"></div>
         </div>
     </header>
@@ -185,8 +174,8 @@
     <div class="footer">
         <div class="pageContent">
             <ul class="footerLinks">
-                <li><a href="misc/contact" class="OverlayTrigger" data-overlayoptions="{&quot;fixed&quot;:false}">Обратная связь</a></li>
-                <li><a href="help/">Помощь</a></li>
+                <li><a href="#" class="OverlayTrigger" data-overlayoptions="{&quot;fixed&quot;:false}">Обратная связь</a></li>
+                <li><a href="#">Помощь</a></li>
                 <li><a href="https://forum.elma-bpm.ru/" class="homeLink">Главная</a></li>
                 <li><a href="#header" onclick="window.scrollTo(0, 0); return false;" class="topLink">Вверх</a></li>
             </ul>
