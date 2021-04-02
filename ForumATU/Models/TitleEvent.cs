@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using ForumATU.Services;
 using ForumATU.ViewModels;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -22,8 +23,8 @@ namespace ForumATU.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int TopicNumber { get; set; }
-        public int MessageNumber { get; set; }
+        public int TopicNumber => Topics.Count;
+        public int MessageNumber => Topics.Count + Topics.GetMessageCount();
         public DateTime CrateDate { get; } = DateTime.Now;
         public DateTime ChangeDate { get; set; } = DateTime.Now;
         public string Description { get; set; }
@@ -44,7 +45,9 @@ namespace ForumATU.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int AnswerNumber { get; set; }
+        [NotMapped]
+        public int AnswerNumber => Messages.Count;
+
         public int ViewsNumber { get; set; }
         public DateTime CrateDate { get; set; } = DateTime.Now;
         public DateTime ChangeDate { get;  } = DateTime.Now;

@@ -34,7 +34,9 @@ namespace ForumATU.Controllers
         {
             var titleEvents = _db.TitleEvents.ToList();
             ViewBag.User = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
-            ViewBag.Statistics = await _db.Statistics.Include(u => u.User).FirstOrDefaultAsync();
+            var statistic = await _db.Statistics.Include(u => u.User).FirstOrDefaultAsync();
+            statistic.Update(_db);
+            ViewBag.Statistics = statistic;
             return View(titleEvents);
         }
 
@@ -81,8 +83,6 @@ namespace ForumATU.Controllers
                     var statistics = await _db.Statistics.FirstOrDefaultAsync();
                     statistics.Topic += 1;
                     var topicEvent = await _db.TopicEvents.FirstOrDefaultAsync(t => t.Id == model.TopicEventId);
-                    topicEvent.MessageNumber += 1;
-                    topicEvent.TopicNumber += 1;
                     topicEvent.ChangeDate = DateTime.Now;
                     topicEvent.AuthorChangeId = UserManager.GetUserId(User);
                     var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
@@ -123,7 +123,6 @@ namespace ForumATU.Controllers
                 var topicComment = new TopicMessage(comment, author.Id,topicId);
                 await _db.TopicMessages.AddAsync(topicComment);
                 var topic = _db.Topics.FirstOrDefault(t => t.Id == topicId);
-                topic.AnswerNumber += 1;
                 topic.AuthorLastMessageId = author.Id;
                 topic.DateLastMessage = DateTime.Now;
                 await _db.SaveChangesAsync();

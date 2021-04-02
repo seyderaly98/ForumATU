@@ -27,14 +27,13 @@ namespace ForumATU.Models
         /// </summary>
         public virtual User User { get; set; }
 
-        public void Update(ForumContext _db)
+        public async void Update(ForumContext _db)
         {
-            Topic = _db.Topics.Count();
-            Topic += _db.TopicEvents.Count();
-            Topic += _db.TitleEvents.Count();
+            Topic = _db.Topics.Count() + _db.TopicEvents.Count() + _db.TitleEvents.Count();
             Message = _db.TopicMessages.Count();
             Users = _db.Users.Count();
-            _db.Statistics.Update(this);
+            // _db.Statistics.Update(this);
+            await _db.SaveChangesAsync();
         }
 
         public void UpdateTopic()
