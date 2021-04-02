@@ -91,7 +91,7 @@ namespace ForumATU.Controllers
                     _db.TopicEvents.Update(topicEvent);
                     _db.Statistics.Update(statistics);
                     await _db.SaveChangesAsync();
-                    return RedirectToAction("Topic", model.TopicEventId);
+                    return RedirectToAction("Topic", new {topicEventId = model.TopicEventId});
                 }
                 else
                     ModelState.AddModelError("","Ошибка!! Попробуйте перезагрузить страницу");
