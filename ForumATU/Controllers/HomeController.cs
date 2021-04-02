@@ -103,6 +103,8 @@ namespace ForumATU.Controllers
         {
             Topic topic = await _db.Topics.FirstOrDefaultAsync(t => t.Id == topicId);
             if (topic == null) return NotFound();
+            topic.ViewsNumber += 1;
+            await _db.SaveChangesAsync();
             return View(topic);
         }
 
@@ -120,6 +122,10 @@ namespace ForumATU.Controllers
                 var author = await _db.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
                 var topicComment = new TopicMessage(comment, author.Id,topicId);
                 await _db.TopicMessages.AddAsync(topicComment);
+                var topic = _db.Topics.FirstOrDefault(t => t.Id == topicId);
+                topic.AnswerNumber += 1;
+                topic.AuthorLastMessageId = author.Id;
+                topic.DateLastMessage = DateTime.Now;
                 await _db.SaveChangesAsync();
                 topicComment.Author = author;
                 return PartialView("Partial/PartialTopicComment",topicComment);
