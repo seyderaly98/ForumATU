@@ -309,3 +309,204 @@ html .redactor_toolbar li a.redactor_btn_insert{background-position:3px -2301px;
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOXOhpOqc.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN8rsOUuhp.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 
+/*! CSS Used from: https://forum.elma-bpm.ru/css.php?css=xenforo,form,public&style=2&dir=LTR&d=1612180704 */
+div,ul,ol,li,h1,h3,form,input,textarea,p,blockquote{margin:0;padding:0;}
+img{border:0;}
+em{font-style:inherit;font-weight:inherit;}
+li{list-style:none;}
+h1,h3{font-size:100%;font-weight:normal;}
+input,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,textarea{*font-size:100%;}
+input,textarea{font:99% arial,helvetica,clean,sans-serif;}
+textarea{word-wrap:normal;}
+[dir=auto]{text-align:left;}
+a:link,a:visited{font-family:'Open Sans', sans-serif;color:#176093;text-decoration:none;}
+a[href]:hover{font-family:'Open Sans', sans-serif;text-decoration:underline;}
+a:hover{_text-decoration:underline;}
+.titleBar{margin-bottom:10px;}
+.titleBar{zoom:1;}
+.titleBar:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.titleBar h1{font-size:18pt;font-family:'Open Sans', sans-serif;overflow:hidden;zoom:1;}
+#pageDescription{font-size:11px;font-family:'Open Sans', sans-serif;color:rgb(150,150,150);margin-top:2px;}
+img{-ms-interpolation-mode:bicubic;}
+a.avatar{*cursor:pointer;}
+.avatar img{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:2px;border:1px none #a5cae4;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;}
+body .muted,body a.muted,body .muted a{color:rgb(150,150,150);}
+.section{font-family:'Open Sans', sans-serif;margin:10px auto;}
+.textHeading{font-weight:bold;font-family:'Open Sans', sans-serif;color:rgb(20,20,20);padding-bottom:2px;margin:10px auto 5px;border-bottom:1px solid #d7edfc;}
+.larger.textHeading{color:#a5cae4;font-size:11pt;margin-bottom:6px;}
+.primaryContent{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px;border-bottom:1px solid #d7edfc;}
+.primaryContent a{font-family:'Open Sans', sans-serif;color:#176093;}
+.secondaryContent{font-family:'Open Sans', sans-serif;background:#f0f7fc url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/category-23px-light.png') repeat-x top;padding:10px;border-bottom:1px solid #d7edfc;}
+.secondaryContent a{font-family:'Open Sans', sans-serif;color:#176093;}
+.textCtrl{font-size:14px;font-family:'Open Sans', sans-serif;color:#000000;background:#ffffff url('https://forum.elma-bpm.ru/styles/default/xenforo/clear.png');padding:3px;margin-bottom:2px;border-width:1px;border-style:solid;border-top-color:rgb(192, 192, 192);border-right-color:rgb(233, 233, 233);border-bottom-color:rgb(233, 233, 233);border-left-color:rgb(192, 192, 192);-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;outline:0;}
+textarea.textCtrl{word-wrap:break-word;resize:vertical;}
+.textCtrl:focus{font-family:'Open Sans', sans-serif;background:rgb(255,255,240) url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-element-focus-25.png') repeat-x;border-top-color:rgb(150,150,150);border-bottom-color:rgb(230,230,230);}
+textarea.textCtrl:focus{background-image:url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-element-focus-100.png');}
+.textCtrl:-moz-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl::-moz-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl::-webkit-input-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+.textCtrl:-ms-input-placeholder{font-style:italic;font-family:'Open Sans', sans-serif;color:rgb(160,160,160);}
+textarea.textCtrl.Elastic{max-height:300px;}
+.button{font-style:normal;font-size:12px;font-family:Calibri, 'Trebuchet MS', Verdana, Geneva, Arial, Helvetica, sans-serif;color:rgb(0, 0, 0);background:rgb(220,220,235) url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-button-white-25px.png') repeat-x top;padding:0px 6px;border:1px solid rgb(221, 221, 235);border-top-color:rgb(255, 255, 255);border-bottom-color:rgb(179, 179, 189);-webkit-border-radius:7px;-moz-border-radius:7px;-khtml-border-radius:7px;border-radius:7px;text-align:center;-webkit-box-shadow:0px 1px 4px 0px rgb(200,200,210);-moz-box-shadow:0px 1px 4px 0px rgb(200,200,210);-khtml-box-shadow:0px 1px 4px 0px rgb(200,200,210);box-shadow:0px 1px 4px 0px rgb(200,200,210);outline:none;line-height:21px;display:inline-block;cursor:pointer;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;height:23px;}
+.button.smallButton{font-size:11px;padding:0px 4px;line-height:21px;height:21px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;}
+.button.primary{background-color:#a5cae4;}
+.button::-moz-focus-inner{border:none;}
+.button:hover,.buttonProxy:hover .button{color:black;text-decoration:none;background-color:rgb(255,255,200);border-color:rgb(255,255,200);border-top-color:white;border-bottom-color:rgb(190,190,170);}
+.button:focus{border-color:#6cb2e4;}
+.button:active,.buttonProxy:active .button{color:black;background-color:rgb(153, 153, 163);border-color:rgb(200,200,215);border-top-color:#b3b3bd;border-bottom-color:white;-webkit-box-shadow:0px 0px 0px 0px transparent;-moz-box-shadow:0px 0px 0px 0px transparent;-khtml-box-shadow:0px 0px 0px 0px transparent;box-shadow:0px 0px 0px 0px transparent;outline:0;}
+.submitUnit .button{min-width:100px;*min-width:0;}
+.bbCodeEditorContainer a{font-size:11px;}
+
+
+
+.content .pageWidth{padding-left:0;padding-right:0;margin:0;}
+.content .avatar img{padding:0;border:none;-webkit-border-radius:18px;-moz-border-radius:18px;-khtml-border-radius:18px;border-radius:18px;}
+.pageContent .messageList{padding:0;}
+.pageContent .messageList .message{border:none;border-bottom:1px solid #cecece;padding-left:10px;padding-right:10px;padding-bottom:10px;position:relative;}
+.messageList .message .messageUserBlock,.quickReply .messageUserBlock{background:none;border:none;}
+.messageList .message .messageUserBlock .avatarHolder,.quickReply .messageUserBlock .avatarHolder{background:none;}
+.message .messageUserBlock .arrow{display:none;}
+.message .avatarHolder img{-webkit-border-radius:48px;-moz-border-radius:48px;-khtml-border-radius:48px;border-radius:48px;}
+.message .userText{text-align:center;}
+.message .userText .username{text-align:center;font-size:12px;line-height:14px;}
+.messageList .message .messageContent{padding-bottom:36px;}
+.messageList .message .messageMeta{position:absolute;bottom:16px;}
+.pageContent .quickReply{border:none;}
+.quickReply .redactor_box{border-color:#cecece;}
+.pageWidth{padding-right:5px;padding-left:5px;margin:0 1%;_width:976px;_margin:0 auto;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+#content .pageContent{font-family:'Open Sans', sans-serif;background-color:rgb(252, 252, 255);padding:10px 20px;}
+#content .pageContent{zoom:1;}
+#content .pageContent:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.messageText{font-size:11pt;font-family:'Open Sans', sans-serif;line-height:1.4;}
+.pageNavLinkGroup{display:table;*zoom:1;table-layout:fixed;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;font-size:11px;font-family:'Open Sans', sans-serif;margin:10px 0;line-height:16px;}
+.pageNavLinkGroup{display:block;overflow:hidden;}
+.pageNavLinkGroup:after{content:". .";display:block;word-spacing:99in;overflow:hidden;height:0;font-size:0.13em;line-height:0;}
+.pageNavLinkGroup .linkGroup{float:right;}
+.linkGroup a{font-family:'Open Sans', sans-serif;padding:3px 0;}
+.linkGroup a{margin-left:10px;display:block;float:left;}
+
+
+.button{background:#fff;-webkit-box-shadow:none;-moz-box-shadow:none;-khtml-box-shadow:none;box-shadow:none;border:1px solid #cecece;padding:5px 20px;height:auto;-webkit-border-radius:0px;-moz-border-radius:0px;-khtml-border-radius:0px;border-radius:0px;font-size:14px;margin:0 5px;}
+.content .button:hover{border:1px solid #cecece;background:#f5f5f5;}
+.button.primary{border:1px solid #3f8ac9;background:#3f8ac9;color:#fff;}
+.button.primary:hover{border-color:#0076d5;background:#0076d5;color:#fff;}
+.button:hover,.buttonProxy:hover .button{background:#f5f5f5;border:1px solid #cecece;}
+.content .pageWidth{padding:0 20px;}
+#content .pageContent{-webkit-box-shadow:0 0 3px 0 #cecece;-webkit-box-shadow:0 0 3px 0 #cecece;-moz-box-shadow:0 0 3px 0 #cecece;-khtml-box-shadow:0 0 3px 0 #cecece;-webkit-box-shadow:0 0 3px 0 #cecece;-moz-box-shadow:0 0 3px 0 #cecece;-khtml-box-shadow:0 0 3px 0 #cecece;box-shadow:0 0 3px 0 #cecece;background:#fff;font-size:14px;padding-left:0;padding-right:0;font-family:'Open Sans', sans-serif;}
+.textCtrl:focus,form textarea.textCtrl:focus{background:none;}
+form .redactor_box{border:1px solid #cecece;}
+.textHeading{border:none;}
+.button:focus{border-color:#cecece;}
+.titleBar{padding:10px 20px;margin:0;}
+.titleBar h1{font-size:20px;font-weight:bold;}
+.primaryContent{background:none;}
+a{color:#3F8AC9;}
+a{background-color:transparent;}
+.pageNavLinkGroup{padding:10px 20px;margin:0;}
+.secondaryContent{background:none;border-bottom:1px solid #cecece;}
+.content .messageUserBlock div.avatarHolder{padding:20px;}
+.quickReply .redactor_box{margin-right:20px;}
+#QuickReply .submitUnit{margin-right:15px;}
+.messageList .message .messageMeta{position:relative;bottom:0;}
+.sharePage.bottom{padding:10px 20px 0;border-top:1px solid #cecece;}
+.sharePage.bottom h3.larger.textHeading{font-size:14px;font-weight:normal;color:#000;display:inline-block;vertical-align:middle;}
+.sharePage .twitter-share{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/twitter.svg');}
+.sharePage .fb-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/facebook.svg');}
+.sharePage .linkedin-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/linkedin.svg');}
+.sharePage .vk-share a{display:inline-block;text-indent:-9999px;width:24px;height:24px;background:url('https://forum.elma-bpm.ru/images/vk.svg');}
+.sharePage .tweet-share,.sharePage .fb-share,.sharePage .vk-share,.sharePage .linkedin-share{display:inline-block;vertical-align:middle;height:24px;}
+.button.smallButton{-webkit-border-radius:0;-moz-border-radius:0;-khtml-border-radius:0;border-radius:0;padding:5px 10px;font-size:12px;height:auto;margin:0;}
+/*! CSS Used from: https://forum.elma-bpm.ru/css.php?css=attachment_editor,bb_code,editor_ui,message,message_user_info,new_adaptive,quick_reply,share_page,thread_view&style=2&dir=LTR&d=1612180704 */
+.AttachmentEditor{clear:both;}
+.AttachmentEditor .AttachedFile,.AttachmentEditor .AttachmentInsertAllBlock{overflow:hidden;zoom:1;vertical-align:middle;padding:5px 10px;}
+.AttachmentEditor .AttachedFile#AttachedFileTemplate{display:none;}
+.AttachmentEditor .AttachedFile .Thumbnail{width:54px;height:54px;line-height:50px;display:block;background:rgb(252, 252, 255);border:1px solid #d7edfc;text-align:center;vertical-align:middle;float:left;}
+.AttachmentEditor .AttachedFile .Thumbnail .genericAttachment{background:transparent url('https://forum.elma-bpm.ru/styles/default/xenforo/node-sprite.png') no-repeat -72px 0;display:block;width:36px;height:36px;margin:7px;}
+.AttachmentEditor .AttachmentText{margin-left:64px;}
+.AttachmentEditor .secondaryContent .label{margin-bottom:2px;font-size:11px;color:rgb(150,150,150);}
+.AttachmentEditor .secondaryContent .controls{line-height:25px;}
+.AttachmentEditor .AttachedFile .ProgressMeter{display:block;padding:2px;border:1px solid #a5cae4;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;background-color:rgb(252, 252, 255);margin-right:75px;margin-top:4px;font-size:14pt;line-height:26px;}
+.AttachmentEditor .AttachedFile .ProgressMeter .ProgressGraphic{display:inline-block;width:0%;height:26px;background:#6cb2e4 url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/category-23px-light.png') repeat-x top;text-align:right;}
+.AttachmentEditor .AttachedFile .ProgressMeter .ProgressCounter{display:inline-block;height:26px;padding:0 10px;}
+.AttachmentEditor .AttachedFile .AttachmentCanceller{float:right;display:none;}
+.AttachmentEditor .AttachmentInsertAllBlock{display:none;}
+.AttachmentEditor .AttachmentInsertAllBlock span{float:left;display:block;width:54px;height:34px;background:rgb(252, 252, 255) url('https://forum.elma-bpm.ru/styles/default/xenforo/widgets/image-attachments.png') no-repeat center;border:1px solid #d7edfc;margin-right:10px;}
+.swfupload{position:absolute;z-index:1;}
+.hasJs .BbCodeWysiwygEditor{visibility:hidden;}
+.redactor_box{font-size:0;border:1px solid #d7edfc;line-height:0;position:relative;overflow:hidden;}
+.redactor_box .placeholder{display:none;position:relative;line-height:0;font-size:0;z-index:1;}
+.redactor_box .placeholder span{line-height:14px;font-size:11pt;font-family:'Open Sans', sans-serif;line-height:1.4;position:absolute;left:8px;top:8px;color:rgb(160,160,160);}
+.redactor_toolbar{font-size:0;background:#f0f7fc url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-button-white-25px.png') repeat-x top;padding:0 0 0 2px;margin:0;border-bottom:1px solid #d7edfc;position:relative;left:0;top:0;line-height:0;list-style:none;overflow:hidden;}
+.blendedEditor .redactor_box .redactor_toolbar{max-height:68px;}
+.blendedEditor .redactor_box.activated .redactor_toolbar{max-height:none;}
+.redactor_toolbar li{float:left;margin:2px 1px;margin-right:0;list-style:none;outline:none;}
+.redactor_toolbar li.redactor_btn_right{float:right;}
+.redactor_toolbar li a{font-size:0;text-decoration:none;border:1px solid transparent;-webkit-border-radius:3px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;display:block;line-height:0;cursor:pointer;zoom:1;outline:none;text-indent:-9999px;width:24px;height:24px;}
+html .redactor_toolbar li a,html .redactor_toolbar li a:hover,html .redactor_toolbar li a:active{background-image:url('https://forum.elma-bpm.ru/styles/default/xenforo/editor/icons.png?redactor');background-repeat:no-repeat;background-position:0;}
+.redactor_toolbar li a:hover{background-color:rgb(252, 252, 255);border-color:#a5cae4;}
+.redactor_toolbar li a:active{background-color:#d7edfc;border:1px solid #a5cae4;}
+.redactor_toolbar li li{padding:0;margin:1px;}
+.redactor_toolbar li.redactor_btn_group{margin-left:2px;margin-right:2px;}
+.redactor_toolbar li.redactor_btn_group ul{background:#f0f7fc url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/form-button-white-25px.png') repeat-x top;padding:1px;margin:0;border:1px solid #d7edfc;-webkit-border-radius:3px;-moz-border-radius:3px;-khtml-border-radius:3px;border-radius:3px;overflow:hidden;*zoom:1;-webkit-box-shadow:1px 1px 1px rgba(255, 255, 255, .5);-moz-box-shadow:1px 1px 1px rgba(255, 255, 255, .5);-khtml-box-shadow:1px 1px 1px rgba(255, 255, 255, .5);box-shadow:1px 1px 1px rgba(255, 255, 255, .5);}
+.blendedEditor .redactor_box .redactor_btn_group ul,.blendedEditor .redactor_box iframe{opacity:0.5;-webkit-transition:opacity 0.3s ease-in-out;-moz-transition:opacity 0.3s ease-in-out;transition:opacity 0.3s ease-in-out;}
+.blendedEditor .redactor_box.activated .redactor_btn_group ul,.blendedEditor .redactor_box.activated iframe{opacity:1;}
+html .redactor_toolbar li a.redactor_btn_switchmode{background-position:3px -605px;}
+html .redactor_toolbar li a.redactor_btn_removeformat{background-position:3px -2205px;}
+html .redactor_toolbar li a.redactor_btn_draft{background-position:3px -2237px;}
+html .redactor_toolbar li a.redactor_btn_bold{background-position:3px -29px;}
+html .redactor_toolbar li a.redactor_btn_italic{background-position:3px -61px;}
+html .redactor_toolbar li a.redactor_btn_underline{background-position:3px -189px;}
+html .redactor_toolbar li a.redactor_btn_fontcolor{background-position:3px -541px;}
+html .redactor_toolbar li a.redactor_btn_fontsize{background-position:3px -2941px;}
+html .redactor_toolbar li a.redactor_btn_fontfamily{background-position:3px -2909px;}
+html .redactor_toolbar li a.redactor_btn_smilies{background-position:3px -2397px;}
+html .redactor_toolbar li a.redactor_btn_alignment{background-position:3px -1469px;}
+html .redactor_toolbar li a.redactor_btn_unorderedlist{background-position:3px -1693px;}
+html .redactor_toolbar li a.redactor_btn_orderedlist{background-position:3px -1757px;}
+html .redactor_toolbar li a.redactor_btn_outdent{background-position:3px -1373px;}
+html .redactor_toolbar li a.redactor_btn_indent{background-position:3px -1309px;}
+html .redactor_toolbar li a.redactor_btn_image{background-position:3px -1245px;}
+html .redactor_toolbar li a.redactor_btn_createlink{background-position:3px -1597px;}
+html .redactor_toolbar li a.redactor_btn_unlink{background-position:3px -1629px;}
+html .redactor_toolbar li a.redactor_btn_media{background-position:3px -2877px;}
+html .redactor_toolbar li a.redactor_btn_undo{background-position:3px -2813px;}
+html .redactor_toolbar li a.redactor_btn_redo{background-position:3px -2749px;}
+html .redactor_toolbar li a.redactor_btn_insert{background-position:3px -2301px;}
+.redactor_editor_drop{display:none;position:absolute;top:0;bottom:0;left:0;right:0;border:2px dashed #aaa;color:#000;background:url(https://forum.elma-bpm.ru/rgba.php?r=190&g=190&b=190&a=127);background:rgba(190, 190, 190, .5);_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FBEBEBE,endColorstr=#7FBEBEBE);}
+.redactor_editor_drop span{display:block;text-align:center;position:absolute;top:50%;width:100%;font-size:18px;line-height:26px;margin-top:-13px;}
+.messageList .message{padding-top:10px;padding-bottom:30px;border-top:1px solid #d7edfc;}
+.messageList .message{zoom:1;}
+.messageList .message:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.message .messageInfo{padding:0;margin-left:140px;border-bottom:1px none black;zoom:1;}
+.message .messageContent{padding-bottom:2px;min-height:100px;overflow:hidden;*zoom:1;}
+.message .messageTextEndMarker{height:0;font-size:0;overflow:hidden;}
+.message .messageMeta{font-size:11px;padding:15px 5px 5px;margin:-5px;overflow:hidden;zoom:1;}
+.message .privateControls{float:left;}
+.message .publicControls{float:right;}
+.message .privateControls .item{margin-right:10px;float:left;}
+.message .privateControls .item:last-child{margin-right:0;}
+.message .publicControls .item{margin-left:10px;float:left;}
+.message .messageText > *:first-child{margin-top:0;}
+
+.messageUserInfo{float:left;width:124px;}
+.messageUserBlock{background:#d7edfc url('https://forum.elma-bpm.ru/styles/default/xenforo/gradients/tab-selected-light.png') repeat-x bottom;border:1px solid #d7edfc;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;position:relative;}
+.messageUserBlock div.avatarHolder{background-color:#f0f7fc;padding:10px;-webkit-border-radius:4px;-moz-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;position:relative;}
+.messageUserBlock div.avatarHolder .avatar{display:block;font-size:0;}
+.messageUserBlock h3.userText{padding:6px;}
+.messageUserBlock a.username{font-weight:bold;font-family:'Open Sans', sans-serif;display:block;overflow:hidden;line-height:16px;}
+.messageUserBlock .userTitle{font-size:11px;font-family:'Open Sans', sans-serif;display:block;}
+.messageUserBlock .arrow{position:absolute;top:10px;right:-10px;display:block;width:0px;height:0px;line-height:0px;border:10px solid transparent;border-left-color:#d7edfc;-moz-border-left-colors:#d7edfc;border-right:none;_display:none;}
+.messageUserBlock .arrow span{position:absolute;top:-10px;left:-11px;display:block;width:0px;height:0px;line-height:0px;border:10px solid transparent;border-left-color:#f0f7fc;-moz-border-left-colors:#f0f7fc;border-right:none;}
+
+
+.quickReply{padding-top:10px;padding-bottom:30px;border-top:1px solid #d7edfc;}
+.quickReply{zoom:1;}
+.quickReply:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+#QuickReply{padding:0;margin-left:140px;border-bottom:1px none black;}
+#QuickReply textarea{width:100%;*width:98%;height:100px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+#QuickReply .submitUnit{margin-top:5px;text-align:right;line-height:31px;position:relative;z-index:1;}
+#QuickReply .submitUnit .draftUpdate{position:absolute;left:0;z-index:-1;color:rgb(150,150,150);font-size:11px;}
+#QuickReply .submitUnit .draftUpdate span{display:none;}
+#QuickReply .AttachmentEditor{padding-top:10px;}
+

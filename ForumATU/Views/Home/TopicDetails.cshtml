@@ -1,0 +1,269 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Topic
+@inject UserManager<User> UserManager;
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+	var user = await UserManager.GetUserAsync(User);
+	int count = 1;
+}
+
+
+<div>
+
+<div class="slider">
+
+</div>
+
+<div id="content" class="content thread_view">
+<div class="pageWidth">
+<div class="pageContent">
+<!-- main content area -->
+<!-- h1 title, description -->
+<div class="titleBar">
+
+	<h1>@Model.Name</h1>
+	<p id="pageDescription" class="muted ">
+		Тема в разделе "<a href="#">Консультантам</a>", создана пользователем <a href="#" class="username" >Ruslan</a>,
+		<a href="#">
+			<span class="DateTime" >10 июн 2021</span>
+		</a>.
+	</p>
+</div>
+
+<!-- main template -->
+<div class="tagBlock TagContainer">
+	Метки:
+	<ul class="tagList">
+		<li>
+			<a href="#" class="tag"><span class="arrow"></span>crm</a>
+		</li>
+		<li>
+			<a href="#" class="tag"><span class="arrow"></span>возможности</a>
+		</li>
+		<li>
+			<a href="#" class="tag"><span class="arrow"></span>сделка</a>
+		</li>
+	</ul>
+</div>
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		<a href="#" class="OverlayTrigger" data-cacheoverlay="false" style="display: block;">Отслеживать тему</a>
+	</div>
+</div>
+<div   class="InlineModForm section" >
+	<ol class="messageList" id="messageList">
+		
+		<li id="post-3431" class="message" >
+			<div class="messageUserInfo" itemscope="itemscope">
+				<div class="messageUserBlock ">
+
+					<div class="avatarHolder">
+						<span class="helper"></span>
+						<a href="#" class="avatar Av1118m" data-avatarhtml="true">
+							<img src="~/@Model.Author.AvatarPath" width="96" height="96" alt="error">
+						</a>
+
+						<!-- slot: message_user_info_avatar -->
+					</div>
+					<h3 class="userText">
+						<a href="#" class="username" itemprop="name">@Model.Author.UserName</a>
+						<em class="userTitle" itemprop="title">New Member</em>
+
+						<!-- slot: message_user_info_text -->
+					</h3>
+					<span class="arrow">
+						<span></span>
+					</span>
+				</div>
+			</div>
+
+			<div class="messageInfo primaryContent">
+				<div class="messageContent">
+					<article>
+						<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+							@Model.Description
+							<div class="messageTextEndMarker">&nbsp;</div>
+						</blockquote>
+					</article>
+				</div>
+				<div class="messageMeta ToggleTriggerAnchor">
+					<div class="privateControls">
+						<span class="item muted">
+							<span class="authorEnd"><a href="#" class="username author">@Model.Author.UserName</a>,</span>
+							<a href="#" title="Постоянная ссылка" class="datePermalink">
+								<span class="DateTime">@Model.CrateDate.ToLongDateString()</span>
+							</a>
+						</span>
+						<a href="#" class="OverlayTrigger item control report" data-cacheoverlay="false"><span></span>Пожаловаться</a>
+					</div>
+					<div class="publicControls">
+						<a href="#" title="Постоянная ссылка" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/3431/permalink">#1</a>
+						<a href="#" class="LikeLink item control like" data-container="#likes-post-3431">
+							<span></span><span class="LikeLabel">Мне нравится</span>
+						</a>
+						<a href="#" data-tip="#MQ-3431" class="ReplyQuote item control reply" title="Ответить, цитируя это сообщение"><span></span>Ответить</a>
+					</div>
+				</div>
+				<div id="likes-post-3431"></div>
+			</div>
+		</li>
+
+		@foreach (var message in Model.Messages)
+		{
+			<li class="message">
+				<div class="messageUserInfo" itemscope="itemscope">
+					<div class="messageUserBlock ">
+						<div class="avatarHolder">
+							<span class="helper"></span>
+							<a href="#" class="avatar Av464m" data-avatarhtml="true">
+								<img src="~/@message.Author.AvatarPath" width="96" height="96" alt="error">
+							</a>
+							<!-- slot: message_user_info_avatar -->
+						</div>
+						<h3 class="userText">
+							<a href="#" class="username"  itemprop="name">@message.Author.UserName</a>
+							<em class="userTitle" itemprop="title">Member</em>
+							<!-- slot: message_user_info_text -->
+						</h3>
+
+						<span class="arrow">
+							<span></span>
+						</span>
+					</div>
+				</div>
+				<div class="messageInfo primaryContent">
+					<div class="messageContent">
+						<article>
+							<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+								&gt;&gt;@message.Text
+								<div class="messageTextEndMarker">&nbsp;</div>
+							</blockquote>
+						</article>
+					</div>
+					<div class="messageMeta ToggleTriggerAnchor">
+						<div class="privateControls">
+							<span class="item muted">
+								<span class="authorEnd"><a href="#" class="username author" >@message.Author.UserName</a>,</span>
+								<a href="#" title="Постоянная ссылка" class="datePermalink">
+									<span class="DateTime" >@message.CrateDate.ToLongDateString()</span>
+								</a>
+							</span>
+							<a href="#" class="OverlayTrigger item control report" data-cacheoverlay="false"><span></span>Пожаловаться</a>
+						</div>
+						<div class="publicControls">
+							<a href="#" title="Постоянная ссылка" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/3552/permalink">#@count++</a>
+							<a href="#" class="LikeLink item control unlike" data-container="#likes-post-3552">
+								<span></span><span class="LikeLabel">Больше не нравится</span>
+							</a>
+							<a href="#" data-posturl="posts/3552/quote" data-tip="#MQ-3552" class="ReplyQuote item control reply" title="Ответить, цитируя это сообщение"><span></span>Ответить</a>
+						</div>
+					</div>
+					<div id="likes-post-3552">
+						<div class="likesSummary secondaryContent">
+							<span class="LikeText">
+								1 это нравится
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</li>
+		}
+	</ol>
+</div>
+
+<div class="quickReply message">
+<div class="messageUserInfo" itemscope="itemscope">
+	<div class="messageUserBlock ">
+
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="#" class="avatar Av1913m" data-avatarhtml="true">
+				<img src="~/@user.AvatarPath" width="96" height="96" alt="error">
+			</a>
+		</div>
+		<span class="arrow">
+			<span></span>
+		</span>
+	</div>
+</div>
+<form action="#" method="post" class="AutoValidator blendedEditor" data-optinout="OptIn" id="QuickReply">
+	<div>
+	<div class="bbCodeEditorContainer" style="padding-right: 30px;">
+		<textarea class="textCtrl Elastic" rows="5" name="message" style="overflow-y: hidden;"></textarea>
+		<div>
+			<a href="javascript:">Использовать полнофункциональный редактор</a>
+		</div>
+	</div>
+	<input type="hidden" name="_xfRelativeResolver" value="#">
+</div>
+	
+<div class="submitUnit">
+	<input type="submit" class="button primary" value="Ответить" accesskey="s">
+	<span id="AttachmentUploader" class="buttonProxy AttachmentUploader" >
+		<input type="button" value="Загрузить файл" id="ctrl_uploader" class="button OverlayTrigger DisableOnSubmit" d>
+	</span>
+	<input type="submit" class="button DisableOnSubmit" value="Расширенный режим..." name="more_options">
+</div>
+
+	<div class="AttachmentEditor" style="display: none;">
+	<div class="NoAttachments"></div>
+	<div class="secondaryContent AttachmentInsertAllBlock JsOnly">
+		<span></span>
+		<div class="AttachmentText">
+			<div class="label">Вставить все изображения как...</div>
+			<div class="controls">
+				<!--<input type="button" value="Удалить всё" class="button _smallButton AttachmentDeleteAll" />-->
+				<input type="button" value="Миниатюра" class="button smallButton AttachmentInsertAll" name="thumb">
+				<!--<input type="button" value="Полное изображение" class="button smallButton AttachmentInsertAll" name="image" />-->
+			</div>
+		</div>
+	</div>
+
+	<ol class="AttachmentList New">
+		<li id="AttachedFileTemplate" class="AttachedFile  secondaryContent">
+			<div class="Thumbnail">
+				<span class="genericAttachment"></span>
+			</div>
+			<div class="AttachmentText">
+				<div class="Filename">
+					<a href="#" target="_blank"></a>
+				</div>
+				<input type="button" value="Отмена" class="button smallButton AttachmentCanceller">
+				<span class="ProgressMeter">
+					<span class="ProgressGraphic">&nbsp;</span><span class="ProgressCounter">0%</span>
+				</span>
+			</div>
+		</li>
+	</ol>
+	<input type="hidden" name="attachment_hash" value="3169d297e18b3cac1e0a85556b5a3071">
+</div>
+
+</form>
+
+</div>
+
+<div class="sharePage bottom">
+	<h3 class="textHeading larger">Поделиться:</h3>
+	<div class="tweet-share">
+		<a class="twitter-share" href="https://twitter.com/share?url=https://localhost:5001/" target="_blank">
+			<i class="btn-icon"></i>
+			<span class="btn-text">Tweet</span>
+		</a>
+	</div>
+	<div class="fb-share">
+		<a href="http://www.facebook.com/sharer.php?u=https://localhost:5001/" target="_blank">facebook</a>
+	</div>
+	<div class="linkedin-share">
+		<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://localhost:5001/" target="_blank"></a>
+	</div>
+	<div class="vk-share">
+		<a href="http://vkontakte.ru/share.php?url=https://localhost:5001/" target="_blank"></a>
+	</div>
+</div>
+</div>
+</div>
+    </div>
+</div>

@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ForumATU.Controllers
 {
+
     [Authorize]
     public class HomeController : Controller
     {
@@ -28,9 +29,10 @@ namespace ForumATU.Controllers
         }
 
 
+       
         public async Task<IActionResult> Index()
         {
-            var titleEvents = _db.TitleEvents.Include(i=>i.TopicEvents).ThenInclude(t =>t.Author).ToList();
+            var titleEvents = _db.TitleEvents.ToList();
             ViewBag.User = await UserManager.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
             ViewBag.Statistics = await _db.Statistics.Include(u => u.User).FirstOrDefaultAsync();
             return View(titleEvents);
@@ -81,7 +83,11 @@ namespace ForumATU.Controllers
                     var topicEvent = await _db.TopicEvents.FirstOrDefaultAsync(t => t.Id == model.TopicEventId);
                     topicEvent.MessageNumber += 1;
                     topicEvent.TopicNumber += 1;
+                    topicEvent.ChangeDate = DateTime.Now;
                     topicEvent.AuthorChangeId = UserManager.GetUserId(User);
+                    var user = await _db.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
+                    user.MessageNumber += 1;
+                    _db.Users.Update(user);
                     _db.TopicEvents.Update(topicEvent);
                     _db.Statistics.Update(statistics);
                     await _db.SaveChangesAsync();
@@ -91,6 +97,13 @@ namespace ForumATU.Controllers
                     ModelState.AddModelError("","Ошибка!! Попробуйте перезагрузить страницу");
             }
             return View(model);
+        }
+
+        public async Task<IActionResult> TopicDetails(int topicId)
+        {
+            Topic topic = await _db.Topics.FirstOrDefaultAsync(t => t.Id == topicId);
+            if (topic == null) return NotFound();
+            return View(topic);
         }
 
 

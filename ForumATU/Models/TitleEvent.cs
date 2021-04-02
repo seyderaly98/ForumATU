@@ -12,6 +12,7 @@ namespace ForumATU.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime CrateDate { get; } = DateTime.Now;
+        public DateTime ChangeDate { get; set; } = DateTime.Now;
         public virtual List<TopicEvent> TopicEvents { get; set; }
         public string AuthorId { get; set; }
         public virtual User Author { get; set; }
@@ -24,12 +25,12 @@ namespace ForumATU.Models
         public int TopicNumber { get; set; }
         public int MessageNumber { get; set; }
         public DateTime CrateDate { get; } = DateTime.Now;
-        public DateTime ChangeDate { get;  } = DateTime.Now;
+        public DateTime ChangeDate { get; set; } = DateTime.Now;
         public string Description { get; set; }
         public virtual List<Topic> Topics { get; set; }
         
         public string AuthorChangeId { get; set; }
-        public User AuthorChange { get; set; }
+        public virtual User AuthorChange { get; set; }
         public string AuthorId { get; set; }
         public virtual User Author { get; set; }
 
