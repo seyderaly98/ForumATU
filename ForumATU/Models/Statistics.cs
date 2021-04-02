@@ -32,7 +32,7 @@ namespace ForumATU.Models
             Topic = _db.Topics.Count();
             Topic += _db.TopicEvents.Count();
             Topic += _db.TitleEvents.Count();
-            Message = _db.Messages.Count();
+            Message = _db.TopicMessages.Count();
             Users = _db.Users.Count();
             _db.Statistics.Update(this);
         }

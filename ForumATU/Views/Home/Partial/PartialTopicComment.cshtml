@@ -1,0 +1,59 @@
+﻿@model TopicMessage
+<li class="message">
+				<div class="messageUserInfo" itemscope="itemscope">
+					<div class="messageUserBlock ">
+						<div class="avatarHolder">
+							<span class="helper"></span>
+							<a href="#" class="avatar Av464m" data-avatarhtml="true">
+								<img src="~/@Model.Author.AvatarPath" width="96" height="96" alt="error">
+							</a>
+							<!-- slot: message_user_info_avatar -->
+						</div>
+						<h3 class="userText">
+							<a href="#" class="username"  itemprop="name">@Model.Author.UserName</a>
+							<em class="userTitle" itemprop="title">Member</em>
+							<!-- slot: message_user_info_text -->
+						</h3>
+
+						<span class="arrow">
+							<span></span>
+						</span>
+					</div>
+				</div>
+				<div class="messageInfo primaryContent">
+					<div class="messageContent">
+						<article>
+							<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+								&gt;&gt;@Model.Text
+								<div class="messageTextEndMarker">&nbsp;</div>
+							</blockquote>
+						</article>
+					</div>
+					<div class="messageMeta ToggleTriggerAnchor">
+						<div class="privateControls">
+							<span class="item muted">
+								<span class="authorEnd"><a href="#" class="username author" >@Model.Author.UserName</a>,</span>
+								<a href="#" title="Постоянная ссылка" class="datePermalink">
+									<span class="DateTime" >@Model.CrateDate.ToLongDateString()</span>
+								</a>
+							</span>
+							<a href="#" class="OverlayTrigger item control report" data-cacheoverlay="false"><span></span>Пожаловаться</a>
+						</div>
+						<div class="publicControls">
+							<a href="#" title="Постоянная ссылка" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/3552/permalink">#@Model.Count</a>
+							<a href="#" class="LikeLink item control unlike" data-container="#likes-post-3552">
+								<span></span><span class="LikeLabel">Больше не нравится</span>
+							</a>
+							<a href="#" data-posturl="posts/3552/quote" data-tip="#MQ-3552" class="ReplyQuote item control reply" title="Ответить, цитируя это сообщение"><span></span>Ответить</a>
+						</div>
+					</div>
+					<div id="likes-post-3552">
+						<div class="likesSummary secondaryContent">
+							<span class="LikeText">
+								1 это нравится
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</li>

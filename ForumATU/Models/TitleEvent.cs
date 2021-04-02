@@ -56,7 +56,7 @@ namespace ForumATU.Models
 
         public DateTime DateLastMessage { get; set; }
 
-        public virtual List<Message> Messages { get; set; }
+        public virtual List<TopicMessage> Messages { get; set; }
         
         public string AuthorLastMessageId { get; set; }
         public virtual User AuthorLastMessage { get; set; }
@@ -79,17 +79,28 @@ namespace ForumATU.Models
         
     }
 
-    public class Message
+    public class TopicMessage
     {
         public int Id { get; set;  }
         public string Text { get; set; }
         public DateTime CrateDate { get; set; } = DateTime.Now;
         public DateTime ChangeDate { get;  } = DateTime.Now;
 
-        public string UserId { get; set; }
+        public string UserId { get; private set; }
         public virtual User Author { get; set; }
         
-        public int TopicId { get; set; }
+        public int TopicId { get; private set; }
         public virtual Topic Topic { get; set; }
+
+        [NotMapped] public string Count { get; set; } = "new";
+        
+        public TopicMessage(){}
+
+        public TopicMessage(string comment, string userId, int topicId)
+        {
+            Text = comment;
+            UserId = userId;
+            TopicId = topicId;
+        }
     }
 }

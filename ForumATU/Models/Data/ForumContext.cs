@@ -12,7 +12,7 @@ namespace ForumATU.Models.Data
         public DbSet<TopicEvent> TopicEvents { get; set; }
         public DbSet<TitleEvent> TitleEvents { get; set; }
         public DbSet<Topic> Topics { get; set; }
-        public DbSet<Message> Messages { get; set; }
+        public DbSet<TopicMessage> TopicMessages { get; set; }
         public DbSet<Statistics> Statistics { get; set; }
         
         public ForumContext(DbContextOptions<ForumContext> options) : base(options) {}

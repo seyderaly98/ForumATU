@@ -106,6 +106,30 @@ namespace ForumATU.Controllers
             return View(topic);
         }
 
+        /// <summary>
+        /// Комментировать тему
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Comment(int topicId,string comment)
+        {
+            try
+            {
+                if (topicId == 0 || string.IsNullOrEmpty(comment) || !await _db.Topics.AnyAsync(t => t.Id == topicId)) return Json(false);
+
+                var author = await _db.Users.FirstOrDefaultAsync(u => u.Id == UserManager.GetUserId(User));
+                var topicComment = new TopicMessage(comment, author.Id,topicId);
+                await _db.TopicMessages.AddAsync(topicComment);
+                await _db.SaveChangesAsync();
+                topicComment.Author = author;
+                return PartialView("Partial/PartialTopicComment",topicComment);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
 
     }
 }
