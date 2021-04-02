@@ -67,14 +67,11 @@ namespace ForumATU.Models
         public int MessageNumber { get; set; }
         public int NewMessageNumber { get; set; }
 
-        [NotMapped]
-        private Random Random = new Random();
-        
 
         #region Конструктор
         public User()
         {
-            AvatarPath = $"images/avatar/{Random.Next(1,10)}.png";
+            AvatarPath = "images/img/avatar_non.png";
             Status = "Online";
             Gender = Gender.None;
         }
@@ -82,7 +79,7 @@ namespace ForumATU.Models
         {
             Email = model.Email;
             UserName = model.UserName.ToLower();
-            AvatarPath = $"images/avatar/{Random.Next(1,10)}.png";
+            AvatarPath = "images/img/avatar_non.png";
             Status = "Online";
             Gender = Gender.None;
         }
