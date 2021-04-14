@@ -16,6 +16,7 @@ namespace ForumATU.Models.Data
         public DbSet<Statistics> Statistics { get; set; }
         
         public ForumContext(DbContextOptions<ForumContext> options) : base(options) {}
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             User user = new User()

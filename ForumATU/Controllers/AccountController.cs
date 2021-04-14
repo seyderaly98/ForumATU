@@ -37,14 +37,23 @@ namespace ForumATU.Controllers
         #endregion
         
         #region actions
-         public IActionResult Login()
+        
+        /// <summary>
+        /// Авторизация  
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
                 return RedirectToAction("Index","Home");
             return View();
         }
         
-        [ValidateAntiForgeryToken]
+        /// <summary>
+        /// Авторизация 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Login(Login model)
         {
@@ -63,6 +72,10 @@ namespace ForumATU.Controllers
             return View(model);
         }
         
+        /// <summary>
+        /// Регистрация 
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Regist()
         {
             if (User.Identity.IsAuthenticated)
@@ -70,7 +83,11 @@ namespace ForumATU.Controllers
             return View();
         }
         
-        [ValidateAntiForgeryToken]
+        /// <summary>
+        /// Регистрация
+        /// </summary>
+        /// <param name="model">Данные для регистрации пользователя</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Regist(Register model)
         {
@@ -95,7 +112,11 @@ namespace ForumATU.Controllers
             return View(model);
         }
         
-        
+        /// <summary>
+        /// Выход
+        /// </summary>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
         [Authorize]
         public async Task<IActionResult> Logout()
         {

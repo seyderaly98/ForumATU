@@ -240,4 +240,6 @@ div#goog-gt-tt{padding:10px 14px;}
 /*! CSS Used fontfaces */
 @font-face{font-family:Circular;font-weight:400;src:url(https://www.mollie.com/dist/static/circular-pro-book.98cfe5ae4310de8fd55a9842605241fd.woff2) format("woff2"),url(https://www.mollie.com/dist/static/circular-pro-book.0ca8ee04bbefab1ab2d7a02fbc08ab2c.woff) format("woff");}
 @font-face{font-family:Circular;font-weight:600;src:url(https://www.mollie.com/dist/static/circular-pro-medium.9a1c71628acc42b8b5cc89ad2033dfb1.woff2) format("woff2"),url(https://www.mollie.com/dist/static/circular-pro-medium.6c61b6e7125376918c822507e8ca914d.woff) format("woff");}
+
 @font-face{font-family:Circular;font-weight:700;src:url(https://www.mollie.com/dist/static/circular-pro-bold.88b5ddd32e32ae4bd08843e9b03af203.woff2) format("woff2"),url(https://www.mollie.com/dist/static/circular-pro-bold.64346b13acef016dbf654e77710a6084.woff) format("woff");}
+
