@@ -30,7 +30,7 @@ namespace ForumATU
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ForumContext>(options => options.UseNpgsql(connection).UseLazyLoadingProxies())
+            services.AddDbContext<ForumContext>(options => options.UseNpgsql(connection, o => o.SetPostgresVersion(9, 6)).UseLazyLoadingProxies())
                 .AddIdentity<User, IdentityRole>(options =>
                 {
                     options.Password.RequiredLength = 3; // минимальная длина
