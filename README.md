@@ -1,2 +1,2 @@
-# ForumATU
-Официальный форум Almaty Technological University
+# Forum
+https://forum.elma-bpm.ru/
